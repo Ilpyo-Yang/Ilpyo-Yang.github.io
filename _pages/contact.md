@@ -1,6 +1,6 @@
 ---
 title: Contact
-author: Tao He
+author: Rosie Yang
 date: 2022-02-05
 category: Jekyll
 layout: post

@@ -1,6 +1,6 @@
 ---
 title: Design Draft
-author: Tao He
+author: Rosie Yang
 date: 2022-02-06
 category: Jekyll
 layout: post

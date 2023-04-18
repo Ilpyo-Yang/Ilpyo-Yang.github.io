@@ -1,6 +1,6 @@
 ---
 title: About
-author: Tao He
+author: Rosie Yang
 date: 2022-02-04
 category: Jekyll
 layout: post

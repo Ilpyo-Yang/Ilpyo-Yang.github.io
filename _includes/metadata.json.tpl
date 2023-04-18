@@ -37,7 +37,7 @@
             }
         },
         "theme": "default",
-        "author": "Tao He",
+        "author": "Rosie",
         "pdf": {
             "pageNumbers": true,
             "fontSize": 12,
