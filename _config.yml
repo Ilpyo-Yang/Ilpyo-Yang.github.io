@@ -56,6 +56,4 @@ plugins:
 
 toc:
   enabled: true
-  min_level: 1
-  max_level: 3
 
