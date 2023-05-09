@@ -10,3 +10,4 @@
   + <span style="background-color:#fff5b1">요약</span>
   + <span style="background-color:#FFE6E6">중요</span>
   + <span style="background-color:#DCFFE4">헷갈렸던 부분</span>
+  + <span style="background-color:#f0f0f0">접은 글</span>
