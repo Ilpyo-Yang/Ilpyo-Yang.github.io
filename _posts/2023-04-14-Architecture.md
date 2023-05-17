@@ -32,6 +32,7 @@ layout: post
 **DDD 파일시스템**  
 
 ****
+
 [Domain-Driven Design Simplified.](https://medium.com/@jaysonmulwa/domain-driven-design-simplified-a03c732401c9)  
 [도메인 주도 설계에서의 전략적 설계](https://engineering-skcc.github.io/msa/DDD-StrategicDesign/)
 

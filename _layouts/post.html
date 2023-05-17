@@ -15,21 +15,19 @@
     </head>
     <body>
         <div class="book">
-
             {%- include toc-date.html -%}
 
             <div class="book-body">
-                <!--<div class="book-header">
-                    &lt;!&ndash; Title &ndash;&gt;
-                    <h1>
+                <div class="book-header">
+                    <!--<h1>
                         <i class="fa fa-circle-o-notch fa-spin"></i>
                         {% if page.title %}
                             <a href="#" onClick="top.location='javascript:location.reload()'" >{{ page.title | escape }}</a>
                         {% else %}
                             <a href="#" onClick="top.location='javascript:location.reload()'" >{{ site.title | escape }}</a>
                         {% endif %}
-                    </h1>
-                </div>-->
+                    </h1>-->
+                </div>
 
                 <div class="body-inner">
                     {%- include body.html -%}
@@ -49,6 +47,10 @@
                             <i class="fa fa-angle-right"></i>
                         </a>
                     {% endif %}
+
+                    <!--<aside>
+                        {% include toc.html html=content %}
+                    </aside>-->
                 </div>
             </div>
 
