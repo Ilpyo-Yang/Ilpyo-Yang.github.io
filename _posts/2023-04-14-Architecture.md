@@ -31,10 +31,12 @@ layout: post
 
 **DDD 파일시스템**  
 
-
-
-
-
 ****
 [Domain-Driven Design Simplified.](https://medium.com/@jaysonmulwa/domain-driven-design-simplified-a03c732401c9)  
 [도메인 주도 설계에서의 전략적 설계](https://engineering-skcc.github.io/msa/DDD-StrategicDesign/)
+
+
+<br><br>
+
+## 폰 노이만 아키텍처
+사용자가 컴퓨터에 값을 입력하거나 프로그램을 실행할 경우 그 정보를 먼저 메모리에 저장시키고 CPU가 순차적으로 그 정보를 해석하고 계산해 사용자에게 결과값을 전달합니다. 컴퓨터는 폰 노이만 구조를 근간으로 발전했으며, 이를 통해 CPU, 메모리, 프로그램 구조를 갖는 범용 컴퓨터 구조를 확립했습니다. 
