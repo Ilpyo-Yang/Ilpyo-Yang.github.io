@@ -1,5 +1,7 @@
 ![readme_rabbit.png](assets%2Fgitbook%2Fpost_images%2Freadme_rabbit.png)
 
+리드미를 어떻게 써야 뽀대나고 간지나고 눈물나게 꾸밀 수 있을까..
+
 ### 개설목적
 + 코드는 Github으로, 학습내용을 위키처럼 개인 블로그로 작성하면서 공부하기 위해 만들었습니다. 
 + 기존에는 Tistory 블로그로 운영했었는데 글 쓰는 것 자체에 더 집중하기 위해 Github 블로그로 변경하게 되었습니다.
