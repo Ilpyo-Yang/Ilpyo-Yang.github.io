@@ -47,6 +47,7 @@ layout: post
  
 계층형 아키텍처는 단일 소프르퉤어 단위로 함께 작동하는 여러 개의 개별 수평 계층으로 구성된 아키텍처 패턴을 말합니다. 그 계층의 수는 소프트웨어에 따라 다양하게 나눌 수 있습니다.  
 
+### 계층구조
 **Presentation 계층**  
 사용자와의 상호작용을 처리하는 계층으로 Model, View, Controller 그리고 HTTP 요청 처리 및 HTML 랜더링에 대해 알고 있는 웹 계층에 해당합니다.
 
@@ -105,9 +106,27 @@ public class Order {
 **Data Access 계층**  
 데이터베이스, Message Queue, 외부 API 통신 등을 처리하는 계층입니다. 
 
+<br>
 
+### 계층형 아키텍처의 문제점
+<span style="background-color:#fff5b1">데이터베이스 주도 설계를 유도합니다.</span>  
+도메인 중심이 아닌 영속성 계층에 의존하는 데이터베이스 중심으로 도메인이 만들어집니다. 이는 ORM 프레임워크에 따라 의존성의 방향이 보통 엔티티들이 속한 영속성 계층에 있기 때문입니다. 결과적으로 도메인 모델에 대한 상태 변경이 아닌 행동 중심으로 모델링이 된다는 단점이 있습니다. 뿐만 아니라 도메인 계층에서 즉시로딩/지연로딩, 트랜잭션 등을 담당하기 때문에 영속성 계층과의 강한 결합이 생기도록 한다는 문제가 있습니다.  
+<span style="background-color:#fff5b1">지름길을 택하기 쉬워집니다.</span>  
+계층형 아키텍처는 하위 계층에서 상위 계층으로의 접근이 어렵다는 문제가 있습니다. 그래서 ```지름길```로써 상위 컴포넌트를 하위 계층으로 내려서 접근이 편하도록 하는 잘못된 방법을 택해 영속성 계층을 비대하게 만드는 방법을 채택할 수 있습니다. 이를 ```깨진 창문 이론```이라는 심리적 효과로 표현하기도 합니다. 결국 하나의 계층에서 다양한 역할을 수행하게 되면서 관심사의 분리가 제대로 이뤄지지 않는다는 단점이 있습니다.  
+<span style="background-color:#fff5b1">테스트하기 어려워집니다.</span>  
+이렇게 프로젝트를 만든 적은 없지만, 웹 계층에서 바로 영속성 계층으로 접근하는 경우가 발생할 수 있습니다. 그 경우 도메인이 해야할 역할이 웹 계층에서 수행되는 등 계층 분리가 모호해지고 그에 따른 유닛테스트 수행이 어려워집니다.   
+<span style="background-color:#fff5b1">유스케이스를 숨깁니다.</span>  
+위 문제와 연장선 상에서 볼 수 있습니다. 계층의 모호한 분리는 유스케이스를 추가하려고 할 때, 정확히 어디에 기능을 추가할지 어려워집니다.  
+<span style="background-color:#fff5b1">동시 작업이 어려워집니다.</span>  
+영속성 계층을 중심으로 하기 때문에 협업이 어렵습니다. 도메인 또는 영속성 계층이 비대해지면 그 과정에서 동시에 편집해야 하는 경우가 발생하게 되고, merge하면서 코드 충돌이 발생할 수 있기 때문입니다.  
+
+<br>
+
+**문제를 해결하기 위한 방법**  
+위와 같은 계층형 아키텍처의 문제를 해결하기 위해서는 <span style="background-color:#fff5b1">객체지향 개발 원칙인 SOLID 윈칙을 따르고, 단위 테스트를 적용</span>해서 부적절하게 넓은 계층이 만들어지거나 불필요한 영속성 계층으로의 의존도를 줄일 필요가 있습니다.  
 
 ****
+[Clean Architecture](https://blog.cleancoder.com/uncle-bob/2012/08/13/the-clean-architecture.html)  
 [Layered Architecture](https://www.baeldung.com/cs/layered-architecture)  
 [계층형 아키텍처](https://jojoldu.tistory.com/603)  
 [Anemic Domain Model vs. Rich Domain Model](https://medium.com/@inzuael/anemic-domain-model-vs-rich-domain-model-78752b46098f)  
