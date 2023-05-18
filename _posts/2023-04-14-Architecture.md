@@ -43,15 +43,64 @@ layout: post
 <br><br>
 
 ## Layered Architecture, 계층형 아키텍처
-계층형 아키텍처는 일반적으로 3계층으로 나뉜 아키텍처를 말하는데 N계층도 있고 그 계층의 수는 다양하게 나눌 수 있습니다. 3계층으로 살펴보자면 크게 Presentation 계층, Domain(Business or Service) 계층, Data Access(Persistence) 계층이 있습니다.  
+> Presentation 계층, Domain(Business or Service) 계층, Data Access(Persistence or Infrastructure) 계층
+ 
+계층형 아키텍처는 단일 소프르퉤어 단위로 함께 작동하는 여러 개의 개별 수평 계층으로 구성된 아키텍처 패턴을 말합니다. 그 계층의 수는 소프트웨어에 따라 다양하게 나눌 수 있습니다.  
 
 **Presentation 계층**  
 사용자와의 상호작용을 처리하는 계층으로 Model, View, Controller 그리고 HTTP 요청 처리 및 HTML 랜더링에 대해 알고 있는 웹 계층에 해당합니다.
 
 **Domain 계층**  
 시스템의 핵심로직을 담고 있는 계층으로 유효성 검사 및 계산들과 도메인 관련 작업들을 담당합니다. 토비의 스프링에서는 서비스 계층과 기반 서비스 계층으로 나누는데, [이동욱님 블로그](https://jojoldu.tistory.com/603)를 보면, 이를 도메인 계층과 서비스 계층으로 분류해서 명확히 한 것을 볼 수 있었습니다. 도메인 계층을 Rich Domain 모델을 기반으로 문제 도메인 해결에 순수하게 집중하는 계층으로 표현했고, 서비스 계층은 트랜잭션, 메일&SMS 발송 등 다른 인프라와의 통신을 담당하는 역할을 하는 계층으로 분리해서 설명했습니다.  
-<span style="background-color:#DCFFE4">Rich Domain 모델은 무엇인가</span>  
+<span style="background-color:#DCFFE4">Rich Domain Model은 무엇인가</span>  
+Anemic Domain Model은 객체가 데이터만을 갖고 있고 동작을 수행하는 데 필요한 비즈니스 로직이 다른 객체에 의해 처리되는 모델을 의미합니다. 이는 비즈니스 로직이 외부 서비스나 관리 객체에 의해 조작되는 형태를 말합니다. <span style="background-color:#fff5b1">반면, Rich Domain Model은 객체 자체가 비즈니스 로직을 포함하고 있으며, 데이터와 로직이 함께 동작합니다. 그러므로 Anemic Domain Model에 비해 비즈니스 중복 로직을 줄이고 객체 간 응집도를 높일 수 있는 장점이 있습니다.</span>    
 
+1. Anemic Domain Model의 예
+```java
+public class Order {
+    private int orderId;
+    private Date orderDate;
+    private List<OrderItem> orderItems;
+
+    // Getter and Setter methods for data fields
+
+    public double calculateTotalPrice() {
+        double totalPrice = 0;
+        for (OrderItem item : orderItems) {
+            totalPrice += item.getPrice();
+        }
+        return totalPrice;
+    }
+}
+```
+
+2. Rich Domain Model 예  
+Anemic Domain Model의 예와 달리 ```addOrderItem```, ```removeOrderItem```와 같이 동작을 수행하는 메서드도 포함되어 있고, ```OrderItem``` 객체에 ```calculatePrice()``` 메서드를 사용하여 각 주문 항목의 가격을 계산합니다. Rich Domain Model은 객체가 스스로 상태를 관리할 수 있도록 데이터와 데이터를 조작하는 로직이 함께 존재합니다.  
+```java
+public class Order {
+    private int orderId;
+    private Date orderDate;
+    private List<OrderItem> orderItems;
+
+    // Getter and Setter methods for data fields
+
+    public void addOrderItem(OrderItem item) {
+        orderItems.add(item);
+    }
+
+    public void removeOrderItem(OrderItem item) {
+        orderItems.remove(item);
+    }
+
+    public double calculateTotalPrice() {
+        double totalPrice = 0;
+        for (OrderItem item : orderItems) {
+            totalPrice += item.calculatePrice();
+        }
+        return totalPrice;
+    }
+}
+```
 
 **Data Access 계층**  
 데이터베이스, Message Queue, 외부 API 통신 등을 처리하는 계층입니다. 
@@ -59,5 +108,7 @@ layout: post
 
 
 ****
+[Layered Architecture](https://www.baeldung.com/cs/layered-architecture)  
 [계층형 아키텍처](https://jojoldu.tistory.com/603)  
-[Anemic Domain Model vs. Rich Domain Model](https://medium.com/@inzuael/anemic-domain-model-vs-rich-domain-model-78752b46098f)
+[Anemic Domain Model vs. Rich Domain Model](https://medium.com/@inzuael/anemic-domain-model-vs-rich-domain-model-78752b46098f)  
+[Rich vs Anemic Domain Model](https://stackoverflow.com/questions/23314330/rich-vs-anemic-domain-model)
