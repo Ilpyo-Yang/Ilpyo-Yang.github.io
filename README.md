@@ -1,22 +1,52 @@
-[//]: # (![readme_rabbit.png]&#40;assets%2Fgitbook%2Fpost_images%2Freadme_rabbit.png&#41;)
+#### Blog Contents
 
-리드미를 어떻게 써야 뽀대나고 간지나고 눈물나게 꾸밀 수 있을까..
+<div style="margin: 10px 0 20px 0">
+  <span style="border-radius:3px; background-color:#FFE6E6; padding:3px 5px; margin-bottom: 5px; font-weight:bold;">Basic</span>
+  <br>
+  <span onclick="location.href='/cs/2023/04/13/CS.html'" style="border-radius:3px; background-color:#fff5b1; padding:3px 5px; cursor:pointer; margin-right:5px;">CS</span>
+  <span onclick="location.href='/web/2023/04/13/Web.html'" style="border-radius:3px; background-color:#fff5b1; padding:3px 5px; cursor:pointer; margin-right:5px;">Web</span>
+  <span onclick="location.href='/cs/2023/04/14/Architecture.html'" style="border-radius:3px; background-color:#fff5b1; padding:3px 5px; cursor:pointer; margin-right:5px;">Architecture</span>
+  <span onclick="location.href='/test/2023/05/05/Test.html'" style="border-radius:3px; background-color:#fff5b1; padding:3px 5px; cursor:pointer; margin-right:5px;">Test</span>
+</div>
 
-#### 개설목적
-+ 코드는 Github으로, 학습내용을 위키처럼 개인 블로그로 작성하면서 공부하기 위해 만들었습니다. 
-+ 기존에는 Tistory 블로그로 운영했었는데 글 쓰는 것 자체에 더 집중하기 위해 Github 블로그로 변경하게 되었습니다.
+<div style="margin-bottom: 20px">
+  <span style="border-radius:3px; background-color:#FFE6E6; padding:3px 5px; margin-bottom: 5px; font-weight:bold;">Backend</span>
+  <br>
+  <span onclick="location.href='/spring/2023/04/14/Spring.html'" style="border-radius:3px; background-color:#fff5b1; padding:3px 5px; cursor:pointer; margin-right:5px;">Spring</span>
+  <span onclick="location.href='/spring/2023/04/15/JPA.html'" style="border-radius:3px; background-color:#fff5b1; padding:3px 5px; cursor:pointer; margin-right:5px;">JPA</span>
+  <span onclick="location.href='/java/2023/04/30/Java.html'" style="border-radius:3px; background-color:#fff5b1; padding:3px 5px; cursor:pointer; margin-right:5px;">Java</span>
+  <span onclick="location.href='/kotlin/2023/05/02/Kotlin.html'" style="border-radius:3px; background-color:#fff5b1; padding:3px 5px; cursor:pointer; margin-right:5px;">Kotlin</span>
+  <span onclick="location.href='/python/2023/05/03/Python.html'" style="border-radius:3px; background-color:#fff5b1; padding:3px 5px; cursor:pointer; margin-right:5px;">Python</span>
+  <span onclick="location.href='/server/2023/05/04/Server.html'" style="border-radius:3px; background-color:#fff5b1; padding:3px 5px; cursor:pointer; margin-right:5px;">Server</span>
+</div>
 
-[//]: # (#### 게시내용)
+<div style="margin-bottom: 20px">
+  <span style="border-radius:3px; background-color:#FFE6E6; padding:3px 5px; margin-bottom: 5px; font-weight:bold;">DevOps</span>
+  <br>
+  <span onclick="location.href='/devops/2023/05/08/AWS.html'" style="border-radius:3px; background-color:#fff5b1; padding:3px 5px; cursor:pointer; margin-right:5px;">AWS</span>
+</div>
 
-[//]: # (+ 강의 및 스터디 내용, 개발도서 내용 정리, 회고)
+<div style="margin-bottom: 20px">
+  <span style="border-radius:3px; background-color:#FFE6E6; padding:3px 5px; margin-bottom: 5px; font-weight:bold;">Front</span>
+</div>
 
-[//]: # (+ 프로젝트 내용 정리)
+<div style="margin-bottom: 20px">
+  <span style="border-radius:3px; background-color:#FFE6E6; padding:3px 5px; margin-bottom: 5px; font-weight:bold;">Tools</span>
+  <br>
+  <span onclick="location.href='/tool/2023/05/08/GitHub.html'" style="border-radius:3px; background-color:#fff5b1; padding:3px 5px; cursor:pointer; margin-right:5px;">Github</span>
+  <span onclick="location.href='/tool/2023/05/08/IntelliJ.html'" style="border-radius:3px; background-color:#fff5b1; padding:3px 5px; cursor:pointer; margin-right:5px;">IntelliJ</span>
+</div>
 
-#### 작성원칙
-+ 간략하게 개발공부 관련 내역을 작성합니다.
-+ 공부한 항목에 대한 자료나 관련 링크를 첨부합니다.
+<div style="margin-bottom: 20px">
+  <span style="border-radius:3px; background-color:#FFE6E6; padding:3px 5px; margin-bottom: 5px; font-weight:bold;">AI</span>
+  <br>
+  <span onclick="location.href='/ai/2023/05/09/ML.html'" style="border-radius:3px; background-color:#fff5b1; padding:3px 5px; cursor:pointer; margin-right:5px;">ML</span>
+</div>
+
+#### Blog Writing Rules
++ 개발공부 관련 내역을 작성하고 참고한 자료나 관련 링크를 첨부합니다.
 + 형광펜이 사용된 부분의 의미는 다음과 같이 지정했습니다.
-  + <span style="background-color:#fff5b1">요약</span>
-  + <span style="background-color:#FFE6E6">중요</span>
-  + <span style="background-color:#DCFFE4">헷갈렸던 부분</span>
-  + <span style="background-color:#f0f0f0">접은 글</span>
+  + <span style="background-color:#fff5b1; margin-right:5px">요약</span>
+    <span style="background-color:#FFE6E6; margin-right:5px">중요</span>
+    <span style="background-color:#DCFFE4; margin-right:5px">헷갈렸던 부분</span>
+    <span style="background-color:#f0f0f0; margin-right:5px">접은 글</span>
