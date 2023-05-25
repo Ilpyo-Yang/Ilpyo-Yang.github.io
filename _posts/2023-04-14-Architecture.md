@@ -131,3 +131,5 @@ public class Order {
 [계층형 아키텍처](https://jojoldu.tistory.com/603)  
 [Anemic Domain Model vs. Rich Domain Model](https://medium.com/@inzuael/anemic-domain-model-vs-rich-domain-model-78752b46098f)  
 [Rich vs Anemic Domain Model](https://stackoverflow.com/questions/23314330/rich-vs-anemic-domain-model)
+
+<div style="padding:3px; margin:200px 0;"></div>   
