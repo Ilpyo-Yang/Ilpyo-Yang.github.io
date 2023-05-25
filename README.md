@@ -3,6 +3,7 @@
 
 <br>
 
+<!--
 #### Blog Contents
 
 <div style="margin: 10px 0 20px 0">
@@ -59,6 +60,7 @@
 </div>
 
 <br>
+-->
 
 #### Blog Writing Rules
 + 개발공부 관련 내역을 작성하고 참고한 자료나 관련 링크를 첨부합니다.
