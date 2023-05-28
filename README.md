@@ -1,7 +1,10 @@
 #### Blog Intro
 보이기 위한 블로그가 아니라 공부하고 생각한 내용을 작성하기 위해 만들어진 블로그입니다. 기록하고 잊지말고 꾸준히 관리해나갈 예정입니다 :)
 
-<br>
+#### Recent Posts
++ [JPA - 엔티티 설계시 주의점](/backend/2023/04/15/JPA.html#엔티티-설계시-주의점)
++ [JPA - 객체지향 쿼리 언어](/backend/2023/04/15/JPA.html#객체지향-쿼리-언어)
++ [Test - Mockist vs Classicist](/backend/2023/04/15/JPA.html#mockist-vs-classicist)
 
 <!--
 #### Blog Contents
@@ -61,6 +64,8 @@
 
 <br>
 -->
+
+****
 
 #### Blog Writing Rules
 + 개발공부 관련 내역을 작성하고 참고한 자료나 관련 링크를 첨부합니다.
