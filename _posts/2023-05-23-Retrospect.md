@@ -6,11 +6,6 @@ category: special
 layout: post
 ---
 
-## 2023년 회고
-
-
-<br><br>
-
 ## GitHub 블로그로의 이전
 
 2년 정도 [Tistory 블로그](https://ilpyoyang.tistory.com/)를 사용하고 있었는데 이번에 github 블로그로 옮기게 되었습니다. 아직 블로그 내용들을 옮기지는 않았지만, (앞으로도 다 옮길지는 미지수...) github 블로그가 더 편하다는 느낌을 받았습니다.  
