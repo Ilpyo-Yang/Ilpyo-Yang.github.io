@@ -2,7 +2,7 @@
 보이기 위한 블로그가 아니라 공부하고 생각한 내용을 작성하기 위해 만들어진 블로그입니다. 기록하고 잊지말고 꾸준히 관리해나갈 예정입니다 :)
 
 #### Recent Posts
-+ [Effective Java 진행중](/backend/2023/04/30/Java.html#effective-java)
++ [Spring Security in Action](/backend/2023/04/14/Spring.html#spring-security-in-action)
 + [Querydsl](/backend/2023/04/15/JPA.html#querydsl)
 + [엔티티 설계시 주의점](/backend/2023/04/14/Spring.html#엔티티-설계시-주의점)
 + [IntelliJ 사용꿀팁](/tool/2023/05/08/IDE.html#intellij-사용꿀팁-)
