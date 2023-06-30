@@ -31,6 +31,7 @@ github_username:  Ilpyo-Yang
 
 # Build settings
 theme: minima
+asset_url: /assets
 plugins:
   - jekyll-feed
   - jekyll-toc
@@ -57,9 +58,8 @@ plugins:
 
 syntax_highlighter_style: colorful
 
+
 toc:
   enabled: true
-#  h_min: 1
-#  h_max: 2
 
 
