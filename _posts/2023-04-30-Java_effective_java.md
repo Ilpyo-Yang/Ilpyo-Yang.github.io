@@ -5,7 +5,7 @@ date: 2023-04-30
 category: backend
 layout: post
 ---
-~~~~
+
 > 작년에 [스터디](https://github.com/BacknPacker/effective_java)를 하면서 공부했던 내용이지만 복습을 위해 핵심 내용 위주로 정리하면서 학습했습니다. 이 부분의 대부분의 예시 코드는 이펙티브 자바 제공 [오픈소스](https://github.com/jbloch/effective-java-3e-source-code)에서 발췌했습니다.  
 
 <img src="https://image.yes24.com/goods/65551284/XL" style="height:400px;" />

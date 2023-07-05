@@ -57,6 +57,6 @@ private Object[] grow() {
   return grow(size + 1);
 }
 ```
-+ ~~~~[Java : ArrayList, LinkedList, HashMap](https://velog.io/@seonmikimm/Java-ArrayList-LinkedList-HashMap)
++ [Java : ArrayList, LinkedList, HashMap](https://velog.io/@seonmikimm/Java-ArrayList-LinkedList-HashMap)
 
 <div style="padding:3px; margin:200px 0;"></div>   
