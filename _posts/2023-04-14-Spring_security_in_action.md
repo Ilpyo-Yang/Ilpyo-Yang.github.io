@@ -1,5 +1,5 @@
 ---
-title: Spring Security in Action
+title: Spring Security in Action (진행중)
 author: Rosie Yang
 date: 2023-04-14
 category: backend
@@ -8,8 +8,26 @@ layout: post
 
 > 책의 모든 내용이 아닌 기억할 내용 + 추가 조사한 내용을 위주로 정리한 포스팅입니다.
 
-+ [1장. 오늘날의 보안](/backend/2023/04/14/Spring.html#1장-오늘날의-보안)
-+ [2장. 안녕! 스프링 시큐리티](/backend/2023/04/14/Spring.html#2장-안녕-스프링-시큐리티)
+### Contents
+<table>
+    <tr>
+        <td style="width:30%;">
+            <img src="/assets/gitbook/post_images/spring/spring_security.jpg">
+        </td>
+        <td>
+            <ul>
+                <li><a href="/backend/2023/04/14/Spring_security_in_action.html#1장-오늘날의-보안">1장. 오늘날의 보안</a></li>
+                <li><a href="/backend/2023/04/14/Spring_security_in_action.html#2장-안녕-스프링-시큐리티">2장. 안녕! 스프링 시큐리티</a></li>
+                <li><a href="/backend/2023/04/14/Spring_security_in_action.html#3장-사용자-관리">3장. 사용자 관리</a></li>
+                <li><a href="/backend/2023/04/14/Spring_security_in_action.html#4장-암호처리">4장. 암호처리</a></li>
+            </ul>
+        </td>
+    </tr>
+</table>
+
+<br>
+
+<br>
 
 ### 1장. 오늘날의 보안
 스프링 시큐리티는 아파치 2.0 라이선스에 따라 릴리스되는 오픈 소스 소프트웨어입니다. 스프링 프레임워크와 함께 애플리케이션 단위의 보안개발을 도와주며 스프링의 방식인 <span style="background-color:#fff5b1">어노테이션, 빈, SpEL(Spring Expression Language)</span> 등을 이용합니다.
@@ -37,7 +55,10 @@ GET http: //banking.com/transfer.do?acct=Mike&amount=5000
 ```
 
 **주입**  
-SQL 주입, XPath 주입, OS 명령 주입, LDAP 주입 등이 있습니다. <span style="background-color:#DCFFE4; margin-right:5px">중요데이터는 볼트에 넣어줘야 합니다.</span> 볼트는 일반적으로 클라우드 기반의 데이터베이스 및 데이터 저장소 서비스인데, 중요한 데이터를 안전하게 저장하고 관리할 수 있는 기능을 제공합니다.  
+SQL 주입, XPath 주입, OS 명령 주입, LDAP 주입 등이 있습니다. <span style="background-color:#fff5b1; margin-right:5px">중요데이터는 볼트에 넣어줘야 합니다.</span> 볼트는 일반적으로 클라우드 기반의 데이터베이스 및 데이터 저장소 서비스인데, 중요한 데이터를 안전하게 저장하고 관리할 수 있는 기능을 제공합니다.  
+
+<span style="background-color:#DCFFE4; margin-right:5px">LDAP(Lightweight Directory Access Protocol)이 무엇일까?</span>  
+LDAP는 사용자가 조직, 구성원 등에 대한 데이터를 찾는 데 도움이 되는 프로토콜입니다. 대부분 검색에 대한 요청으로 DAP보다 통신 네트워크 대역폭 상의 가벼운 특성이 있습니다. LDAP 서버에서 주로 특정 데이터를 중앙에서 관리하는 경우 트리구조로 저장하거나 조회하는 경우에 사용됩니다.  
 
 **기밀 데이터 노출**  
 공개 정보는 로그화하지 말아야 합니다. 예를 들어 500 에러가 발생했을 때, 그대로 에러 내역이 클라이언트 단에 노출된다면 애플리케이션 구조와 그 종속성까지 다 알 수 있기 때문에 위험합니다.  
@@ -104,6 +125,80 @@ public class CustomAuthenticationProvider implements AuthenticationProvider {
 <br><br>
 
 ### 3장. 사용자 관리
+3장은 ```User```, ```UserDetailService```, ```UserDetailManager```에 대한 내용을 다루고 있습니다. 사용자가 인증을 하는 과정에서 인증 논리에 따라 인증 제공자는 사용자를 인증하는 과정을 거치게 되는데 이 때, 메모리 User를 관리하는 체계에 대한 내용입니다.  
+
+<br>
+
+**UserDetils와 구현**  
+사용자 기술을 위해서 스프링 시큐리티는 ```UserDetils``` 인터페이스를 구현하고 준수합니다. ```UserDetails```를 직접 클래스로 구현해도 되고, 사용에 따라 ```UserDetail```를 빌드해서 사용할 수 있습니다.
+```UserDetails```는 하나 이상의 권한, password, username을 조회하거나 계정의 활성화 및 비활성화를 관리하는 메서드들을 가지고 있습니다. 계정의 관리는 기본적으로 ```true``` 처리를 하지면 별도 내부 서비스 방침에 따라 커즈터마이징해 구현할 수 있습니다.  
+```java
+public interface UserDetails extends Serializable {
+	Collection<? extends GrantedAuthority> getAuthorities();
+	String getPassword();
+	String getUsername();
+	boolean isAccountNonExpired();
+	boolean isAccountNonLocked();
+	boolean isCredentialsNonExpired();
+	boolean isEnabled();
+}
+```  
+이렇게 ```UserDetails```를 하나의 클래스로 implements 해서 구현하는 방법도 있지만, ```UserDetailService```를 위해 제공되는 ```User``` 모델을 빌드할 수 있습니다. 이 모델도 ```UserDetails``` 구현체입니다. 
+이 경우 ```withUsername``` 메서드를 이용해 ```UserBuilder```를 만들어 ```UserDetiails``` 객체를 만들 수도 있습니다.  
+```java
+UserDetails userDetails = User.withUsername(member.getEmail())
+                            .password(member.getPassword())
+                            .roles(member.getRole())
+                            .build();
+```
+
+<br>
+
+**UserDetailService와 세 가지 UserDetailManager에 대하여**  
+```UserDetailService```는 인증의 핵심이 되는 부분으로 인증 논리에서 메모리 내에서 User를 관리합니다. ```UserDetailService``` 인터페이스는 단 한 가지 메서드를 가지고 있는데 ```loadUserByUsername(String username)```를 가지고 Username에 해당하는 사용자가 있는지 메모리에서 확인합니다. 해당하는 사용자가 없다면, ```UsernameNotFoundException```로 ```RuntimeException```를 던집니다.
+```java
+public interface UserDetailsService {
+	UserDetails loadUserByUsername(String username) throws UsernameNotFoundException;
+}
+```
+책에서 제시한 ```loadUserByUsername``` 구현의 예입니다. User들 중에서 username이 동일한 User만을 추출해 UserDetails로 리턴하는 것을 볼 수 있습니다.
+```java
+@Override
+public UserDetails loadUserByUsername(String username) throws UsernameNotFoundException{
+  return Users.stream()
+    .filter(u -> u.getUsername().equals(username))
+    .findFirst()
+    .orElseThrows(() -> new UsernameNotFoundException("User not found"));
+}
+```
+```UserDetailManager```는 ```UserDetailService```의 기능을 확장하고 메서드를 추가합니다. ```UserDetailManager```의 구현클래스로 ```InMemoryUserDetailsManager```와 ```JdbcUserDetailsManager```를 제공하고 있습니다. 내부 메모리를 사용하는지 또는 SQL 데이터베이스에 저장된 사용자를 관리하며 JDBC를 통해 데이터베이스에 직접 연결하는지에 따라 다르게 사용됩니다.  
+```LdapUserDetailsManager```도 제공하고 있지만 LDAP를 사용할 경우 [별도 dependency 설정](https://www.baeldung.com/spring-security-ldap)이 필요합니다.
+```java
+public interface UserDetailsManager extends UserDetailsService {
+	void createUser(UserDetails user);
+	void updateUser(UserDetails user);
+	void deleteUser(String username);
+	void changePassword(String oldPassword, String newPassword);
+	boolean userExists(String username);
+}
+```
+추가로 ```setUsersByUsernameQuery``` 등과 같이 ```JdbcUserDetailsManager```의 쿼리를 변경할 수 있으며 @Bean으로 ```UserDetailsService``` config로 등록할 수 있습니다.
+```java
+@Bean
+public UserDetailsService userDetailsService(DataSource dataSource) {
+    String usersByUsernameQuery = "select username, password, enabled from spring.users where username = ?";
+    String authsByUserQuery = "select username, authority from spring.authorities where username = ?";
+    var userDetailsManager = new JdbcUserDetailsManager(dataSource);
+    userDetailsManager.setUsersByUsernameQuery(usersByUsernameQuery);
+    userDetailsManager.setAuthoritiesByUsernameQuery(authsByUserQuery);
+    return userDetailsManager;
+
+}
+```
+
+<br><br>
+
+### 4장. 암호처리
 
 ****
 + [Spring Security in Action](https://github.com/spring-projects/spring-security/)  
