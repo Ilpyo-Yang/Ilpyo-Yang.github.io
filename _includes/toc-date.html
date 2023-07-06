@@ -19,7 +19,7 @@
 
             <li class="divider"></li>
 
-            <div style="border-radius:3px; background-color:#FFE6E6; padding:3px 5px; cursor:pointer; margin-right:5px; text-align: center">Special</div>
+            <div style="border-radius:3px; background-color:#FFE6E6; padding:3px 5px; margin-right:5px; text-align: center">Manage</div>
 
             {% for collection in site.collections %}
             <!-- <p>{{ collection.label }}</p> -->
@@ -32,7 +32,7 @@
 
             {% for post in reversed_posts %}
 
-            {% if post.category == 'special' %}
+            {% if post.category == 'manage' %}
             {% if page.url == post.url %}
             <li class="chapter active" data-level="1.2" data-path="{{site.baseurl}}{{post.url}}">
                 {% else %}
@@ -57,7 +57,7 @@
             {% endif %}
             {% endfor %}
 
-            <div style="border-radius:3px; background-color:#fff5b1; padding:3px 5px; cursor:pointer; margin-right:5px; text-align: center">CS</div>
+            <div style="border-radius:3px; background-color:#fff5b1; padding:3px 5px; margin-right:5px; text-align: center">CS</div>
 
             {% for collection in site.collections %}
                 <!-- <p>{{ collection.label }}</p> -->
@@ -95,7 +95,7 @@
                 {% endif %}
             {% endfor %}
 
-            <div style="border-radius:3px; background-color:#fff5b1; padding:3px 5px; cursor:pointer; margin-right:5px; text-align: center">Backend</div>
+            <div style="border-radius:3px; background-color:#fff5b1; padding:3px 5px; margin-right:5px; text-align: center">Backend</div>
 
             {% for collection in site.collections %}
             <!-- <p>{{ collection.label }}</p> -->
@@ -133,7 +133,7 @@
             {% endif %}
             {% endfor %}
 
-            <div style="border-radius:3px; background-color:#fff5b1; padding:3px 5px; cursor:pointer; margin-right:5px; text-align: center">Devops</div>
+            <div style="border-radius:3px; background-color:#fff5b1; padding:3px 5px; margin-right:5px; text-align: center">Devops</div>
 
             {% for collection in site.collections %}
             <!-- <p>{{ collection.label }}</p> -->
@@ -209,7 +209,7 @@
             {% endif %}
             {% endfor %}-->
 
-            <div style="border-radius:3px; background-color:#fff5b1; padding:3px 5px; cursor:pointer; margin-right:5px; text-align: center">Tool</div>
+            <div style="border-radius:3px; background-color:#fff5b1; padding:3px 5px; margin-right:5px; text-align: center">Tool</div>
 
             {% for collection in site.collections %}
             <!-- <p>{{ collection.label }}</p> -->
@@ -247,7 +247,7 @@
             {% endif %}
             {% endfor %}
 
-            <div style="border-radius:3px; background-color:#fff5b1; padding:3px 5px; cursor:pointer; margin-right:5px; text-align: center">AI</div>
+            <div style="border-radius:3px; background-color:#fff5b1; padding:3px 5px; margin-right:5px; text-align: center">AI</div>
 
             {% for collection in site.collections %}
             <!-- <p>{{ collection.label }}</p> -->
@@ -261,6 +261,44 @@
             {% for post in reversed_posts %}
 
             {% if post.category == 'ai' %}
+            {% if page.url == post.url %}
+            <li class="chapter active" data-level="1.2" data-path="{{site.baseurl}}{{post.url}}">
+                {% else %}
+            <li class="chapter" data-level="1.1" data-path="{{site.baseurl}}{{post.url}}">
+                {% endif %}
+                <a href="{{site.baseurl}}{{post.url}}">
+                    {{ post.title | escape }}
+                </a>
+                {% if site.toc.enabled %}
+                {% if page.url == post.url %}
+                {% include toc.html html=content h_min=site.toc.h_min h_max=site.toc.h_max %}
+                {% endif %}
+                {% endif %}
+            </li>
+            {% endif %}
+
+            {% endfor %}
+
+            {% if reversed_posts.size > 0 %}
+            <li class="divider"></li>
+            {% endif %}
+            {% endif %}
+            {% endfor %}
+
+            <div style="border-radius:3px; background-color:#DCFFE4; padding:3px 5px; margin-right:5px; text-align: center">Archive</div>
+
+            {% for collection in site.collections %}
+            <!-- <p>{{ collection.label }}</p> -->
+            {% if collection.output %}
+            {% if collection.label == "posts"%}
+            {% assign reversed_posts = site[collection.label] | reverse %}
+            {% else %}
+            {% assign reversed_posts = site[collection.label] %}
+            {% endif %}
+
+            {% for post in reversed_posts %}
+
+            {% if post.category == 'archive' %}
             {% if page.url == post.url %}
             <li class="chapter active" data-level="1.2" data-path="{{site.baseurl}}{{post.url}}">
                 {% else %}
