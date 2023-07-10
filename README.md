@@ -3,7 +3,7 @@
 
 #### Recent Posts
 + [백엔드 아키텍처 설계시 고려사항](/cs/2023/04/14/Architecture.html#백엔드-아키텍처-설계시-고려사항)
-+ [스프링부트 시큐리티 & JWT 강의](/backend/2023/04/14/Spring_security_in_jwt.html)
++ [암호화와 authentication 이슈](/manage/2023/05/24/Issue.html#암호화와-authentication-이슈)
 + [Spring Security in Action](/backend/2023/04/14/Spring_security_in_action.html)
 + [Querydsl](/backend/2023/04/15/JPA_inflearn_roadmap.html#querydsl)
 + [엔티티 설계시 주의점](/backend/2023/04/14/Spring.html#엔티티-설계시-주의점)
