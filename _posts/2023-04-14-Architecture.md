@@ -1,5 +1,5 @@
 ---
-title: 🍋 Architecture
+title: Architecture
 author: Rosie Yang
 date: 2023-04-14
 category: cs

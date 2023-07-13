@@ -1,5 +1,5 @@
 ---
-title: 가상면접 사례로 배우는 대규모 시스템 설계 기초 (진행중)
+title: 📖 가상면접 사례로 배우는 대규모 시스템 설계 기초 (진행중)
 author: Rosie Yang
 date: 2023-04-13
 category: cs
