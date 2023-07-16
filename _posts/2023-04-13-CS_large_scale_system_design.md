@@ -7,7 +7,6 @@ layout: post
 ---
 
 > 토의 스터디로 진행된 학습내용을 정리한 포스트입니다. [github](https://github.com/BacknPacker/large_scale_system_design.git)
-{: .block-tip }
 
 <br>
 
