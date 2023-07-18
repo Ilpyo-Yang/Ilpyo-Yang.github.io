@@ -726,7 +726,7 @@ JPA 에는 auto_increment일때 insert 합치기가 적용되지 않으므로 �
 ## Hibernate
 JPA 구현체는 Hibernate 외에도 EclipseLink, OpenJPA, DataNucleus 등이 있습니다. 그 중에서도 가장 많이 사용되는 Hibernate에 대해 알아보려고 합니다. <span style="background-color:#fff5b1">Hibernate는 자바 언어를 위한 객체 관계 매칭 프레임워크입니다.</span> 실제 Spring 프로젝트에서 JPA를 사용하는 경우 Hibernate가 라이브러리가 포함되어 있는 것을 볼 수 있습니다.  
 
-![hibernate_lib.png](/assets%2Fgitbook/post_images/jpa/hibernate_lib.png)  
+![hibernate_lib.png](/assets/gitbook/post_images/jpa/hibernate_lib.png)  
 
 Hibernate는 JPA 구현으로 SessionFactory, Session, Transaction으로 상속받고 각각의 Impl을 구현하고 있습니다. JDBC API를 사용하지 않고, Hibernate에서 제공하는 메서드만으로도 SQL을 대체할 수 있다는 장점이 있습니다. 따라서 비즈니스 로직에 집중할 수 있게 되고, 객체지향적 개발이 가능하게 합니다.  
 
