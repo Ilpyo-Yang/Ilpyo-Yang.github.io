@@ -63,9 +63,17 @@ HTTP 요청을 받은 웹서버는 데이터베이스를 통해 데이터를 얻
 캐시는 주로 참조 데이터에 사용하며, 만료시 데이터를 다시 데이터베이스에서 읽어와야 하므로 만료기간을 너무 짧게 두어선 안됩니다. 또 만료기간이 너무 길 경우에는 캐시와 데이터베이스 간의 일관성이 떨어집니다. 
 그리고 캐시 역시 단일 장애지점(Single Point of Failure, SPOF)가 되지 않도록 캐시 서버를 분산시켜야 합니다.  
 
-<span style="background-color:#DCFFE4">캐시 방출정책</span>
+<span style="background-color:#DCFFE4">캐시 방출정책</span>  
+[Caching Strategies and How to Choose the Right One](https://codeahoy.com/2017/08/11/caching-strategies-and-how-to-choose-the-right-one/)의 내용을 기반으로 정리했습니다.  
+어떤 캐싱전략을 사용하느냐는 어떤 데이터 접근 방식을 사용하는지에 따라 달라집니다. 쓰기작업이 한 번에 많이 이뤄지는지, 쓰기 연산의 작업 빈도가 높은지, 데이터가 unique한 값을 갖는지에 따라서 다릅니다.  
+Cache-Aside 방식은 애플리케이션에서 cache를 먼저 읽고, 데이터가 없으면(cache miss) 데이터베이스에서 읽어온 뒤에 cache에 데이터를 넣어줍니다. 이 방식은 모두 애플리케이션에서 핸들링하고 별도로 cache와 데이터베이스 간의 연결은 없습니다. 조회할 내용이 많은 경우로 Memcached와 Redis가 가장 많이 사용됩니다. Cache-Aside 방식은 일반적으로 주로 쓰기 작업에서 데이터베이스에 데이터를 직접 쓰기 때문에 캐시와 일치하지 않을 수 있습니다. 따라서 데이터 신선도를 적절히 유지해야 하는 경우 캐시 항목을 무효화하거나 적절한 TTL 설정이 필요합니다.  
+Read-Through 방식은 Cache-Aside 방식과 유사하지만, 캐시와 데이터베이스 데이터 모델이 다르지 않다는 점에서 차이가 있습니다. 대신 처음 로드되거나 캐싱처리하는 불필요한 캐싱이 발생하기 때문에 개발자는 수동으로 쿼리를 실행해 미리 워밍할 필요가 있습니다.  
+Write-Through 방식은 항상 쓰기 작업시 캐시에 쓰여지고 그 다음 데이터베이스에 쓰기 작업이 이뤄지는 경우를 말합니다. 일관성이 있으나 매번 2개의 쓰기 작업이 수행되기 때문에 대기시간이 발생합니다.   
+Write-Back 방식은 캐시에 기록된 데이터를 기본 데이터베이스에 비동기적으로 업데이트합니다. 쓰기 작업이 많은 경우 Write-Through 방식처럼 매번 수행하는 것이 아니라 반환 작업 전에 수행하므로 비용이 감소합니다. 하지만 캐시 오류 발생시 데이터가 영구적으로 손실될 수 있습니다.  
 
-<span style="background-color:#DCFFE4">캐시 일관성에 대한 페이스북 논문</span>
+<span style="background-color:#DCFFE4">[캐시 일관성에 대한 페이스북 논문](/manage/2023/07/06/Tech.html#scaling-memcache-at-facebook)</span>
+> R. Nishtala, "Facebook, Scaling Memcache at," 10th USENIX Symposium on NetworkedSystems Design and Implementation (NSDI ’13)
+
 
 **콘텐츠 전송 네트워크 (CDN)**  
 CDN은 정적 콘텐츠 전송에 쓰이는 네트워크로 가까운 CDN 서버를 통해 정적 콘텐츠를 얻고 해당 지리적 위치의 CDN에 소스가 없다면, 그 CDN에 원본 서버에서 가지고 온 정적 콘텐츠를 저장 후, 가지고 오게 됩니다. CDN을 사용할 때는 비용과 콘텐츠의 만료시점, 장애대처 방안 그리고 버전 관리를 이용한 콘텐츠 무효화 등을 고려해야 합니다.  
@@ -108,8 +116,6 @@ CDN은 정적 콘텐츠 전송에 쓰이는 네트워크로 가까운 CDN 서버
 + 데이터 계층은 샤딩을 통해 그 규모를 확장할 것
 + 각 계층은 독립적 서비스로 분할할 것
 + 시스템을 지속적으로 모니터링하고, 자동화 도구들을 활용할 것
-
-<span style="background-color:#DCFFE4">참고문헌</span>
 
 <br><br>
 
@@ -165,8 +171,6 @@ CDN은 정적 콘텐츠 전송에 쓰이는 네트워크로 가까운 CDN 서버
 2. 가정을 적어두자
 3. 단위를 붙이자
 4. QPS, 최대 QPS, 저장소 요구량, 캐시 요구량, 서버 수 문제를 익혀두자
-
-<span style="background-color:#DCFFE4">참고문헌</span>
 
 ****
 + [Uptime/SLA calculator: what is an SLA and how to calculate it?](https://pandorafms.com/blog/what-is-an-sla/)  
