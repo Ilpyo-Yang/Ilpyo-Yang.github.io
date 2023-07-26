@@ -264,14 +264,12 @@ CDN은 정적 콘텐츠 전송에 쓰이는 네트워크로 가까운 CDN 서버
 + 새 요청을 로그에 추가하고, 만료된 타임스탬프를 제거합니다.
 + 거부된 요청의 타임스탬프로 저장하기 때문에 다량의 메모리를 사용합니다.
  
-![large_scale_token_4.png](/assets/gitbook/post_images/cs/large_scale_token_4.png)
+![large_scale_token_4.png](/assets/gitbook/post_images/cs/large_scale_token_5.png)
 
 이동 윈도 카운터
 + 고정 윈도 카운터와 이동 윈도 로그를 결합한 것으로 요청의 계산은 다음과 같습니다.
 + 현재 1분간 요청 수 + 직전 1분간의 요청 수 * 이동 윈도와 직접 1분이 겹치는 비율
 + 직전 시간대에 도착한 요청이 균등하게 분포되어 있다고 가정한 상태에서 추정치를 계산하기 때문에 다소 느슨합니다.
-
-![large_scale_token_5.png](/assets/gitbook/post_images/cs/large_scale_token_5.png)
 
 **카운터의 보관**  
 Redis 메모리 기반 저장장치에 저장하며, 카운터 값을 1씩 증가시키는 ```INCR```와 카운터의 타임아웃 값을 정하는 ```EXPIRE```가 있습니다.
