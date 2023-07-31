@@ -2,7 +2,7 @@
 보이기 위한 블로그가 아니라 공부하고 생각한 내용을 작성하기 위해 만들어진 블로그입니다. 기록하고 잊지말고 꾸준히 관리해나갈 예정입니다 🙂
 
 #### Recent Posts
-+ [6장. 사용자 수에 따른 규모 확장성](https://ilpyo-yang.github.io/cs/2023/04/13/CS_large_scale_system_design.html#6장-키-값-저장소-설계)
++ [6장. 키-값 저장소 설계](https://ilpyo-yang.github.io/cs/2023/04/13/CS_large_scale_system_design.html#6장-키-값-저장소-설계)
 + [5장. 안정 해시 설계](https://ilpyo-yang.github.io/cs/2023/04/13/CS_large_scale_system_design.html#5장-안정-해시-설계)
 + [4장. 처리율 제한 장치의 설계](https://ilpyo-yang.github.io/cs/2023/04/13/CS_large_scale_system_design.html#4장-처리율-제한-장치의-설계)
 + [3장. 시스템 설계 면접 공략법](https://ilpyo-yang.github.io/cs/2023/04/13/CS_large_scale_system_design.html#3장-시스템-설계-면접-공략법)
