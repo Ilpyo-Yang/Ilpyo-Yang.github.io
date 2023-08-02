@@ -425,10 +425,16 @@ descriptors:
 **읽기경로**  
 + 메모리 캐시에 데이터가 없는 경우, 디스크의 SSTable에서 블룸 필터를 이용해 데이터를 가지고 옵니다.
 
-<span style="background-color:#DCFFE4">블룸 필터(Bloom filter)의 원리</span>  
-
-
 ![large_scale_key_6.png](/assets/gitbook/post_images/cs/large_scale_key_6.png)
+
+<span style="background-color:#DCFFE4">블룸 필터(Bloom filter)의 원리</span>  
+블룸 필터는 여러 개의 해시함수를 사용해 데이터를 여러 해시 값을 만들고 대응되는 비트 값들을 모두 1로 변경하므로써 비트 배열의 상태를 통해 데이터 값이 없는지 혹은 있을 수 있는지를 파악하는데 도움을 줍니다.  
+따라서 모든 디스크 데이터를 파악하지 않아도 되기 때문에 조회해야 할 데이터 공간을 축소시켜 줍니다.  
+블룸 필터 원리의 예
++ 예를 들어, 해시 함수 1은 'apple'을 3, 'banana'를 7, 'orange'를 2로 매핑할 수 있습니다. 해시 함수 2는 'apple'을 4, 'banana'를 2, 'orange'를 6으로 매핑할 수 있습니다. 마지막으로 해시 함수 3은 'apple'을 1, 'banana'를 5, 'orange'를 4로 매핑할 수 있습니다.
++ 이렇게 해시 함수를 통해 매핑된 각 과일의 여러 해시 값에 대응되는 비트들을 1로 변경하면, 비트 배열의 상태는 다음과 같이 됩니다.
+> Index: 1 2 3 4 5 6 7 8 <br>
+> Value: 1 1 1 1 0 1 1 0
 
 <br>
 
