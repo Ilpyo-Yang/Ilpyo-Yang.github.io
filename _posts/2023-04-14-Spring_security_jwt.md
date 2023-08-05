@@ -2,7 +2,7 @@
 title: 📖 스프링부트 시큐리티 & JWT (진행중)
 author: Rosie Yang
 date: 2023-04-14
-category: backend
+category: test
 layout: post
 ---
 
