@@ -7,9 +7,6 @@
 + [7장. 분산시스템을 위한 유일 ID 생성기 설계](https://ilpyo-yang.github.io/cs/2023/04/13/CS_large_scale_system_design.html#7장-분산시스템을-위한-유일-id-설계)
 + [6장. 키-값 저장소 설계](https://ilpyo-yang.github.io/cs/2023/04/13/CS_large_scale_system_design.html#6장-키-값-저장소-설계)
 + [5장. 안정 해시 설계](https://ilpyo-yang.github.io/cs/2023/04/13/CS_large_scale_system_design.html#5장-안정-해시-설계)
-+ [4장. 처리율 제한 장치의 설계](https://ilpyo-yang.github.io/cs/2023/04/13/CS_large_scale_system_design.html#4장-처리율-제한-장치의-설계)
-+ [3장. 시스템 설계 면접 공략법](https://ilpyo-yang.github.io/cs/2023/04/13/CS_large_scale_system_design.html#3장-시스템-설계-면접-공략법)
-+ [2장. 개략적인 규모 추정](https://ilpyo-yang.github.io/cs/2023/04/13/CS_large_scale_system_design.html#2장-개략적인-규모-추정)
 
 <!--
 #### Blog Contents
