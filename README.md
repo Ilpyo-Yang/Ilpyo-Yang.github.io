@@ -2,11 +2,11 @@
 보이기 위한 블로그가 아니라 공부하고 생각한 내용을 작성하기 위해 만들어진 블로그입니다. 기록하고 잊지말고 꾸준히 관리해나갈 예정입니다 🙂
 
 #### Recent Posts
++ [AWS 다양한 배포 방법들](https://ilpyo-yang.github.io/devops/2023/05/08/AWS.html#aws-다양한-배포-방법들)
 + [AWS EC2 Ubuntu22.04LTS tomcat10 세팅하기](https://ilpyo-yang.github.io/devops/2023/05/08/AWS.html#aws-ec2-ubuntu2204lts-tomcat10-세팅하기)
 + [8장. URL 단축키 설계](https://ilpyo-yang.github.io/cs/2023/04/13/CS_large_scale_system_design.html#8장-URL-단축키-설계)
 + [7장. 분산시스템을 위한 유일 ID 생성기 설계](https://ilpyo-yang.github.io/cs/2023/04/13/CS_large_scale_system_design.html#7장-분산시스템을-위한-유일-id-설계)
 + [6장. 키-값 저장소 설계](https://ilpyo-yang.github.io/cs/2023/04/13/CS_large_scale_system_design.html#6장-키-값-저장소-설계)
-+ [5장. 안정 해시 설계](https://ilpyo-yang.github.io/cs/2023/04/13/CS_large_scale_system_design.html#5장-안정-해시-설계)
 
 <!--
 #### Blog Contents
@@ -71,6 +71,9 @@
 
 #### Blog Writing Rules
 + 개발공부 관련 내역을 작성하고 참고한 자료나 관련 링크를 첨부합니다.
++ 이모지별 의미
+  + 📖 카테고리 하위 학습경로로 인강, 책, 스터디 등 연결된 포스팅을 모아둔 카테고리입니다.
+  + 🚴 버그나 이슈 사항을 찾아서 정리한 내용입니다.
 + 형광펜이 사용된 부분의 의미는 다음과 같이 지정했습니다.
   + <span style="background-color:#fff5b1; margin-right:5px">요약</span>
     <span style="background-color:#FFE6E6; margin-right:5px">중요</span>
