@@ -2,7 +2,7 @@
 title: Interview
 author: Rosie Yang
 date: 2023-05-25
-category: archive
+category: test
 layout: post
 ---
 
