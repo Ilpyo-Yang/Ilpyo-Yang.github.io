@@ -2,14 +2,14 @@
 title: Coding Test
 author: Rosie Yang
 date: 2023-08-25
-category: ai
+category: job
 layout: post
 ---
 
 ## LeetCode
 ### Top Interview 150
-+ [88. Merge Sorted Array](/coding-teset/2023/08/25/CodingTest.html)
-+ [27. Remove Element]()
++ [88. Merge Sorted Array](/job/2023/08/25/Coding_test.html#88-merge-sorted-array)
++ [27. Remove Element](/job/2023/08/25/Coding_test.html#27-remove-element)
 + [26. Remove Duplicates from Sorted Array]()
 
 <br>
