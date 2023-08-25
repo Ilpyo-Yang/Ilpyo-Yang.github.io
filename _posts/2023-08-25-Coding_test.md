@@ -10,7 +10,7 @@ layout: post
 ### Top Interview 150
 + [88. Merge Sorted Array](/job/2023/08/25/Coding_test.html#88-merge-sorted-array)
 + [27. Remove Element](/job/2023/08/25/Coding_test.html#27-remove-element)
-+ [26. Remove Duplicates from Sorted Array]()
++ [26. Remove Duplicates from Sorted Array](/job/2023/08/25/Coding_test.html#26-remove-duplicates-from-sorted-array)
 
 <br>
 
@@ -135,7 +135,7 @@ class Solution {
 ```java
 class Solution {
     public int removeElement(int[] nums, int val) {
-        Arrays.stream(nums).distinct().toArray();
+        nums = Arrays.stream(nums).distinct().toArray();
         return nums.length;
     }
 }
