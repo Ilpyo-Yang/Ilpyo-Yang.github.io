@@ -7,9 +7,9 @@ layout: post
 ---
 
 ## LeetCode - Top Interview 150
-+ [125. Valid Palindrome](/job/2023/08/25/Coding_test.html#125-vaild-palindrome)
++ [125. Valid Palindrome](/job/2023/08/25/Coding_test.html#125-valid-palindrome)
 + [169. Majority Element](/job/2023/08/25/Coding_test.html#169-majority-element)
-+ [80. Remove Duplicates from Sorted Array II](/job/2023/08/25/Coding_test.html#80-remove-duplicates-from-sorted-array)
++ [80. Remove Duplicates from Sorted Array II](/job/2023/08/25/Coding_test.html#80-remove-duplicates-from-sorted-array-2)
 + [26. Remove Duplicates from Sorted Array](/job/2023/08/25/Coding_test.html#26-remove-duplicates-from-sorted-array)
 + [27. Remove Element](/job/2023/08/25/Coding_test.html#27-remove-element)
 + [88. Merge Sorted Array](/job/2023/08/25/Coding_test.html#88-merge-sorted-array)
@@ -232,7 +232,7 @@ class Solution {
 
 ---
 
-### 80. Remove Duplicates from Sorted Array II
+### 80. Remove Duplicates from Sorted Array 2
 #### 1. 문제
 [문제 URL](https://leetcode.com/problems/remove-duplicates-from-sorted-array-ii/?envType=study-plan-v2&envId=top-interview-150)
 + 주어진 배열에서 순서대로 동일한 요소가 3개 이상 연속되지 않도록 만들어야 하는 문제입니다.
