@@ -9,7 +9,7 @@ layout: post
 ## LeetCode - Top Interview 150
 + []()
 + [209. Minimum Size Subarray Sum](/job/2023/08/25/Coding_test.html#209-minimum-size-subarray-sum)
-+ [167. Two Sum II - Input Array Is Sorted](/job/2023/08/25/Coding_test.html#167-two-sum-2-input-array-in-sorted)
++ [167. Two Sum II - Input Array Is Sorted](/job/2023/08/25/Coding_test.html#167-two-sum-2-input-array-is-sorted)
 + [125. Valid Palindrome](/job/2023/08/25/Coding_test.html#125-valid-palindrome)
 + [169. Majority Element](/job/2023/08/25/Coding_test.html#169-majority-element)
 + [80. Remove Duplicates from Sorted Array II](/job/2023/08/25/Coding_test.html#80-remove-duplicates-from-sorted-array-2)
@@ -102,7 +102,7 @@ class Solution {
 ---
 <br>
 
-### 167. Two Sum 2 - Input Array Is Sorted
+### 167. Two Sum 2 Input Array Is Sorted
 #### 1. 문제
 [문제 URL](https://leetcode.com/problems/two-sum-ii-input-array-is-sorted/?envType=study-plan-v2&envId=top-interview-150)
 + 정렬된 배열 내 두 요소를 더한 값으로 원하는 값을 만드는 문제입니다.
