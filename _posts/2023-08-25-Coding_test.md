@@ -7,6 +7,9 @@ layout: post
 ---
 
 ## LeetCode - Top Interview 150
++ []()
++ [209. Minimum Size Subarray Sum](/job/2023/08/25/Coding_test.html#209-minimum-size-subarray-sum)
++ [167. Two Sum II - Input Array Is Sorted](/job/2023/08/25/Coding_test.html#167-two-sum-2-input-array-in-sorted)
 + [125. Valid Palindrome](/job/2023/08/25/Coding_test.html#125-valid-palindrome)
 + [169. Majority Element](/job/2023/08/25/Coding_test.html#169-majority-element)
 + [80. Remove Duplicates from Sorted Array II](/job/2023/08/25/Coding_test.html#80-remove-duplicates-from-sorted-array-2)
@@ -14,7 +17,162 @@ layout: post
 + [27. Remove Element](/job/2023/08/25/Coding_test.html#27-remove-element)
 + [88. Merge Sorted Array](/job/2023/08/25/Coding_test.html#88-merge-sorted-array)
 
+<br>
 
+---
+<br>
+
+### 209. Minimum Size Subarray Sum
+#### 1. 문제
+[문제 URL](https://leetcode.com/problems/minimum-size-subarray-sum/?envType=study-plan-v2&envId=top-interview-150)
++ 배열의 요소들의 합으로 ```target```이 되기 위한 서브 배열의 최소 길이를 구하는 문제입니다.
++ 배열 ```nums```는 정렬되지 않았습니다.
++ 서브배열이 없는 경우에는 ```0```을 return 합니다.
++ 시간복잡도가 O(n) 또는 O(n log n)인 방법을 찾아습니다.
+
+#### 2. 나의 풀이
+##### 시도 1
+이중루프 밖에 생각나지 않아서 이렇게 시도했지만 역시나 시간초과로 실패했습니다.
++ 시간복잡도: O(n log n)
++ 공간복잡도: O(1)
+
+```java
+class Solution {
+    public int minSubArrayLen(int target, int[] nums) {
+        if(Arrays.binarySearch(nums, target)>=0) return 1;
+        int j=1, cnt=0;
+        boolean b = false;
+        for(int i=0; i<nums.length; i++){
+            int value = nums[i];
+            j = i+1;
+            while(true){
+                if(j<=nums.length-1) value += nums[j];
+                if(target==value){
+                    b=true;
+                    break;
+                }
+                if(j==nums.length-1 || target<value) break;
+            }
+            if(b) cnt = j-i+1;
+        }
+        return cnt;
+    }
+}
+```
+
+#### 3. 다른 사람의 풀이를 보고 개선하기
+```슬라이딩 윈도우```를 이용한 풀이었는데, 앞에서 나의 풀이와 같이 for문과 while문을 함께 쓰는 방식인데 효율적이라는 부분이 달랐습니다.   
+
+먼저 서브배열이 없는 경우 ```0```을 반환합니다. 그리고 부분 배열의 합이 target 이상이 되도록 left 포인터를 이동시키면서 최소 길이를 갱신합니다.
++ 시간복잡도: O(n)
++ 공간복잡도: O(1)
+
+```java
+class Solution {
+    public int minSubArrayLen(int target, int[] nums) {
+        if (nums == null || nums.length == 0) {
+            return 0;
+        }
+
+        int left = 0;
+        int minLength = Integer.MAX_VALUE;
+        int currentSum = 0;
+
+        for (int right = 0; right < nums.length; right++) {
+            currentSum += nums[right];
+
+            while (currentSum >= target) {
+                minLength = Math.min(minLength, right - left + 1);
+                currentSum -= nums[left];
+                left++;
+            }
+        }
+
+        if (minLength != Integer.MAX_VALUE) 
+            return minLength;
+        else 
+            return 0;
+    }
+}
+```
+
+#### 4. 생각해 볼 부분
+두 포인터를 이용한 방법과는 약간 상이했는데, 슬라이딩 윈도우를 사용하는 방법에 좀 더 능숙해져야 겠다고 생각했습니다.
+
+---
+<br>
+
+### 167. Two Sum 2 - Input Array Is Sorted
+#### 1. 문제
+[문제 URL](https://leetcode.com/problems/two-sum-ii-input-array-is-sorted/?envType=study-plan-v2&envId=top-interview-150)
++ 정렬된 배열 내 두 요소를 더한 값으로 원하는 값을 만드는 문제입니다.
++ 이 때 그 배열 내 두 요소의 순서 쌍을 return 합니다.
+
+#### 2. 나의 풀이
+##### 시도 1
+```Arrays.binarySearch```로 짝이 되는 index를 구할 수 있었습니다.
++ 이렇게 풀었을 때 기본적인 예제는 다 통과했지만, ```[5,25,75]```에서 ```100```이 될 수 있는 값을 찾는 것에서 실패했습니다.
++ output이 ```[1,-3]```이 나왔는데 ```indexOf```와 착각하고 ```-1```만을 반환한다고 가정했기 때문입니다.
+  + ```Arrays.binarySearch```은 찾지 못한 경우 음수 값을 반환합니다. 반환 값은 key의 정확한 위치가 아니라 key를 삽입해야 할 위치에 대한 음수 값을 반환합니다.
+
+```java
+class Solution {
+    public int[] twoSum(int[] numbers, int target) {
+        int i=0, j=0;
+        for(i=0; i<numbers.length; i++){
+            j = Arrays.binarySearch(numbers, target-numbers[i]);
+            if(j>0) break;
+        }
+        return new int[]{i+1, j+1};
+    }
+}
+```
+##### 시도 2
+위에서 ```Arrays.binarySearch```의 음수 문제, 동일한 숫자가 연속으로 있을 때의 같은 인덱스 반환문제, 반환 배열의 정렬문제 등을 고려해서 코드를 수정했습니다.
++ 시간복잡도: O(n log n)
++ 공간복잡도: O(1)
+
+```java
+class Solution {
+    public int[] twoSum(int[] numbers, int target) {
+        int i=0, j=0;
+        for(i=0; i<numbers.length; i++){
+            j = Arrays.binarySearch(numbers, target-numbers[i]);
+            if(j>=0 && i!=j) break;
+        }
+        if(i<j) return new int[]{i+1, j+1};
+        else return new int[]{j+1, i+1};
+    }
+}
+```
+
+#### 3. 다른 사람의 풀이를 보고 개선하기
+주어진 ```nums``` 배열이 정렬된 값이므로 양쪽의 값을 더해서 ```target```보다 작은지 큰지에 따라 포인터를 변경해주는 방식이었습니다.
+코드도 훨씬 깔끔하고 이 접근법을 기억해두는게 좋겠다는 생각이 들었습니다.
+```java
+class Solution {
+  public int[] twoSum(int[] nums, int target) {
+    int l = 0, r = nums.length - 1;
+    while (nums[l] + nums[r] != target) {
+      if (nums[l] + nums[r] < target)
+        l++;
+      else
+        r--;
+    }
+    return new int[]{l + 1, r + 1};
+  }
+}
+```
+
+#### 4. 생각해 볼 부분
+참고한 풀이 작성자가 쓴 내용에서 정렬된 배열이 주어졌을 때 고려해볼 내용으로 다음 내용들을 추천했습니다. 이 문제에서는 두 포인터를 이용한 방식을 사용한 방법이었습니다.
++ 이진 검색
++ 두 개(또는 세 개)의 포인터
++ 슬라이딩 윈도우
+  + 슬라이딩 윈도우 알고리즘의 핵심 아이디어는 윈도우의 시작과 끝을 조절하면서 필요한 연산을 수행하는 것입니다. 이를 통해 불필요한 계산을 줄이고, 문제의 복잡도를 줄이며, 효율적으로 문제를 해결할 수 있습니다.
++ 오른쪽부터 순회
+
+---
 <br>
 
 ### 125. Valid Palindrome
@@ -26,9 +184,11 @@ layout: post
 + ```" "``` 빈 문자열도 Palindrome으로 간주합니다.
 
 #### 2. 나의 풀이
+##### 시도 1
 문자열을 char[] 배열로 변환해서 뒤의 배열의 값과 비교하는 방식으로 풀이했습니다. 
 + 이 경우, 458 / 485 테스트케이스는 통과했지만 ```0P```는 통과하지 못했습니다.
   + 문제에서 ```Alphanumeric characters include letters and numbers.```로 숫자도 고려해야 하므로 수정이 필요했습니다.
+
 ```java
 class Solution {
     public boolean isPalindrome(String s) {
@@ -51,9 +211,10 @@ class Solution {
     }
 }
 ```  
-
+##### 시도 2
 위 코드에서 숫자를 다시 반영한 코드로 작성했지만 시간초과가 발생했습니다.
 + ```!(start >= 0 && start <= 9) && !(start >= 'a' && start <= 'z')```
+
 ```java
 class Solution {
     public boolean isPalindrome(String s) {
@@ -77,7 +238,7 @@ class Solution {
     }
 }
 ```
-
+##### 시도 3
 이중 반복문 때문에 발생한 것 같아서 다른 방법을 생각해보게 되었습니다. while문으로 처리하지 않고 미리 ```s```의 숫자와 영문자 외 다른 문자는 공백처리하는 방법입니다. 
 + 이 경우, 462 / 485 테스트케이스는 통과했지만 ```0P```는 통과하지 못했습니다.
   + ```if(!(arr[i] >= 0 && arr[i] <= 9) && !(arr[i] >= 'a' && arr[i] <= 'z')) arr[i]=' ';```
@@ -87,6 +248,7 @@ class Solution {
 결과적으로 통과는 했지만 마음에 드는 풀이는 아니었습니다.
 + 시간복잡도: O(n)
 + 공간복잡도: O(n)
+
 ```java
 class Solution {
     public boolean isPalindrome(String s) {
@@ -111,6 +273,7 @@ class Solution {
 그리고 저는 배열로 변환했다가 문자열로 합치는 과정을 거쳤는데 그냥 반복문을 돌면서 문자열의 문자 위치를 ```left```와 ```right```로 처리해서 비교하는 법을 배웠습니다.
 + 시간복잡도: O(n)
 + 공간복잡도: O(1)
+
 ```java
 class Solution {
    public boolean isPalindrome(String s) {
@@ -147,6 +310,7 @@ class Solution {
 너무 복잡하게 생각하지 말고, 기존 문자열을 최대한 변환하지 않는 선에서 문제를 풀어야겠다는 생각이 들었습니다.
 
 ----
+<br>
 
 ### 169. Majority Element
 #### 1. 문제
@@ -160,6 +324,7 @@ class Solution {
 통과는 했지만 문제에서 고려해봐야할 복잡도 부분에서는 부족했습니다.
 + 시간 복잡도: O(n + n log n)
 + 공간 복잡도: O(n)
+
 ```java
 class Solution {
   public int majorityElement(int[] nums) {
@@ -183,6 +348,7 @@ class Solution {
 하지만 원하는 시간, 공간 복잡도는 아니였습니다.
 + 시간 복잡도: O(n log n)
 + 공간 복잡도: O(1)
+
 ```java
 class Solution {
     public int majorityElement(int[] nums) {
@@ -203,6 +369,7 @@ class Solution {
   
 + 시간 복잡도: O(n)
 + 공간 복잡도: O(1)
+
 ```java
 class Solution {
     public int majorityElement(int[] nums) {
@@ -231,6 +398,7 @@ class Solution {
 하지만 간단하게 예제로 주어진 배열 ```2,2,1,1,1,2,2```을 넣어서 생각해보면 오히려 쉬웠는데 결국에는 이 알고리즘이 **과반수 이상의 요소가 있다는 전제**가 있었기 때문에 가능하므로 이 부분을 고려할 필요가 있습니다.
 
 ---
+<br>
 
 ### 80. Remove Duplicates from Sorted Array 2
 #### 1. 문제
@@ -292,6 +460,7 @@ if (nums[i] != nums[index - 2]) {
 ```nums[i]```의 값이 기존에 값들과 다른 경우(새로 쌓은 배열과 다른 경우), ```nums[index] = nums[i];```로 다른 요소를 넣어줍니다.
 
 ---
+<br>
 
 ### 26. Remove Duplicates from Sorted Array
 #### 1. 문제
@@ -333,6 +502,7 @@ stream에서 사용되는 ```distinct()```와 ```toArray()```는 객체를 새�
 새로운 객체 생성보다는 주어진 ```nums``` 객체 값에 변화를 주는 방식으로 해결하는 것을 생각해봐야 합니다.
 
 ---
+<br>
 
 ### 27. Remove Element
 #### 1. 문제
@@ -389,6 +559,7 @@ class Solution {
 포인터를 이용한 풀이가 정렬 문제에서 시간복잡도를 줄일 수 있는 방법이므로 좀 더 익숙해지도록 해야겠습니다.
 
 ---
+<br>
 
 ### 88. Merge Sorted Array
 #### 1. 문제
