@@ -2,11 +2,11 @@
 보이기 위한 블로그가 아니라 공부하고 생각한 내용을 작성하기 위해 만들어진 블로그입니다. 기록하고 잊지말고 꾸준히 관리해나갈 예정입니다 🙂
 
 #### Recent Posts
++ [LeetCode - Top Interview 150](https://ilpyo-yang.github.io/job/2023/08/25/Leetcode.html)
 + [AWS 다양한 배포 방법들](https://ilpyo-yang.github.io/devops/2023/05/08/AWS.html#aws-다양한-배포-방법들)
 + [AWS EC2 Ubuntu22.04LTS tomcat10 세팅하기](https://ilpyo-yang.github.io/devops/2023/05/08/AWS.html#aws-ec2-ubuntu2204lts-tomcat10-세팅하기)
 + [8장. URL 단축키 설계](https://ilpyo-yang.github.io/cs/2023/04/13/CS_large_scale_system_design.html#8장-URL-단축키-설계)
 + [7장. 분산시스템을 위한 유일 ID 생성기 설계](https://ilpyo-yang.github.io/cs/2023/04/13/CS_large_scale_system_design.html#7장-분산시스템을-위한-유일-id-설계)
-+ [6장. 키-값 저장소 설계](https://ilpyo-yang.github.io/cs/2023/04/13/CS_large_scale_system_design.html#6장-키-값-저장소-설계)
 
 <!--
 #### Blog Contents
