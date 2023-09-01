@@ -56,8 +56,7 @@ plugins:
 #   - vendor/gems/
 #   - vendor/ruby/
 
-syntax_highlighter_style: colorful
-
+syntax_highlighter_style: thankful_eyes
 
 toc:
   enabled: true
