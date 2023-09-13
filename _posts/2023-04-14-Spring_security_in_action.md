@@ -1,5 +1,5 @@
 ---
-title: 📖 Spring Security in Action (진행중)
+title: ㅎSpring Security in Action (진행중)
 author: Rosie Yang
 date: 2023-04-14
 category: backend
@@ -131,7 +131,7 @@ public class CustomAuthenticationProvider implements AuthenticationProvider {
 
 **UserDetils와 구현**  
 사용자 기술을 위해서 스프링 시큐리티는 ```UserDetils``` 인터페이스를 구현하고 준수합니다. ```UserDetails```를 직접 클래스로 구현해도 되고, 사용에 따라 ```UserDetail```를 빌드해서 사용할 수 있습니다.
-```UserDetails```는 하나 이상의 권한, password, username을 조회하거나 계정의 활성화 및 비활성화를 관리하는 메서드들을 가지고 있습니다. 계정의 관리는 기본적으로 ```true``` 처리를 하지면 별도 내부 서비스 방침에 따라 커즈터마이징해 구현할 수 있습니다.
+```UserDetails```는 하나 이상의 권한, password, username을 조회하거나 계정의 활성화 및 비활성화를 관리하는 메서드들을 가지고 있습니다. 계정의 관리는 기본적으로 ```true``` 처리를 하지만 별도 내부 서비스 방침에 따라 커즈터마이징해 구현할 수 있습니다.
 ```java
 public interface UserDetails extends Serializable {
 	Collection<? extends GrantedAuthority> getAuthorities();
@@ -199,6 +199,75 @@ public UserDetailsService userDetailsService(DataSource dataSource) {
 <br><br>
 
 ### 4장. 암호처리
+인증공급자가 제공한 password를 이용해서 PasswordEncorder를 이용해서 암호를 검증합니다.
+이 부분은 작성시점인 현재(2023-09)와 차이가 좀 있지만 프로세스를 이해하기 위한 것으로 책을 기반으로 서술하고자 합니다.
+
+**PasswordEncorder 인터페이스**  
+encode()를 통해 암호화를 matches()를 통해 인코딩된 문자열이 암호와 일치여부를 확인할 수 있습니다. upgradeEncoding(CharSequence encodedPassword)는 기본값이 false이지만 true 처리하는 경우 인코딩된 암호를 다시 인코딩하게 됩니다.
+
+Spring security에서 제공하는 PasswordEncoder 구현 옵션들은 다음 옵션들이 있습니다. [각 해싱 알고리즘에 대한 설명](https://livebook.manning.com/book/real-world-cryptography/chapter-2/17)
+
+1. **NoOpPasswordEncoder**
+2. **BCryptPasswordEncoder**
+3. **Pbkdf2PasswordEncoder**
+4. **SCryptPasswordEncoder**
+5. **Argon2PasswordEncoder**
+6. **DelegatingPasswordEncoder**
+
+**NoOpPasswordEncoder**  
+테스트나 이전 시스템과의 호환성을 위한 경우에만 사용되어야 합니다. 현재는 Deprecated 되었습니다.
+
+**BCryptPasswordEncoder**
+
+```
+@Bean  
+public BCryptPasswordEncoder passwordEncoder() {  
+	return new BCryptPasswordEncoder(16);  
+}
+```
+
+이렇게 인코딩 프로세스에 이용되는 로그 라운드를 나타내는 강도 계수를 지정할 수도 있습니다. 아래 예제에서 4는 강도 계수입니다. 이 값은 2의 4제곱 즉, 16번의 해싱 라운드를 의미합니다. b는 BCrypt에서 솔트(salt)를 생성할 때 사용됩니다.
+```
+SecureRandom s = SecureRandom.getInstanceStrong();
+PasswordEncoder p = new BCryptPasswordEncoder(4, s);
+```
+
+
+**DelegatingPasswordEncoder**  
+여러 해싱 전략을 유연하게 관리할 수 있게 도와줍니다. 접두사 {noop}에 대해 NoOpasswordEncoder가, {bcrypt}인 경우에는 BCryptPasswordEncoder, {scrypt}이면, SCryptPasswordEncoder를 등록합니다.
+스프링 시큐리티에는 DelegatingPasswordEncoder의 구현을 반환하는 정적 메서드를 제공합니다.
+```
+PasswordEncoder passwordEncoder = PasswordEncoderFactories.createDelegatingPasswordEncoder();
+```
+스프링 시큐리티에서 DelegatingPasswordEncoder를 기본적으로 사용하게 되면서, `NoOpPasswordEncoder`와 같은 deprecated된 `PasswordEncoder`를 포함하여 여러 전략을 지원하게 되었습니다. 이때, `NoOpPasswordEncoder`에 대한 deprecated 경고를 피하기 위해 `createDelegatingPasswordEncoder` 메서드에 `@SuppressWarnings("deprecation")`을 추가된 것을 볼 수 있습니다.
+
+<br>
+
+**그럼 비밀번호 암호화 외에는 어떻게 암호화를 구현할까요?**  
+스프링 시큐리티 암호화 모듈(SSCM)에는 키 생성기와 암호기를 구현하는 대안이 있습니다.
+```
+StringKeyGenerator keyGenerator = KeyGenerators.string();
+String salt = keyGenertor.generateKey();
+
+
+BytesKeyGenertor keyGenerator = KeyGenerators.secureRandom(16);
+
+BytesKeyGenertor keyGenerator = KeyGenerators.shared(16);
+```
+암호기는 암호화 알고리즘을 구현하는 객체입니다. BytesEncryptor와 TextEncryptor라는 암호기가 있고 각각은 다른 데이터 형식을 처리합니다. BytesEncryptor가 문자열로 출력을 반환하는 반면, TextEncryptor는 더 범용적이고 바이트 배열로 입력 데이터를 받습니다.
+```
+BytesEncryptor e = Encryptors.stronger(password, salt);
+```
+TextEncryptor는 Encryptors.text(), Encryptors.delux(), Encryptors.queryableText()의 세 가지 주요 형식을 가지고 있습니다. Encryptors.text(), Encryptors.delux()는 encrypt() 메서드를 반복 호출해도 다른 출력이 반환되는데, 초기화 벡터가 생성되기 때문입니다.
+Encryptors.queryableText()는 쿼리 가능 텍스트로 입력이 같으면 같은 출력을 반환하는 것을 보장합니다.
+```
+TextEncryptor e = Encryptors.queryableText(password, salt);
+String encrypted = e.encrypt(valueToEncrypt);
+```
+
+<br><br>
+
+### 5장. 인증 구현
 
 ****
 + [Spring Security in Action](https://github.com/spring-projects/spring-security/)
