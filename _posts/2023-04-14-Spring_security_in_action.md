@@ -199,13 +199,13 @@ public UserDetailsService userDetailsService(DataSource dataSource) {
 <br><br>
 
 ### 4장. 암호처리
-인증공급자가 제공한 password를 이용해서 PasswordEncorder를 이용해서 암호를 검증합니다.
+인증공급자가 제공한 password를 이용해서 ```PasswordEncorder```를 이용해서 암호를 검증합니다.
 이 부분은 작성시점인 현재(2023-09)와 차이가 좀 있지만 프로세스를 이해하기 위한 것으로 책을 기반으로 서술하고자 합니다.
 
 **PasswordEncorder 인터페이스**  
-encode()를 통해 암호화를 matches()를 통해 인코딩된 문자열이 암호와 일치여부를 확인할 수 있습니다. upgradeEncoding(CharSequence encodedPassword)는 기본값이 false이지만 true 처리하는 경우 인코딩된 암호를 다시 인코딩하게 됩니다.
+````encode()````를 통해 암호화를 ```matches()```를 통해 인코딩된 문자열이 암호와 일치여부를 확인할 수 있습니다. ```upgradeEncoding(CharSequence encodedPassword)```는 기본값이 ````false````이지만 true 처리하는 경우 인코딩된 암호를 다시 인코딩하게 됩니다.
 
-Spring security에서 제공하는 PasswordEncoder 구현 옵션들은 다음 옵션들이 있습니다. [각 해싱 알고리즘에 대한 설명](https://livebook.manning.com/book/real-world-cryptography/chapter-2/17)
+Spring security에서 제공하는 ```PasswordEncoder``` 구현 옵션들은 다음 옵션들이 있습니다. [각 해싱 알고리즘에 대한 설명](https://livebook.manning.com/book/real-world-cryptography/chapter-2/17)
 
 1. **NoOpPasswordEncoder**
 2. **BCryptPasswordEncoder**
@@ -234,12 +234,12 @@ PasswordEncoder p = new BCryptPasswordEncoder(4, s);
 
 
 **DelegatingPasswordEncoder**  
-여러 해싱 전략을 유연하게 관리할 수 있게 도와줍니다. 접두사 {noop}에 대해 NoOpasswordEncoder가, {bcrypt}인 경우에는 BCryptPasswordEncoder, {scrypt}이면, SCryptPasswordEncoder를 등록합니다.
+여러 해싱 전략을 유연하게 관리할 수 있게 도와줍니다. 접두사 ```{noop}```에 대해 NoOpasswordEncoder가, ````{bcrypt}````인 경우에는 BCryptPasswordEncoder, ```{scrypt}```이면, SCryptPasswordEncoder를 등록합니다.
 스프링 시큐리티에는 DelegatingPasswordEncoder의 구현을 반환하는 정적 메서드를 제공합니다.
 ```
 PasswordEncoder passwordEncoder = PasswordEncoderFactories.createDelegatingPasswordEncoder();
 ```
-스프링 시큐리티에서 DelegatingPasswordEncoder를 기본적으로 사용하게 되면서, `NoOpPasswordEncoder`와 같은 deprecated된 `PasswordEncoder`를 포함하여 여러 전략을 지원하게 되었습니다. 이때, `NoOpPasswordEncoder`에 대한 deprecated 경고를 피하기 위해 `createDelegatingPasswordEncoder` 메서드에 `@SuppressWarnings("deprecation")`을 추가된 것을 볼 수 있습니다.
+스프링 시큐리티에서 DelegatingPasswordEncoder를 기본적으로 사용하게 되면서, NoOpPasswordEncoder와 같은 deprecated된 PasswordEncoder를 포함하여 여러 전략을 지원하게 되었습니다. 이때, `NoOpPasswordEncoder`에 대한 deprecated 경고를 피하기 위해 `createDelegatingPasswordEncoder` 메서드에 `@SuppressWarnings("deprecation")`을 추가된 것을 볼 수 있습니다.
 
 <br>
 
@@ -258,8 +258,8 @@ BytesKeyGenertor keyGenerator = KeyGenerators.shared(16);
 ```
 BytesEncryptor e = Encryptors.stronger(password, salt);
 ```
-TextEncryptor는 Encryptors.text(), Encryptors.delux(), Encryptors.queryableText()의 세 가지 주요 형식을 가지고 있습니다. Encryptors.text(), Encryptors.delux()는 encrypt() 메서드를 반복 호출해도 다른 출력이 반환되는데, 초기화 벡터가 생성되기 때문입니다.
-Encryptors.queryableText()는 쿼리 가능 텍스트로 입력이 같으면 같은 출력을 반환하는 것을 보장합니다.
+TextEncryptor는 ```Encryptors.text()```, ```Encryptors.delux()```, ```Encryptors.queryableText()```의 세 가지 주요 형식을 가지고 있습니다. ```Encryptors.text()```, ```Encryptors.delux()```는 ```encrypt()``` 메서드를 반복 호출해도 다른 출력이 반환되는데, 초기화 벡터가 생성되기 때문입니다.
+```Encryptors.queryableText()```는 쿼리 가능 텍스트로 입력이 같으면 같은 출력을 반환하는 것을 보장합니다.
 ```
 TextEncryptor e = Encryptors.queryableText(password, salt);
 String encrypted = e.encrypt(valueToEncrypt);
