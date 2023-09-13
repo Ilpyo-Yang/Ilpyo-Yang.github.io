@@ -16,18 +16,37 @@ layout: post
         </td>
         <td>
             <ul>
+                <li><a href="/backend/2023/04/14/Spring_security_in_action.html#spring-security-5에서-추가된-새로운-기능">Spring Security 5에서 추가된 새로운 기능</a></li>
                 <li><a href="/backend/2023/04/14/Spring_security_in_action.html#1장-오늘날의-보안">1장. 오늘날의 보안</a></li>
                 <li><a href="/backend/2023/04/14/Spring_security_in_action.html#2장-안녕-스프링-시큐리티">2장. 안녕! 스프링 시큐리티</a></li>
                 <li><a href="/backend/2023/04/14/Spring_security_in_action.html#3장-사용자-관리">3장. 사용자 관리</a></li>
                 <li><a href="/backend/2023/04/14/Spring_security_in_action.html#4장-암호처리">4장. 암호처리</a></li>
+                <li><a href="/backend/2023/04/14/Spring_security_in_action.html#5장-인증-구현">5장. 인증 구현</a></li>
             </ul>
         </td>
     </tr>
 </table>
 
-<br>
+<br><br>
 
-<br>
+### Spring Security 5에서 추가된 새로운 기능
+**OAuth 2.0 지원 개선**
++ OAuth 2.0 클라이언트 지원 개선
++ OAuth 2.0 리소스 서버 지원 개선
++ JWT(JWT Token) 지원 개선
++ JDK 9 모듈 시스템 지원
+
+**WebFlux 지원**
++ Spring WebFlux를 사용하는 애플리케이션에서 Spring Security를 사용할 수 있습니다.
+
+**PasswordEncoder 인터페이스 변경**
++ PasswordEncoder 인터페이스가 변경되어 더욱 유연한 비밀번호 암호화 구현이 가능해졌습니다.
+
+**Deprecated 클래스 및 메서드 제거**
++ AuthenticationProvider 인터페이스의 Deprecated 및 제거
++ RememberMeAuthenticationProvider 클래스의 Deprecated 및 제거 등
+   
+<br><br>
 
 ### 1장. 오늘날의 보안
 스프링 시큐리티는 아파치 2.0 라이선스에 따라 릴리스되는 오픈 소스 소프트웨어입니다. 스프링 프레임워크와 함께 애플리케이션 단위의 보안개발을 도와주며 스프링의 방식인 <span style="background-color:#fff5b1">어노테이션, 빈, SpEL(Spring Expression Language)</span> 등을 이용합니다.
