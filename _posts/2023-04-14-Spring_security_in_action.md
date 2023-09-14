@@ -22,7 +22,7 @@ layout: post
                 <li><a href="/backend/2023/04/14/Spring_security_in_action.html#3장-사용자-관리">3장. 사용자 관리</a></li>
                 <li><a href="/backend/2023/04/14/Spring_security_in_action.html#4장-암호처리">4장. 암호처리</a></li>
                 <li><a href="/backend/2023/04/14/Spring_security_in_action.html#5장-인증-구현">5장. 인증 구현</a></li>
-                <li><a href="/backend/2023/04/14/Spring_security_in_action.html#6장-실전-작고-안전한-웹-애플리케이션">실전: 작고 안전한 웹 애플리케이션</a></li>
+                <li><a href="/backend/2023/04/14/Spring_security_in_action.html#6장-실전-작고-안전한-웹-애플리케이션">6장. 실전: 작고 안전한 웹 애플리케이션</a></li>
             </ul>
         </td>
     </tr>
@@ -49,7 +49,7 @@ layout: post
    
 <br><br>
 
-### 1장. 오늘날의 보안
+## 1장. 오늘날의 보안
 스프링 시큐리티는 아파치 2.0 라이선스에 따라 릴리스되는 오픈 소스 소프트웨어입니다. 스프링 프레임워크와 함께 애플리케이션 단위의 보안개발을 도와주며 스프링의 방식인 <span style="background-color:#fff5b1">어노테이션, 빈, SpEL(Spring Expression Language)</span> 등을 이용합니다.
 + 아파치 시로
 + GDRR(Genernal Data Protection Regulations, 일반 데이터 보호 규정)
@@ -85,7 +85,7 @@ LDAP는 사용자가 조직, 구성원 등에 대한 데이터를 찾는 데 도
 
 <br><br>
 
-### 2장. 안녕! 스프링 시큐리티
+## 2장. 안녕! 스프링 시큐리티
 
 ![Spring-Security-Architecture-1024x576.jpg](/assets/gitbook/post_images/spring/Spring-Security-Architecture-1024x576.jpg)
 
@@ -144,7 +144,7 @@ public class CustomAuthenticationProvider implements AuthenticationProvider {
 
 <br><br>
 
-### 3장. 사용자 관리
+## 3장. 사용자 관리
 3장은 ```User```, ```UserDetailService```, ```UserDetailManager```에 대한 내용을 다루고 있습니다. 사용자가 인증을 하는 과정에서 인증 논리에 따라 인증 제공자는 사용자를 인증하는 과정을 거치게 되는데 이 때, 메모리 User를 관리하는 체계에 대한 내용입니다.
 
 <br>
@@ -218,7 +218,7 @@ public UserDetailsService userDetailsService(DataSource dataSource) {
 
 <br><br>
 
-### 4장. 암호처리
+## 4장. 암호처리
 인증공급자가 제공한 password를 이용해서 ```PasswordEncorder```를 이용해서 암호를 검증합니다.
 이 부분은 작성시점인 현재(2023-09)와 차이가 좀 있지만 프로세스를 이해하기 위한 것으로 책을 기반으로 서술하고자 합니다.
 
@@ -287,7 +287,7 @@ String encrypted = e.encrypt(valueToEncrypt);
 <br><br>
 
 
-### 5장. 인증 구현
+## 5장. 인증 구현
 
 + 맞춤형 AuthenticationProvider로 인증 논리 구현
 + HTTP Basic 및 양식 기반 로그인 인증 메서드 이용
@@ -419,7 +419,7 @@ public class HelloController{
 
 <br><br>
 
-### 6장 실전: 작고 안전한 웹 애플리케이션
+## 6장 실전: 작고 안전한 웹 애플리케이션
 주로 구현단에 대한 이야기가 있는 챕터입니다.  작성일자 기준 Deprecated된 내용은 제외했습니다.
 
 + 의존성 추가
@@ -442,8 +442,48 @@ public CustomUserDetails loadUserByUsername(String username){
 
 <br><br>
 
-### 7장. 권한 부여 구성: 액세스 제한
+## 7장. 권한 부여 구성: 액세스 제한
+스프링 시큐리티에서는 인증 필터에서 보안 컨텍스트에 인증된 사용자 세부 정보를 저장하고 이후에 권한 부여 필터로 요청을 허용할지 결정합니다.
 
+한 사용자는 하나 이상의 권한을 갖습니다. 즉 GrantedAuthority로 UserDetils는 하나 이상의 권한을 갖습니다. UserDetils의 ```getAuthorities()``` 메서드로 사용자 세부 정보의 모든 권한을 반환합니다.
+
+**엔드포인트 권한 제어**  
+```permitAll()```이 아닌 특정 권한 제어로 "WRITE" 권한을 가진 경우에만 접근이 가능하도록 할 수 있습니다. 이외에도 권한 제어를 위한 다음 세 가지 메서드가 있습니다.
++ hasAuthority()
++ hasAnyAuthority()
++ access()
+```java
+// .hasAuthority()의 이용
+http.authoriseRequests()
+.anyRequest()
+.hasAuthority("WRITE");
+
+// .access()의 이용
+// 복잡한 식을 작성해야 하는 경우의 실제 시나리오가 있을 수 있습니다.
+http.authoriseRequests()
+.anyRequest()
+.access("hasAuthority('WRITE') and !hasAuthority('DELETE')");
+```
+
+<span style="background-color:#DCFFE4; margin-right:5px">스프링 식(SpEL)이란?</span>  
+Spring Framework에서 제공하는 표현 언어입니다.  
+스프링 식은 XML이나 애노테이션 기반의 구성에서 사용할 수 있으며, 객체 그래프를 탐색하고 조작하는 데 사용됩니다. 스프링 식은 Java의 다양한 연산자와 함수를 지원하며, 객체의 프로퍼티나 메서드 호출, 리스트나 맵의 인덱스 접근, 산술 연산 등 다양한 기능을 제공합니다.
+책의 예제에서는 정오 이후에만 엔드포인트 접근을 하용하는 경우 등 SpEL 식을 활용해서 ```access()``` 메서드를 사용하는 더 범용적인 상황에서 사용이 가능합니다.
+
+권한이 없는 경우의 요청은 HTTP 상태는 ```HTTP 403 Forbidden```을 반환합니다.
+여기서 권한과 달리 역할은 권한보다 결이 굵은데 같은 GrantedAuthority가 사용되며, 역할이름은 ```ROLE_```로 시작해야 합니다.
+```java
+User.withUsername("john")
+.password("qwer1234")
+.authorities("ROLE_MEMBER")
+.build();
+```
+
+```permitAll()```로 모든 접근 권한을 허용할 수 있으며, ```denyAll()```로 모든 요청을 거부할 수도 있습니다.
+
+<br><br>
+
+## 7장. 권한 부여 구성: 제한 적용
 
 <br><br>
 
