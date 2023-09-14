@@ -452,6 +452,7 @@ public CustomUserDetails loadUserByUsername(String username){
 + hasAuthority()
 + hasAnyAuthority()
 + access()
+
 ```java
 // .hasAuthority()의 이용
 http.authoriseRequests()
@@ -525,7 +526,63 @@ http.csrf().disable();
 
 <br><br>
 
+
 ## 9장. 필터 구현
+스프링 시큐리티가 제공하는 필터 BasicAuthenticationFilter 외의 맞춤형 필터 체인을 추가할 수 있습니다. 권한필터 전 이벤트나 로깅필터 구축이 가능해집니다.
+스프링에서 제공하는 필터 간에는 순서가 이미 정해져 있습니다. ```CorsFilter``` → ```CsrfFilter``` → ```BasicAuthenticationFilter``` 순입니다.
+
+**맞춤형 필터 구현**
+```java
+public class RequestVaildationFilter implements Filter {
+	@Override
+	public void doFilter(ServletRequest servletRequest, ServletResponse servletResponse, FilterChain filterChain) throws IOException, ServletException {  
+		var httpRequest = (HttpServletRequest) request;
+		var httpResponse = (HttpServletResponse) response;
+		String requestId = httpRequest.getHeader("Request_id");
+
+		if(requestId.isBlank){
+			httpResponse.setStatus(HttpServletResponse.SC_BAD_REQUEST);
+			return;
+		}
+		filterChain.doFilter(request, response);
+	}
+}
+```
+
+**맞춤형 필터 순서 지정**  
+이렇게 ```addFilterBefore```를 사용하면, BasicAuthenticationFilter 전에 RequestVaildationFilter를 사용할 수 있 됩니다.   
+인증 통과를 기록하는 필터를 만든다고 한다면 BasicAuthenticationFilter 뒤에 배치할 수 있도록 ```addFilterAfter```를 사용할 수 있습니다.
+```java
+http.addFilterBefore(
+	new RequestVaildationFilter(),
+	BasicAuthenticationFilter.class)
+	.authorizeRequests().anyRequest().permitAll();
+)
+```
+
+그렇다면 다른 필터 위치에 필터를 추가하려면 어떻게 해야할까?  
+BasicAuthenticationFilter에 배치하려면 ```addFilterAt```를 사용할 수 있습니다. 이는 필터 대체가 아닌 추가적인 개념으로 봐야합니다.
+
+이런 경우의 시나리오에 대해서 책에서는 다음 세 가지 사례를 들고 있습니다.
++ 인증은 위한 정적 헤더 값에 기반을 둔 식별
+  + 암호화 서명이 아닌 단순한 문자열 제공으로 인증하는 경우
++ 대칭 키를 이용해 인증 요청 서명
+  + 클라이언트와 서버가 키를 공유하는 경우
++ 인증 프로세스에 OTP 이용
+  + 타가 인증 서버에서 OTP를 얻어서 애플리케이션 다단계 인증을 사용하는 경우
+
+> 실제 시나리오에서 세부 정보를 저장할 때는 비밀 볼트를 이용해야 합니다.
+
+UserDetailsService 구성을 비활성화 하기 위해서 ```exclude``` 특성을 이용할 수 있습니다.
+```java
+@SpringBootApplication(exclude={UserDetailsServiceAutoConfiguration.class})
+```
+
+**OncePerRequestFilter**  
+스프링 시큐리트에서 제공하는 필터를 이용하는 것도 좋지만 최대한 간단하게 구현할 수 있는 방법이 있다면 그냥 확장하는 것을 피해야 합니다. 같은 요청에 한 번의 필터 호출을 위해 OncePerRequestFilter 클래스를 이용해 필터를 구현하는 것이 권장됩니다.
+
+OncePerRequestFilter는 형식을 형변환하여 HttpServletReqeust 및 HttpServletResponse로 직접 요청을 수신합니다.  필터에서 요청 및 응답을 직접 조작할 수 있으므로 필요한 작업을 수행할 수 있습니다. 이러한 객체를 직접 사용하면 필터에서 외부 라이브러리나 서비스에 의존하지 않아도 되므로 독립성과 유연성을 높여줍니다.  
+기본적으로 비동기 요청이나 오류 발송 요청에는 적용되지 않습니다. 하지만 메서드 재정의로 가능하게 할 수 있습니다. 필터가 적용될지 여부도 메서드 재정의로 정할 수 있습니다.
 
 <br><br>
 
