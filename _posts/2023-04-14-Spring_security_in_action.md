@@ -238,7 +238,7 @@ Spring security에서 제공하는 ```PasswordEncoder``` 구현 옵션들은 다
 
 **BCryptPasswordEncoder**
 
-```
+```java
 @Bean  
 public BCryptPasswordEncoder passwordEncoder() {  
 	return new BCryptPasswordEncoder(16);  
@@ -246,7 +246,7 @@ public BCryptPasswordEncoder passwordEncoder() {
 ```
 
 이렇게 인코딩 프로세스에 이용되는 로그 라운드를 나타내는 강도 계수를 지정할 수도 있습니다. 아래 예제에서 4는 강도 계수입니다. 이 값은 2의 4제곱 즉, 16번의 해싱 라운드를 의미합니다. b는 BCrypt에서 솔트(salt)를 생성할 때 사용됩니다.
-```
+```java
 SecureRandom s = SecureRandom.getInstanceStrong();
 PasswordEncoder p = new BCryptPasswordEncoder(4, s);
 ```
@@ -255,7 +255,7 @@ PasswordEncoder p = new BCryptPasswordEncoder(4, s);
 **DelegatingPasswordEncoder**  
 여러 해싱 전략을 유연하게 관리할 수 있게 도와줍니다. 접두사 ```{noop}```에 대해 NoOpasswordEncoder가, ````{bcrypt}````인 경우에는 BCryptPasswordEncoder, ```{scrypt}```이면, SCryptPasswordEncoder를 등록합니다.
 스프링 시큐리티에는 DelegatingPasswordEncoder의 구현을 반환하는 정적 메서드를 제공합니다.
-```
+```java
 PasswordEncoder passwordEncoder = PasswordEncoderFactories.createDelegatingPasswordEncoder();
 ```
 스프링 시큐리티에서 DelegatingPasswordEncoder를 기본적으로 사용하게 되면서, NoOpPasswordEncoder와 같은 deprecated된 PasswordEncoder를 포함하여 여러 전략을 지원하게 되었습니다. 이때, `NoOpPasswordEncoder`에 대한 deprecated 경고를 피하기 위해 `createDelegatingPasswordEncoder` 메서드에 `@SuppressWarnings("deprecation")`을 추가된 것을 볼 수 있습니다.
@@ -264,7 +264,7 @@ PasswordEncoder passwordEncoder = PasswordEncoderFactories.createDelegatingPassw
 
 **그럼 비밀번호 암호화 외에는 어떻게 암호화를 구현할까요?**  
 스프링 시큐리티 암호화 모듈(SSCM)에는 키 생성기와 암호기를 구현하는 대안이 있습니다.
-```
+```java
 StringKeyGenerator keyGenerator = KeyGenerators.string();
 String salt = keyGenertor.generateKey();
 
@@ -274,19 +274,155 @@ BytesKeyGenertor keyGenerator = KeyGenerators.secureRandom(16);
 BytesKeyGenertor keyGenerator = KeyGenerators.shared(16);
 ```
 암호기는 암호화 알고리즘을 구현하는 객체입니다. BytesEncryptor와 TextEncryptor라는 암호기가 있고 각각은 다른 데이터 형식을 처리합니다. BytesEncryptor가 문자열로 출력을 반환하는 반면, TextEncryptor는 더 범용적이고 바이트 배열로 입력 데이터를 받습니다.
-```
+```java
 BytesEncryptor e = Encryptors.stronger(password, salt);
 ```
 TextEncryptor는 ```Encryptors.text()```, ```Encryptors.delux()```, ```Encryptors.queryableText()```의 세 가지 주요 형식을 가지고 있습니다. ```Encryptors.text()```, ```Encryptors.delux()```는 ```encrypt()``` 메서드를 반복 호출해도 다른 출력이 반환되는데, 초기화 벡터가 생성되기 때문입니다.
 ```Encryptors.queryableText()```는 쿼리 가능 텍스트로 입력이 같으면 같은 출력을 반환하는 것을 보장합니다.
-```
+```java
 TextEncryptor e = Encryptors.queryableText(password, salt);
 String encrypted = e.encrypt(valueToEncrypt);
 ```
 
 <br><br>
 
+
 ### 5장. 인증 구현
+
++ 맞춤형 AuthenticationProvider로 인증 논리 구현
++ HTTP Basic 및 양식 기반 로그인 인증 메서드 이용
++ SecurityContext 구성 요소의 이해 및 관리
+
+인증 필터가 가로챈 요청을 그리고 그 인증 책임을 인증 관리자에 위임합니다. 그리고 인증 공급자에서 확인한 인증 결과는 보안 컨텍스트(SecurityContext)에 저장됩니다.
+
+~~**AuthenticationProvider의 이해**~~  
+Authentication 계약인 Principal 계약을 상속하는데 Authentication에서는 암호같은 요구 사항이나 인증 요청에 대한 세부 정보를 추가할 수 있습니다. 이는 자바 시큐리티 API의 Principal 계약을 확장하도록 설계되어 호환성 측면에 이점이 됩니다. (마이그레이션 이점)
+```java
+public interface Authentication extends Principal, Serializable {  
+	Collection<? extends GrantedAuthority> getAuthorities();  
+	Object getCredentials();  
+	Object getDetails();  
+	Object getPrincipal();   
+	boolean isAuthenticated();    
+	void setAuthenticated(boolean isAuthenticated) throws IllegalArgumentException;  
+}
+```
+
+AuthenticationProvider 인터페이스는 사용자를 찾는 것은 UserDetailsService에 위임하고 PasswordEncoder로 인증 프로세스에서 암호를 관리합니다.
+
+하지만, ```AuthenticationProvider```는 Spring Security 5부터 Deprecated 되었으며, 대신에 AuthenticationManager를 사용하도록 권장됩니다. AuthenticationManager는 AuthenticationProvider와 다양한 인증 방식을 지원하는 Provider들을 통합적으로 관리하고, 실제 인증 처리를 담당하는 역할을 수행하기 때문입니다.
+
+구현부의 ```AuthenticationProvider```와 ```WebSecurityConfigurerAdapter``` 둘 다 현재는 사용되지 않는 부분으로 작성하지 않았습니다.
+
+<br>
+
+글 마지막에 이런 내용이 존재하는데 이 부분이 오히려 책의 핵심 내용이자, 의존성을 사용하는 개발자들이 필히 고려해야 할 부분이라고 생각합니다.
+
+프레임워크, 특히 애플리케이션에 널리 이용되는 프레임워크는 수많은 똑똑한 개발자의 참여로 개발된다. 그렇다고 해도 프레임워크가 잘못 구현되는 경우는 많지 않다. 어떤 문제가 프레임워크의 잘못이라고 결론 내리기 전에 애플리케이션을 분석하자.
+
+프레임워크를 이용하기로 결정했다면 최대한 프레임워크의 의도된 용도에 맞게 이용한다. 예를 들어 스프링 시큐리티를 이용하면서 보안 구현에 프레임워크가 제공하는 것보다 맞춤형 코드를 작성하는 일이 많다고 느낀다면 이런 일이 왜 생기는지 의문을 가져야 한다.
+
+<br>
+
+**SecurityContext 이용**  
+보안 컨텍스트는 Authentication 객체를 저장하는 인스턴스입니다. 
+```java
+public interface SecurityContext extends Serializable{
+	Authentication getAuthentication();
+	void setAuthentication(Authentication authentication);
+}
+```
+SecurityContext를 관리하기 위해 스프링 시큐리티는 SecurityContextHolder라는 객체를 제공합니다.  MODE_THREADLOCAL, MODE_INHRITABLETHREADLOCAL, MODE_GLOBAL 옵션을 제공하고 설정은 Config에서 다음과 같이 설정할 수 있습니다.
+```java
+return() -> SecurityContextHolder.setStrategyName(	SecurityContextHodler.MODE_INHERITABLETHREADLOCAL);
+```
+
+**MODE_THREADLOCAL**  
+(보안 컨텍스트를 위한 보유 전략 이용)   
+각 스레드가 보안 컨텍스트 각자 세부 정보를 저장하는 것으로 기본값입니다. 새 스레드도 자체 보안 컨텍스트를 가지며 상위 스레드의 세부 정보가 새 스레드의 보안 컨텍스트로 복사되지 않습니다.
+이 SecurityContext에서 Authentication을 얻기 위해서는 앤드포인트 매개변수에 바로 주입해서 얻을 수 있습니다.
+```java
+@GetMapping
+public String hello(Authentication a){
+	return a.getName();
+}
+```
+
+**MODE_INHRITABLETHREADLOCAL**  
+(비동기 호출을 위한 보유 전략 이용)  
+MODE_THREADLOCAL와 비슷하지만 비동기 메서드의 경우 보안 컨텍스트를 다음 스레드로 복사하도록 스프링 시큐리티에 지시합니다.
+부모 스레드에서 생성된 SecurityContext를 자식 스레드에서도 공유할 수 있습니다. 즉, 원래 스레드에 있는 세부 정보를 비동기 메서드의 새로 생성된 스레드로 복사합니다.
+
+**MODE_GLOBAL**  
+(독립형 애플리케이션을 위한 보유 전략 이용)  
+애플리케이션의 모든 스레드가 같은 보안 컨텍스트 인스턴스를 보게 합니다. 스레드 안전을 지원하지 않음에 유의해야 합니다. 공유 스레드 전략에서는 스프링이 관리하는 스레드에만 전략이 적용된다는 것을 기억해야 합니다.
+
+<br>
+
+보안 컨텍스트를 새로 생성한 스레드로 전파하게 도와주는 몇 가지 스프링 시큐리티의 유틸리티 툴이 있습니다.
+
+**DelegatingSecurityContextRunnable**  
+Runnable 인터페이스를 구현한 클래스로, 생성자로 Runnable 객체와 현재 SecurityContext를 받아서, 새로 생성한 스레드에서 Runnable 객체를 실행할 때 보안 컨텍스트를 전파합니다. 반환값이 없는 작업 실행 후 이용할 수 있습니다.
+```java
+SecurityContext securityContext = SecurityContextHolder.getContext();
+Runnable runnable = new MyRunnable();
+Runnable wrappedRunnable = new DelegatingSecurityContextRunnable(runnable, securityContext);
+new Thread(wrappedRunnable).start();
+```
+
+**DelegatingSecurityContextCallable**  
+반환값이 있는 작업에는 DelegatingSecurityContextCallable 대안을 사용할 수 있습니다. 현재 보안 컨텍스트를 복사해 비동기적으로 실행할 Callable 작업을 지정합니다.
+
+**DelegatingSecurityContextExecutorService**  
+ExecutorService 인터페이스를 구현한 클래스로, 보안 컨텍스트를 새로 생성한 스레드에서 실행하는 작업을 자동으로 처리할 수 있습니다. 이와 유사하게 DelegatingSecurityContextScheduledExecutorService는 예약된 작업을 위해 보안 컨텍스트 전파를 구현해야 하는 경우의 데코레이터로 사용됩니다.
+```java
+SecurityContext securityContext = SecurityContextHolder.getContext();
+ExecutorService executorService = Executors.newFixedThreadPool(10);
+ExecutorService wrappedExecutorService = new DelegatingSecurityContextExecutorService(executorService, securityContext);
+wrappedExecutorService.submit(new MyRunnable());
+```
+
+<br>
+
+**HTTP Basic 인증 양식**
+
+```java
+http.httpBasic(c->{
+		// 영역 이름을 변경하는 방법
+		c.realName("OTHER");
+		// custom AuthenticationEntryPoint 적용
+		c.authenticationEntiryPoint(new CustomEntryPoint());
+	})
+	http.authorizeRequests().anyRequest().authenticated();
+```
+
+AuthenticationEntryPoint 인터페이스  
+Spring Security에서는 여러 가지 AuthenticationEntryPoint 구현체를 제공하며, 이를 통해 다양한 인증 실패 시나리오에 대응할 수 있습니다. 예를 들어, 웹 애플리케이션에서는 ```LoginUrlAuthenticationEntryPoint```가 자주 사용되며, REST API에서는 ```Http403ForbiddenEntryPoint```가 자주 사용됩니다.
+
+**양식 기반 로그인 인증**  
+> 수평적 확장성이 필요한 대형 애플리케이션에서 보안 컨텍스트를 관리하는 데 서버 쪽 세션을 이용하는 것은 좋지 않습니다.
+
+양식 기반 로그인을 사용하는 경우에는 formLogin() 메서드를 이용합니다. 스프링 시큐리티에서 로그인을 하지 않는 경우는 로그인 페이지로 리디렉션되게 처리됩니다.
+```java
+http.formLogin();
+```
+```@RestController```가 아닌 ```@Controller```를 사용하므로써 메서드 반환 값을 HTTP 응답으로 보내는 것이 아닌 ```home.html```로 랜더링해줍니다.
+이 때 로그인을 하지 않았다면, /login 로그인 페이지로 리디렉션되고 /logout 경로로 접근하면 로그아웃 페이지로 리디렉션됩니다. (HTTP 302)
+```java
+@Controller
+public class HelloController{
+	@Getmapping("/home")
+	public String home(){ return "home.html"; }
+}
+```
+```formLogin()```의 맞춤 구성을 위해 ```AuthenticationSuccessHandler```와 ```AuthenticationFailureHandler``` 객체를 이용할 수 있습니다.
+
+<br><br>
+
+### 6장 실전: 작고 안전한 웹 애플리케이션
+
+
+<br><br>
 
 ****
 + [Spring Security in Action](https://github.com/spring-projects/spring-security/)
