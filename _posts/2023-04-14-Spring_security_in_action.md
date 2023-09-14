@@ -1,5 +1,5 @@
 ---
-title: ㅎSpring Security in Action (진행중)
+title: 📖 Spring Security in Action (진행중)
 author: Rosie Yang
 date: 2023-04-14
 category: backend
@@ -22,6 +22,7 @@ layout: post
                 <li><a href="/backend/2023/04/14/Spring_security_in_action.html#3장-사용자-관리">3장. 사용자 관리</a></li>
                 <li><a href="/backend/2023/04/14/Spring_security_in_action.html#4장-암호처리">4장. 암호처리</a></li>
                 <li><a href="/backend/2023/04/14/Spring_security_in_action.html#5장-인증-구현">5장. 인증 구현</a></li>
+                <li><a href="/backend/2023/04/14/Spring_security_in_action.html#6장-실전-작고-안전한-웹-애플리케이션">실전: 작고 안전한 웹 애플리케이션</a></li>
             </ul>
         </td>
     </tr>
@@ -225,13 +226,12 @@ public UserDetailsService userDetailsService(DataSource dataSource) {
 ````encode()````를 통해 암호화를 ```matches()```를 통해 인코딩된 문자열이 암호와 일치여부를 확인할 수 있습니다. ```upgradeEncoding(CharSequence encodedPassword)```는 기본값이 ````false````이지만 true 처리하는 경우 인코딩된 암호를 다시 인코딩하게 됩니다.
 
 Spring security에서 제공하는 ```PasswordEncoder``` 구현 옵션들은 다음 옵션들이 있습니다. [각 해싱 알고리즘에 대한 설명](https://livebook.manning.com/book/real-world-cryptography/chapter-2/17)
-
-1. **NoOpPasswordEncoder**
-2. **BCryptPasswordEncoder**
-3. **Pbkdf2PasswordEncoder**
-4. **SCryptPasswordEncoder**
-5. **Argon2PasswordEncoder**
-6. **DelegatingPasswordEncoder**
++ NoOpPasswordEncoder 
++ BCryptPasswordEncoder 
++ Pbkdf2PasswordEncoder 
++ SCryptPasswordEncoder 
++ Argon2PasswordEncoder 
++ DelegatingPasswordEncoder
 
 **NoOpPasswordEncoder**  
 테스트나 이전 시스템과의 호환성을 위한 경우에만 사용되어야 합니다. 현재는 Deprecated 되었습니다.
@@ -420,6 +420,29 @@ public class HelloController{
 <br><br>
 
 ### 6장 실전: 작고 안전한 웹 애플리케이션
+주로 구현단에 대한 이야기가 있는 챕터입니다.  작성일자 기준 Deprecated된 내용은 제외했습니다.
+
++ 의존성 추가
+    + SQL 버전 지정을 위한 플라이웨이, 리퀴베이스 종속성 이용할 수 있습니다.
++ 비밀번호 암호화를 위한 PasswordEncoder @Bean으로 등록
++ User, Authority 엔티티 설정
++ UserDetails 인터페이스의 구현
+
+```java
+@Override
+public CustomUserDetails loadUserByUsername(String username){
+	Supplier<UsernameNotFoundException> s = () -> new UsernameNotFoundException("user not found");
+	User user  = userRepository.findByUsername(username)
+	.orElseThrow(s);
+	return new CustomUserDetails(user);
+}
+```
+인증논리에서 암호가 일치하면 encoder.matches(rawPassword, user.getPassword()) 인증이 되었으므로, Authentication을 반환합니다.
+> 대부분은 같은 기능을 여러 가지 다른 방법으로 구현할 수 있으며, 가장 단순한 해결책을 선택해 코드를 이해하기 쉽게 만들어 오류와 보안 침해 여지를 줄일 필요가 있습니다.
+
+<br><br>
+
+### 7장. 권한 부여 구성: 액세스 제한
 
 
 <br><br>
