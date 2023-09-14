@@ -424,7 +424,7 @@ public class HelloController{
 
 + 의존성 추가
     + SQL 버전 지정을 위한 플라이웨이, 리퀴베이스 종속성 이용할 수 있습니다.
-+ 비밀번호 암호화를 위한 PasswordEncoder @Bean으로 등록
++ 비밀번호 암호화를 위한 PasswordEncoder ```@Bean```으로 등록
 + User, Authority 엔티티 설정
 + UserDetails 인터페이스의 구현
 
@@ -437,7 +437,7 @@ public CustomUserDetails loadUserByUsername(String username){
 	return new CustomUserDetails(user);
 }
 ```
-인증논리에서 암호가 일치하면 encoder.matches(rawPassword, user.getPassword()) 인증이 되었으므로, Authentication을 반환합니다.
+인증논리에서 암호가 일치하면 ```encoder.matches(rawPassword, user.getPassword())``` 인증이 되었으므로, Authentication을 반환합니다.
 > 대부분은 같은 기능을 여러 가지 다른 방법으로 구현할 수 있으며, 가장 단순한 해결책을 선택해 코드를 이해하기 쉽게 만들어 오류와 보안 침해 여지를 줄일 필요가 있습니다.
 
 <br><br>
@@ -483,7 +483,57 @@ User.withUsername("john")
 
 <br><br>
 
-## 7장. 권한 부여 구성: 제한 적용
+## 8장. 권한 부여 구성: 제한 적용
+선택기 메서드로 엔드포인트 선택  
+스프링 시큐리티에서 제공하는 선택기 메서드는 MVC 선택기, 앤트 선택기, 정규식 선택기가 있습니다.
+
+> 이용하는 선택기가 어떤 것이지도 모르고 하는 복사-붙여넣기 프로그래밍의 위험한 접근법을 초보 개발자가 너무 자주 이용합니다.   
+> 어떻게 작동하는지 이해하기 전에는 이용하지 말아야 합니다!
+
+**MVC 선택기**  
+책에서는 앤트 선택기보다 MVC 선택을 권장했는데, 매핑으로 인한 위험을 방지하기 위함입니다.
+```java
+http.authorizeRequests()
+        .mvcMatchers(HttpMethod.Post, "/hello").authenticated()
+        // 길이와 관계없이 숫자를 포함하는 문자열을 나타내는 정규식
+        .mvcMatchers("/reg/{code:^[0-9]*$*}").permitAll()
+        .anyRequest().authenticated();
+```
+
+**앤트 선택기**  
+MVC 선택기와 달리 스프링 MVC의 작동을 고려하는 것이 아닌 방식으로 /hello 경로의 엔드포인트를 설정한다고 했을 때, /hello/ 경로는 보호되지 않습니다. 즉 확실한 경로 설정이 필요합니다.
+```java
+http.authorizeRequests()
+        .antMatchers("/hello/**").hasRole("ADMIN")
+        .anyRequest().authenticated();        
+```
+
+**정규식 선택기**  
+[온라인 정규식 선택기](https://regexr.com)  
+MVC와 엔트 식으로 해결할 수 없는 경우에 이용하는 것이 좋습니다.
+```java
+http.authorizeRequests()
+        .regexMatchers(".*/(kr|ca)+/(en).**").authenticated()
+        .anyRequest().authenticated();        
+```
+잘못된 자격 증명으로 엔드포인트를 호출하면 권한이 있더라도 인증 필터에서 먼저 인증이 실패하는 경우 권한부여 필터까지 가지 않고 응답 상태 ```HTTP 401 Unauthorized```를 반환합니다.
+
+스프링 시큐리티를 기본적으로 CSRF(사이트 간 요청 위조)에 대한 보호를 적용하는데 모든 엔드포인트 호출을 위해 비활성화할 수 있습니다.
+```java
+http.csrf().disable();
+```
+
+<br><br>
+
+## 9장. 필터 구현
+
+<br><br>
+
+## 10장. CSRF 보호와 CORS 적용
+
+<br><br>
+
+## 11장. 실전: 책임의 분리
 
 <br><br>
 
