@@ -1,9 +1,9 @@
-#### Blog Intro
+### Blog Intro
 보이기 위한 블로그가 아니라 공부하고 생각한 내용을 작성하기 위해 만들어진 블로그입니다. 기록하고 잊지말고 꾸준히 관리해나갈 예정입니다 🙂
 
----
+<br>
 
-#### Blog Writing Rules
+### Blog Writing Rules
 + 개발공부 관련 내역을 작성하고 참고한 자료나 관련 링크를 첨부합니다.
 + 이모지별 의미
   + 📖 카테고리 하위 학습경로로 인강, 책, 스터디 등 연결된 포스팅을 모아둔 카테고리입니다.
@@ -14,9 +14,9 @@
     <span style="background-color:#DCFFE4; margin-right:5px">나의 궁금증</span>
     <span style="background-color:#f0f0f0; margin-right:5px">접은 글</span>
 
----
+<br>
 
-#### Recent Posts
+### Recent Posts
 + 2023-09-16 ____ [개발자가 ChatGPT를 이용하는 다양한 방법들](https://ilpyo-yang.github.io/tool/2023/05/08/Tools.html#개발자가-chatgpt를-이용하는-다양한-방법들)
 + 2023-09-15 ____ [LeetCode - Top Interview 150](https://ilpyo-yang.github.io/job/2023/08/25/Leetcode.html)
 + 2023-09-15 ____ [Spring security in action 9장. 필터 구현](https://ilpyo-yang.github.io/backend/2023/04/14/Spring_security_in_action.html#9장-필터-구현)
@@ -82,3 +82,10 @@
 <br>
 -->
 
+<div style="padding:3px; margin:200px 0;"></div>   
+
+<style>
+h3{
+  border-bottom: 1px dotted lightgray;
+}
+</style>
