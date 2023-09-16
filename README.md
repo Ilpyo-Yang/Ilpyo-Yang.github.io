@@ -1,12 +1,27 @@
 #### Blog Intro
 보이기 위한 블로그가 아니라 공부하고 생각한 내용을 작성하기 위해 만들어진 블로그입니다. 기록하고 잊지말고 꾸준히 관리해나갈 예정입니다 🙂
 
+---
+
+#### Blog Writing Rules
++ 개발공부 관련 내역을 작성하고 참고한 자료나 관련 링크를 첨부합니다.
++ 이모지별 의미
+  + 📖 카테고리 하위 학습경로로 인강, 책, 스터디 등 연결된 포스팅을 모아둔 카테고리입니다.
+  + 🚴 버그나 이슈 사항을 찾아서 정리한 내용입니다.
++ 형광펜이 사용된 부분의 의미는 다음과 같이 지정했습니다.
+  + <span style="background-color:#fff5b1; margin-right:5px">요약</span>
+    <span style="background-color:#FFE6E6; margin-right:5px">중요</span>
+    <span style="background-color:#DCFFE4; margin-right:5px">나의 궁금증</span>
+    <span style="background-color:#f0f0f0; margin-right:5px">접은 글</span>
+
+---
+
 #### Recent Posts
-+ [LeetCode - Top Interview 150](https://ilpyo-yang.github.io/job/2023/08/25/Leetcode.html)
-+ [AWS 다양한 배포 방법들](https://ilpyo-yang.github.io/devops/2023/05/08/AWS.html#aws-다양한-배포-방법들)
-+ [AWS EC2 Ubuntu22.04LTS tomcat10 세팅하기](https://ilpyo-yang.github.io/devops/2023/05/08/AWS.html#aws-ec2-ubuntu2204lts-tomcat10-세팅하기)
-+ [8장. URL 단축키 설계](https://ilpyo-yang.github.io/cs/2023/04/13/CS_large_scale_system_design.html#8장-URL-단축키-설계)
-+ [7장. 분산시스템을 위한 유일 ID 생성기 설계](https://ilpyo-yang.github.io/cs/2023/04/13/CS_large_scale_system_design.html#7장-분산시스템을-위한-유일-id-설계)
++ 2023-09-16 ____ [개발자가 ChatGPT를 이용하는 다양한 방법들](https://ilpyo-yang.github.io/tool/2023/05/08/Tools.html#개발자가-chatgpt를-이용하는-다양한-방법들)
++ 2023-09-15 ____ [LeetCode - Top Interview 150](https://ilpyo-yang.github.io/job/2023/08/25/Leetcode.html)
++ 2023-09-15 ____ [Spring security in action 9장. 필터 구현](https://ilpyo-yang.github.io/backend/2023/04/14/Spring_security_in_action.html#9장-필터-구현)
++ 2023-09-15 ____ [Spring security in action 8장. 권한 부여 구성: 제한 적용](https://ilpyo-yang.github.io/backend/2023/04/14/Spring_security_in_action.html#8장-권한-부여-구성-제한-적용)
++ 2023-09-15 ____ [Spring security in action 7장. 권한 부여 구성: 엑세스 제한](https://ilpyo-yang.github.io/backend/2023/04/14/Spring_security_in_action.html#7장-권한-부여-구선-엑세스-제한)
 
 <!--
 #### Blog Contents
@@ -67,15 +82,3 @@
 <br>
 -->
 
-****
-
-#### Blog Writing Rules
-+ 개발공부 관련 내역을 작성하고 참고한 자료나 관련 링크를 첨부합니다.
-+ 이모지별 의미
-  + 📖 카테고리 하위 학습경로로 인강, 책, 스터디 등 연결된 포스팅을 모아둔 카테고리입니다.
-  + 🚴 버그나 이슈 사항을 찾아서 정리한 내용입니다.
-+ 형광펜이 사용된 부분의 의미는 다음과 같이 지정했습니다.
-  + <span style="background-color:#fff5b1; margin-right:5px">요약</span>
-    <span style="background-color:#FFE6E6; margin-right:5px">중요</span>
-    <span style="background-color:#DCFFE4; margin-right:5px">나의 궁금증</span>
-    <span style="background-color:#f0f0f0; margin-right:5px">접은 글</span>
