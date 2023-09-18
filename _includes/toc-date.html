@@ -63,44 +63,6 @@
             {% endif %}
             {% endfor %}
 
-            <!-- job post -->
-
-            {% for collection in site.collections %}
-            <!-- <p>{{ collection.label }}</p> -->
-            {% if collection.output %}
-            {% if collection.label == "posts"%}
-            {% assign reversed_posts = site[collection.label] | reverse %}
-            {% else %}
-            {% assign reversed_posts = site[collection.label] %}
-            {% endif %}
-
-            {% for post in reversed_posts %}
-
-            {% if post.category == 'study' %}
-            {% if page.url == post.url %}
-            <li class="chapter active" data-level="1.2" data-path="{{site.baseurl}}{{post.url}}">
-                {% else %}
-            <li class="chapter" data-level="1.1" data-path="{{site.baseurl}}{{post.url}}">
-                {% endif %}
-                <a href="{{site.baseurl}}{{post.url}}">
-                    {{ post.title | escape }}
-                </a>
-                {% if site.toc.enabled %}
-                {% if page.url == post.url %}
-                {% include toc.html html=content h_min=1 h_max=2 %}
-                {% endif %}
-                {% endif %}
-            </li>
-            {% endif %}
-
-            {% endfor %}
-
-            {% if reversed_posts.size > 0 %}
-            <li class="divider"></li>
-            {% endif %}
-            {% endif %}
-            {% endfor %}
-
 
             <!-- others post -->
 
@@ -141,7 +103,43 @@
             {% endfor %}
 
 
+            <!-- study post -->
 
+            {% for collection in site.collections %}
+            <!-- <p>{{ collection.label }}</p> -->
+            {% if collection.output %}
+            {% if collection.label == "posts"%}
+            {% assign reversed_posts = site[collection.label] | reverse %}
+            {% else %}
+            {% assign reversed_posts = site[collection.label] %}
+            {% endif %}
+
+            {% for post in reversed_posts %}
+
+            {% if post.category == 'study' %}
+            {% if page.url == post.url %}
+            <li class="chapter active" data-level="1.2" data-path="{{site.baseurl}}{{post.url}}">
+                {% else %}
+            <li class="chapter" data-level="1.1" data-path="{{site.baseurl}}{{post.url}}">
+                {% endif %}
+                <a href="{{site.baseurl}}{{post.url}}">
+                    {{ post.title | escape }}
+                </a>
+                {% if site.toc.enabled %}
+                {% if page.url == post.url %}
+                {% include toc.html html=content h_min=1 h_max=2 %}
+                {% endif %}
+                {% endif %}
+            </li>
+            {% endif %}
+
+            {% endfor %}
+
+            {% if reversed_posts.size > 0 %}
+            <li class="divider"></li>
+            {% endif %}
+            {% endif %}
+            {% endfor %}
 
 
             <div style="background-color:#fafafa; padding:20px;"></div>

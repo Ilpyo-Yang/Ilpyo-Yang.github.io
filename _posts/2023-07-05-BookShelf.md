@@ -2,8 +2,8 @@
 title: BookShelf
 author: Rosie Yang
 date: 2023-07-05
-category: manage
-layout: test
+category: test
+layout: post
 ---
 
 <span class="date">2023</span>
