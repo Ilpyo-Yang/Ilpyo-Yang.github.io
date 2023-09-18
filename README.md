@@ -6,7 +6,7 @@
 ### Blog Writing Rules
 + 개발공부 관련 내역을 작성하고 참고한 자료나 관련 링크를 첨부합니다.
 + 이모지별 의미
-  + 📖 카테고리 하위 학습경로로 인강, 책, 스터디 등 연결된 포스팅을 모아둔 카테고리입니다.
+  + 📖 인강, 책, 스터디 등 연결된 포스팅을 모아둔 카테고리입니다.
   + 🚴 버그나 이슈 사항을 찾아서 정리한 내용입니다.
 + 형광펜이 사용된 부분의 의미는 다음과 같이 지정했습니다.
   + <span style="background-color:#fff5b1; margin-right:5px">요약</span>
@@ -17,11 +17,64 @@
 <br>
 
 ### Recent Posts
-+ 2023-09-16 ____ [개발자가 ChatGPT를 이용하는 다양한 방법들](https://ilpyo-yang.github.io/tool/2023/05/08/Tools.html#개발자가-chatgpt를-이용하는-다양한-방법들)
-+ 2023-09-15 ____ [LeetCode - Top Interview 150](https://ilpyo-yang.github.io/job/2023/08/25/Leetcode.html)
-+ 2023-09-15 ____ [Spring security in action 9장. 필터 구현](https://ilpyo-yang.github.io/backend/2023/04/14/Spring_security_in_action.html#9장-필터-구현)
-+ 2023-09-15 ____ [Spring security in action 8장. 권한 부여 구성: 제한 적용](https://ilpyo-yang.github.io/backend/2023/04/14/Spring_security_in_action.html#8장-권한-부여-구성-제한-적용)
-+ 2023-09-15 ____ [Spring security in action 7장. 권한 부여 구성: 엑세스 제한](https://ilpyo-yang.github.io/backend/2023/04/14/Spring_security_in_action.html#7장-권한-부여-구선-엑세스-제한)
+<span class="badge date">2023.09.16</span>
+<span class="badge skill">AI</span>
+<span class="details">
+<a href="https://ilpyo-yang.github.io/tool/2023/05/08/Tools.html#개발자가-chatgpt를-이용하는-다양한-방법들">개발자가 ChatGPT를 이용하는 다양한 방법들</a>
+</span>
+
+<span class="badge date">2023.09.15</span>
+<span class="badge skill">Algorithm</span>
+<span class="details">
+<a href="https://ilpyo-yang.github.io/job/2023/08/25/Leetcode.html">LeetCode - Top Interview 150</a>
+</span>
+
+<span class="badge date">2023.09.15</span>
+<span class="badge skill">Spring security</span>
+<span class="details">
+<a href="https://ilpyo-yang.github.io/backend/2023/04/14/Spring_security_in_action.html#9장-필터-구현">Spring security in action 9장. 필터 구현</a>
+</span>
+
+<span class="badge date">2023.09.15</span>
+<span class="badge skill">Spring security</span>
+<span class="details">
+<a href="https://ilpyo-yang.github.io/backend/2023/04/14/Spring_security_in_action.html#8장-권한-부여-구성-제한-적용">Spring security in action 8장. 권한 부여 구성: 제한 적용</a>
+</span>
+
+<span class="badge date">2023.09.15</span>
+<span class="badge skill">Spring security</span>
+<span class="details">
+<a href="https://ilpyo-yang.github.io/backend/2023/04/14/Spring_security_in_action.html#7장-권한-부여-구선-엑세스-제한">Spring security in action 7장. 권한 부여 구성: 엑세스 제한</a>
+</span>
+
+<style>
+.contents{
+    display: block;
+    margin-top: 30px;
+    margin-bottom: 10px;
+    border-bottom: 1px dotted lightgray;
+}
+.badge{
+    border-radius: 5px;
+    padding: 4px;
+    font-size: small;
+}
+.details{
+    margin-left: 10px;
+}
+.date{
+    border: 1px solid lightslategrey;
+    color: lightslategrey;
+}
+.skill{
+    border: 1px solid darkolivegreen;
+    color: darkolivegreen;
+}
+.backend{
+    
+}
+</style>
+
 
 <!--
 #### Blog Contents
