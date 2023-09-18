@@ -53,7 +53,7 @@
   <a href="https://ilpyo-yang.github.io/study/2023/04/14/Spring_security_in_action.html#7장-권한-부여-구선-엑세스-제한">Spring security in action 7장. 권한 부여 구성: 엑세스 제한</a>
 </span>
 
-
+<br>
 
 ##### 📖 Study Posts
 <span class="badge skill">Algorithm</span>
@@ -82,7 +82,7 @@
   <a href="https://ilpyo-yang.github.io/study/2023/04/15/JPA_inflearn_roadmap.html">스프링 부트와 JPA 실무 완전 정복 로드맵</a>
 </span>
 
-
+<br>
 
 ##### 🚴 Trouble Shooting Posts
 <span class="badge skill">Database</span>
@@ -193,9 +193,9 @@
     color: darkolivegreen;
 }
 h3{
-  border-bottom: 1px dotted white;
+  border-bottom: 1px dotted darkolivegreen;
 }
 h5{
-  border-bottom: 1px dotted lightgray;
+  border-bottom: 1px dotted lightslategrey;
 }
 </style>
