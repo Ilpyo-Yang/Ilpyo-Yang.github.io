@@ -76,7 +76,7 @@
 
             {% for post in reversed_posts %}
 
-            {% if post.category == 'job' %}
+            {% if post.category == 'study' %}
             {% if page.url == post.url %}
             <li class="chapter active" data-level="1.2" data-path="{{site.baseurl}}{{post.url}}">
                 {% else %}
@@ -115,7 +115,7 @@
 
             {% for post in reversed_posts %}
 
-            {% if post.category != 'manage' and post.category != 'test' and post.category != 'job' %}
+            {% if post.category != 'manage' and post.category != 'test' and post.category != 'study' %}
             {% if page.url == post.url %}
             <li class="chapter active" data-level="1.2" data-path="{{site.baseurl}}{{post.url}}">
                 {% else %}

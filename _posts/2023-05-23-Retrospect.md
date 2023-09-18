@@ -8,9 +8,9 @@ layout: post
 
 ## Google I/O Extended Incheon 2023
 
-[retrospect](/assets/gitbook/post_images/retrospect)
+[retrospect](/assets/gitbook/post_images/retrospect/IMG_5289.jpg)
 
-2023-08-26
+**2023-08-26**  
 벌써 Google I/O Extended Incheon 2023 행사 참여가 끝난지 일주일이 지난 시점에 회고를 작성하게 되었습니다.
 감사하게도 정말 많은 사람들이 참여해주셔서 거의 500명이 되는 인원들이 모이는 큰 행사가 될 수 있었습니다.  
 
@@ -28,7 +28,7 @@ Redis에 대해 마냥 캐시서버, 그냥 데이터베이스, NoSQL이라고 �
 당장은 아니지만 언젠가 더 경력이 쌓여서 새로운 트랜드 혹은 개발자로서 내 생각을 더 정리해서 전달할 수 있는 기회가 생겼을 때 준비된 개발자가 되고 싶다는 생각이 들었습니다.
 
 추가로 이번 행사에서 제가 발표한 자료를 정리해서 다시 포스팅해봤습니다. 
-[행사 자료 보러가기]()
+[행사 자료 보러가기](/backend/2023/05/04/Database.html#deadlock과-redis-대기열)
 
 <br><br>
 

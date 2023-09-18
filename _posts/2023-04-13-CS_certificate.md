@@ -2,7 +2,7 @@
 title: 📖 정보처리기사 실기
 author: Rosie Yang
 date: 2023-04-13
-category: cs
+category: study
 layout: post
 ---
 > 수제비 정보처리기사 실기 책 내용 요약내용 + 직접적으로 시험에 나왔던 문제는 기호(🔴) 표기를 해두었습니다.  

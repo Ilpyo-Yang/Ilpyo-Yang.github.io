@@ -2,7 +2,7 @@
 title: 📖 Effective Java (진행중)
 author: Rosie Yang
 date: 2023-04-30
-category: backend
+category: study
 layout: post
 ---
 
