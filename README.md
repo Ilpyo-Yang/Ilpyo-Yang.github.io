@@ -20,31 +20,31 @@
 <span class="badge date">2023.09.16</span>
 <span class="badge skill">AI</span>
 <span class="details">
-<a href="https://ilpyo-yang.github.io/tool/2023/05/08/Tools.html#개발자가-chatgpt를-이용하는-다양한-방법들">개발자가 ChatGPT를 이용하는 다양한 방법들</a>
+  <a href="https://ilpyo-yang.github.io/tool/2023/05/08/Tools.html#개발자가-chatgpt를-이용하는-다양한-방법들">개발자가 ChatGPT를 이용하는 다양한 방법들</a>
 </span>
 
 <span class="badge date">2023.09.15</span>
 <span class="badge skill">Algorithm</span>
 <span class="details">
-<a href="https://ilpyo-yang.github.io/job/2023/08/25/Leetcode.html">LeetCode - Top Interview 150</a>
+  <a href="https://ilpyo-yang.github.io/job/2023/08/25/Leetcode.html">LeetCode - Top Interview 150</a>
 </span>
 
 <span class="badge date">2023.09.15</span>
 <span class="badge skill">Spring security</span>
 <span class="details">
-<a href="https://ilpyo-yang.github.io/backend/2023/04/14/Spring_security_in_action.html#9장-필터-구현">Spring security in action 9장. 필터 구현</a>
+  <a href="https://ilpyo-yang.github.io/study/2023/04/14/Spring_security_in_action.html#9장-필터-구현">Spring security in action 9장. 필터 구현</a>
 </span>
 
 <span class="badge date">2023.09.15</span>
 <span class="badge skill">Spring security</span>
 <span class="details">
-<a href="https://ilpyo-yang.github.io/backend/2023/04/14/Spring_security_in_action.html#8장-권한-부여-구성-제한-적용">Spring security in action 8장. 권한 부여 구성: 제한 적용</a>
+  <a href="https://ilpyo-yang.github.io/study/2023/04/14/Spring_security_in_action.html#8장-권한-부여-구성-제한-적용">Spring security in action 8장. 권한 부여 구성: 제한 적용</a>
 </span>
 
 <span class="badge date">2023.09.15</span>
 <span class="badge skill">Spring security</span>
 <span class="details">
-<a href="https://ilpyo-yang.github.io/backend/2023/04/14/Spring_security_in_action.html#7장-권한-부여-구선-엑세스-제한">Spring security in action 7장. 권한 부여 구성: 엑세스 제한</a>
+  <a href="https://ilpyo-yang.github.io/study/2023/04/14/Spring_security_in_action.html#7장-권한-부여-구선-엑세스-제한">Spring security in action 7장. 권한 부여 구성: 엑세스 제한</a>
 </span>
 
 <style>
