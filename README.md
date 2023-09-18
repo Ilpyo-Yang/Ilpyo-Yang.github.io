@@ -17,6 +17,12 @@
 <br>
 
 ### Recent Posts
+<span class="badge date">2023.09.18</span>
+<span class="badge skill">Database</span>
+<span class="details">
+  <a href="https://ilpyo-yang.github.io/backend/2023/05/04/Database.html#deadlock과-redis-대기열">DeadLock과 Redis 대기열</a>
+</span>
+
 <span class="badge date">2023.09.16</span>
 <span class="badge skill">AI</span>
 <span class="details">
@@ -47,33 +53,59 @@
   <a href="https://ilpyo-yang.github.io/study/2023/04/14/Spring_security_in_action.html#7장-권한-부여-구선-엑세스-제한">Spring security in action 7장. 권한 부여 구성: 엑세스 제한</a>
 </span>
 
-<style>
-.contents{
-    display: block;
-    margin-top: 30px;
-    margin-bottom: 10px;
-    border-bottom: 1px dotted lightgray;
-}
-.badge{
-    border-radius: 5px;
-    padding: 4px;
-    font-size: small;
-}
-.details{
-    margin-left: 10px;
-}
-.date{
-    border: 1px solid lightslategrey;
-    color: lightslategrey;
-}
-.skill{
-    border: 1px solid darkolivegreen;
-    color: darkolivegreen;
-}
-.backend{
-    
-}
-</style>
+
+
+##### 📖 Study Posts
+<span class="badge skill">Algorithm</span>
+<span class="details">
+  <a href="https://ilpyo-yang.github.io/study/2023/08/25/Leetcode.html">LeetCode Top Interview 150</a>
+</span>
+
+<span class="badge skill">Spring Security</span>
+<span class="details">
+  <a href="https://ilpyo-yang.github.io/study/2023/04/14/Spring_security_in_action.html">Spring Security in Action</a>
+</span>
+
+<span class="badge skill">Architecture</span>
+<span class="details">
+  <a href="https://ilpyo-yang.github.io/study/2023/04/13/CS_large_scale_system_design.html">가상면접 사례로 배우는 대규모 시스템 설계 기초</a>
+</span>
+
+<span class="badge skill">CS</span>
+<span class="details">
+  <a href="https://ilpyo-yang.github.io/study/2023/04/13/CS_certificate.html">정보처리기사 실기</a>
+</span>
+
+<span class="badge skill">Spring</span>
+<span class="badge skill">JPA</span>
+<span class="details">
+  <a href="https://ilpyo-yang.github.io/study/2023/04/15/JPA_inflearn_roadmap.html">스프링 부트와 JPA 실무 완전 정복 로드맵</a>
+</span>
+
+
+
+##### 🚴 Trouble Shooting Posts
+<span class="badge skill">Database</span>
+<span class="details">
+  <a href="https://ilpyo-yang.github.io/backend/2023/05/04/Database.html#deadlock과-redis-대기열">DeadLock과 Redis 대기열</a>
+</span>
+
+<span class="badge skill">Spring</span>
+<span class="details">
+  <a href="https://ilpyo-yang.github.io/backend/2023/04/14/Spring.html#암호화와-authentication-이슈">암호화와 authentication 이슈</a>
+</span>
+
+<span class="badge skill">JPA</span>
+<span class="details">
+  <a href="https://ilpyo-yang.github.io/backend/2023/04/15/JPA.html#-jpaqueryfactory-설정-이슈">JPAQueryFactory 설정 이슈</a>
+</span>
+
+<span class="badge skill">Intellij</span>
+<span class="details">
+  <a href="https://ilpyo-yang.github.io/tool/2023/05/08/Tools.html#-intellij-환경에서-struts-프로젝트-구동하기">IntelliJ 환경에서 Struts 프로젝트 구동하기</a>
+</span>
+
+
 
 
 <!--
@@ -135,10 +167,35 @@
 <br>
 -->
 
-<div style="padding:3px; margin:200px 0;"></div>   
+<div style="padding:3px; margin:200px 0;"></div>
 
 <style>
+.contents{
+    display: block;
+    margin-top: 30px;
+    margin-bottom: 10px;
+    border-bottom: 1px dotted lightgray;
+}
+.badge{
+    border-radius: 5px;
+    padding: 4px;
+    font-size: small;
+}
+.details{
+    margin-left: 10px;
+}
+.date{
+    border: 1px solid lightslategrey;
+    color: lightslategrey;
+}
+.skill{
+    border: 1px solid darkolivegreen;
+    color: darkolivegreen;
+}
 h3{
+  border-bottom: 1px dotted white;
+}
+h5{
   border-bottom: 1px dotted lightgray;
 }
 </style>
