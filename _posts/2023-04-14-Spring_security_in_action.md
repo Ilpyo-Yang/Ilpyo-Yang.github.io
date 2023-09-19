@@ -23,6 +23,9 @@ layout: post
                 <li><a href="/backend/2023/04/14/Spring_security_in_action.html#4장-암호처리">4장. 암호처리</a></li>
                 <li><a href="/backend/2023/04/14/Spring_security_in_action.html#5장-인증-구현">5장. 인증 구현</a></li>
                 <li><a href="/backend/2023/04/14/Spring_security_in_action.html#6장-실전-작고-안전한-웹-애플리케이션">6장. 실전: 작고 안전한 웹 애플리케이션</a></li>
+                <li><a href="/backend/2023/04/14/Spring_security_in_action.html#7장-권한-부여-구성-액세스-제한">7장. 권한 부여 구성: 액세스 제한</a></li>
+                <li><a href="/backend/2023/04/14/Spring_security_in_action.html#8장-권한-부여-구성-제한-적용">8장. 권한 부여 구성: 제한 적용</a></li>
+                <li><a href="/backend/2023/04/14/Spring_security_in_action.html#9장-필터-구현">9장. 필터 구현</a></li>
             </ul>
         </td>
     </tr>
