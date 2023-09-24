@@ -33,7 +33,7 @@ layout: post
     <span class="answer badge">Gradle</span>
     <span class="answer badge">jjwt</span>
     <span class="answer badge">JUnit5</span>
-    <span class="answer badge">Github Actions</span><br>
+    <span class="answer badge">Github Action</span><br>
     <span class="answer badge">AWS EC2, S3, CodeDeploy</span>
 </div>
 
@@ -46,9 +46,9 @@ layout: post
 
 <a target="_blank" href="https://ilpyo-yang.github.io/devops/2023/05/08/AWS.html#aws-다양한-배포-방법들">고민의 흔적들</a>  
 
-사전과제의 요구사항 중 하나가 AWS 배포였기 때문에, 기존에 아는 내용에서 빠르게 배포할 수 있는 방법들을 모색했습니다. GitHub Actions CI/CD로 사용했는데 이미 버전관리가 Github으로 되어 있고, Travis는 일부 유료버전으로 변경되면서 접근이 제한된 부분이 있었기 때문입니다.
+사전과제의 요구사항 중 하나가 AWS 배포였기 때문에, 기존에 아는 내용에서 빠르게 배포할 수 있는 방법들을 모색했습니다. GitHub Action CI/CD로 사용했는데 이미 버전관리가 Github으로 되어 있고, Travis는 일부 유료버전으로 변경되면서 접근이 제한된 부분이 있었기 때문입니다.
 Github 클론을 이용한 jar 배포를 하게 되면 매번 클론을 받아서 EC2에서 빌드를 진행해야 한다는 번거로움과 서버 리소스를 사용하게 됩니다.
-따라서 Github Actions 이용한 빌드로 zip 파일을 S3에 전송하고 AWS 배포를 진행했습니다.
+따라서 Github Action 이용한 빌드로 zip 파일을 S3에 전송하고 AWS 배포를 진행했습니다.
 ```yml
 - name: Build with Gradle
   run: ./gradlew build
@@ -61,7 +61,7 @@ Github 클론을 이용한 jar 배포를 하게 되면 매번 클론을 받아�
 
 #### 2. 테스트 코드를 작성하자
 테스트 코드 역시 선택과제 중 하나였는데, 단위테스트로 각 API, config에 정의된 util 기능, security 설정과 관련된 기능을 개별로 작성했습니다.
-mock 객체를 사용해서 ```resultActions```를 이용한 API 호출과 response 내용을 확인했습니다.
+mock 객체를 사용해서 ```resultAction```를 이용한 API 호출과 response 내용을 확인했습니다.
 ```java
 @Test
 @DisplayName("과제 3. 새로운 게시글을 생성하는 엔드포인트")
