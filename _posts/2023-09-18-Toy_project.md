@@ -38,9 +38,8 @@ layout: post
 </div>
 
 ### 프로젝트 소개
-게시판에서 필요한 기능들을 만든 API으로 사용자(회원가입, 로그인), 게시글(추가, 전체 조회, 특정 게시글 조회, 수정, 삭제) 기능을 담았습니다. 배포는 GitHub Action, AWS EC2, S3, CodeDeploy를 이용했습니다.
-
-<a target="_blank" href="https://ilpyo.notion.site/API-d989a5067e384350ae50c3022a503eec?pvs=4">API 명세</a>
+게시판에서 필요한 기능들을 만든 API으로 사용자(회원가입, 로그인), 게시글(추가, 전체 조회, 특정 게시글 조회, 수정, 삭제) 기능을 담았습니다. 배포는 GitHub Action, AWS EC2, S3, CodeDeploy를 이용했습니다.  
+<a target="_blank" href="https://ilpyo.notion.site/API-d989a5067e384350ae50c3022a503eec?pvs=4">API 명세 바로가기</a>
 
 ### 주요 고려사항
 #### 1. 어떻게 배포할 것인가에 관하여
