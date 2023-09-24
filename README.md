@@ -17,6 +17,12 @@
 <br>
 
 <h3 style="border-bottom: 1px dotted darkolivegreen;">Recent Posts</h3>
+<span class="badge date" style="border-radius: 5px; padding: 4px; font-size: small; border: 1px solid lightslategrey; color: lightslategrey;">2023.09.23</span>
+<span class="badge skill" style="border-radius: 5px; padding: 4px; font-size: small; border: 1px solid darkolivegreen; color: darkolivegreen;">Project</span>
+<span class="details" style="margin-left: 10px;">
+<a href="https://ilpyo-yang.github.io/manage/2023/09/18/Project.html#개발자를-위한-챗봇-지역기반-서비스---devmingle">개발자를 위한 챗봇 지역기반 서비스 - DevMingle</a>
+</span>
+
 <span class="badge date" style="border-radius: 5px; padding: 4px; font-size: small; border: 1px solid lightslategrey; color: lightslategrey;">2023.09.19</span>
 <span class="badge skill" style="border-radius: 5px; padding: 4px; font-size: small; border: 1px solid darkolivegreen; color: darkolivegreen;">Tech</span>
 <span class="details" style="margin-left: 10px;">
