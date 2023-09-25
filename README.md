@@ -17,16 +17,22 @@
 <br>
 
 <h3 style="border-bottom: 1px dotted darkolivegreen;">Recent Posts</h3>
+<span class="badge date" style="border-radius: 5px; padding: 4px; font-size: small; border: 1px solid lightslategrey; color: lightslategrey;">2023.09.25</span>
+<span class="badge skill" style="border-radius: 5px; padding: 4px; font-size: small; border: 1px solid darkolivegreen; color: darkolivegreen;">Spring security</span>
+<span class="details" style="margin-left: 10px;">
+  <a href="https://ilpyo-yang.github.io/study/2023/04/14/Spring_security_in_action.html#10장-csrf-보호와-cors-적용">Spring Security in Action 10장. CSRF 보호와 CORS 적용</a>
+</span>
+
 <span class="badge date" style="border-radius: 5px; padding: 4px; font-size: small; border: 1px solid lightslategrey; color: lightslategrey;">2023.09.23</span>
 <span class="badge skill" style="border-radius: 5px; padding: 4px; font-size: small; border: 1px solid darkolivegreen; color: darkolivegreen;">Git</span>
 <span class="details" style="margin-left: 10px;">
-<a href="https://ilpyo-yang.github.io/tool/2023/05/08/Git_github.html#잘못된-github-실수-만회하기">잘못된 Github 실수 만회하기</a>
+  <a href="https://ilpyo-yang.github.io/tool/2023/05/08/Git_github.html#잘못된-github-실수-만회하기">잘못된 Github 실수 만회하기</a>
 </span>
 
 <span class="badge date" style="border-radius: 5px; padding: 4px; font-size: small; border: 1px solid lightslategrey; color: lightslategrey;">2023.09.23</span>
 <span class="badge skill" style="border-radius: 5px; padding: 4px; font-size: small; border: 1px solid darkolivegreen; color: darkolivegreen;">Project</span>
 <span class="details" style="margin-left: 10px;">
-<a href="https://ilpyo-yang.github.io/manage/2023/09/18/Project.html#개발자를-위한-챗봇-지역기반-서비스---devmingle">개발자를 위한 챗봇 지역기반 서비스 - DevMingle</a>
+  <a href="https://ilpyo-yang.github.io/manage/2023/09/18/Project.html#개발자를-위한-챗봇-지역기반-서비스---devmingle">개발자를 위한 챗봇 지역기반 서비스 - DevMingle</a>
 </span>
 
 <span class="badge date" style="border-radius: 5px; padding: 4px; font-size: small; border: 1px solid lightslategrey; color: lightslategrey;">2023.09.19</span>
@@ -56,19 +62,19 @@
 <span class="badge date" style="border-radius: 5px; padding: 4px; font-size: small; border: 1px solid lightslategrey; color: lightslategrey;">2023.09.15</span>
 <span class="badge skill" style="border-radius: 5px; padding: 4px; font-size: small; border: 1px solid darkolivegreen; color: darkolivegreen;">Spring security</span>
 <span class="details" style="margin-left: 10px;">
-  <a href="https://ilpyo-yang.github.io/study/2023/04/14/Spring_security_in_action.html#9장-필터-구현">Spring security in action 9장. 필터 구현</a>
+  <a href="https://ilpyo-yang.github.io/study/2023/04/14/Spring_security_in_action.html#9장-필터-구현">Spring Security in Action 9장. 필터 구현</a>
 </span>
 
 <span class="badge date" style="border-radius: 5px; padding: 4px; font-size: small; border: 1px solid lightslategrey; color: lightslategrey;">2023.09.15</span>
 <span class="badge skill" style="border-radius: 5px; padding: 4px; font-size: small; border: 1px solid darkolivegreen; color: darkolivegreen;">Spring security</span>
 <span class="details" style="margin-left: 10px;">
-  <a href="https://ilpyo-yang.github.io/study/2023/04/14/Spring_security_in_action.html#8장-권한-부여-구성-제한-적용">Spring security in action 8장. 권한 부여 구성: 제한 적용</a>
+  <a href="https://ilpyo-yang.github.io/study/2023/04/14/Spring_security_in_action.html#8장-권한-부여-구성-제한-적용">Spring Security in Action 8장. 권한 부여 구성: 제한 적용</a>
 </span>
 
 <span class="badge date" style="border-radius: 5px; padding: 4px; font-size: small; border: 1px solid lightslategrey; color: lightslategrey;">2023.09.15</span>
 <span class="badge skill" style="border-radius: 5px; padding: 4px; font-size: small; border: 1px solid darkolivegreen; color: darkolivegreen;">Spring security</span>
 <span class="details" style="margin-left: 10px;">
-  <a href="https://ilpyo-yang.github.io/study/2023/04/14/Spring_security_in_action.html#7장-권한-부여-구선-엑세스-제한">Spring security in action 7장. 권한 부여 구성: 엑세스 제한</a>
+  <a href="https://ilpyo-yang.github.io/study/2023/04/14/Spring_security_in_action.html#7장-권한-부여-구선-엑세스-제한">Spring Security in Action 7장. 권한 부여 구성: 엑세스 제한</a>
 </span>
 
 <br>

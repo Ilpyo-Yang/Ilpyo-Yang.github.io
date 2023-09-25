@@ -26,6 +26,8 @@ layout: post
                 <li><a href="/backend/2023/04/14/Spring_security_in_action.html#7장-권한-부여-구성-액세스-제한">7장. 권한 부여 구성: 액세스 제한</a></li>
                 <li><a href="/backend/2023/04/14/Spring_security_in_action.html#8장-권한-부여-구성-제한-적용">8장. 권한 부여 구성: 제한 적용</a></li>
                 <li><a href="/backend/2023/04/14/Spring_security_in_action.html#9장-필터-구현">9장. 필터 구현</a></li>
+                <li><a href="/backend/2023/04/14/Spring_security_in_action.html#10장-csrf-보호와-cors-적용">10장. CSRF 보호와 CORS 적용</a></li>
+                <li><a href="/backend/2023/04/14/Spring_security_in_action.html#11장-실전-책임의-분리">11장. 실전: 책임의 분리</a></li>
             </ul>
         </td>
     </tr>
@@ -590,6 +592,46 @@ OncePerRequestFilter는 형식을 형변환하여 HttpServletReqeust 및 HttpSer
 <br><br>
 
 ## 10장. CSRF 보호와 CORS 적용
+**CSRF(사이트 간 요청 위조) 보호 적용**  
+POST, PUT, DELETE를 비롯한 변경 호출 페이지는 응답으로 CSRF 토큰을 받고 다음 호출에 사용해야 합니다. 여기서 CSRF 공격은 사용자가 악성 스크립트가 있는 페이지를 열었을 때, 사용자 대신 작업을 수행하게 됩니다.
+
+```CsrfFilter```를 통해 발급되는데, 이 필터는 GET, HEAD, TRACE, OPTIONS를 사용한 HTTP 방식의 요청을 모두 허용하고 CSRF 토큰을 담아서 응답합니다.
+POST, PUT, DELETE 의 엔드포인트에서 개발을 하기 위해서는 CSRT 보호 활성화된 경우 토큰이 필요한데, ```_csrf``` 특성에 추가되어 있기 때문에 이를 응답 또는 thymeleaf를 이용해 출력합니다.
+
+CSRF 보호는 브라우저에서 실행되는 웹 앱에 사용되며, 로그인과 같이 앱 내에서 수행하는 변경되는 작업이 없는 경우를 제외합니다.
+그리고 같은 서버가 프런트와 백을 담당하는 아키텍처에서는 잘 작동하지만 솔루션이 독립적일 때는 그에 따른 보안 접근법(11~15장)을 고려해야 합니다.
+
+Spring security는 기본적으로 CSRF 보호를 지원하는데, 서버에서 생성된 리소스를 이용하는 페이지가 같은 서버에서 생성된 경우에만 이용합니다.
+
+그럼 모든 경로가 아니라 일부 경로에만 보호를 설정하려면 어떻게 해야 할까?
+CSRF 보호를 아래 코드 처럼 ```disable``` 처리하는 것이 아니라 제공되는  handler와 matcher들 이용해서 보호 제외 경로를 지정할 수 있습니다.
+```
+http.httpBasic(HttpBasicConfigurer::disable)  
+	.csrf(CsrfConfigurer::disable)
+```
+
+서버 쪽 세션에 csrf 토큰을 저장하는 것은 수평적 확장에서 적합하지 않습니다.
+데이터베이스에서 토큰을 관리하는 방식으로 전환하기 위해서는 ```CsrfTokenRepository```를 새로 구현해서 세션 ID를 이용해 관리할 수 있습니다.
+```CsrtTokenRepository``` 구현체를 만들면 override된 ```generateToken()```과 ```saveToken()```, ```loadToken()``` 메서드를 구현해서 사용하게 됩니다.
+다른 대안으로는 토큰의 만료시간을 정해서 관리하는 방법도 있습니다.
+
+**CORS(교차 출처 리소스 공유) 이용**  
+CORS는 일부 조건에서 서로 다른 출처 간 요청을 허용합니다. 예를 들어 ```domain.com```에서 ```domain2.com```에서 ```domain.com```의 REST 엔드포인트를 호출한다고 할 때, 호출은 거부됩니다. CORS를 이용하면 이런 문제를 해결할 수 있습니다.
+
++ ```Access-Control-Allow-Origin``` 접근 가능한 외부 도메인 지정
++ ```Access-Control-Allow-Methods``` 다른 도메인에 대한 접근은 허용하지만 특정 엔드포인트만 허용
++ ```Access-Control-Allow-Headers``` 특정 요청에 이용할 수 있는 헤더에 제한을 추가
+
+CSRF와 개념을 헷갈리지 말아야하는데 CORS는 교차 도메인 호출을 완화해주는 개념이고 브라우저에 관한 것이며 엔드포인트를 보호하는 방법은 아닙니다. CSRF 보흐는 공격을 막는 개념입니다.
+
+HTTP OPTIONS 방식으로 사전 테스트 요청을 하는 경우가 있습니다. 이 요청이 실패하면 브라우저는 원래 요청을 수락하지 않습니다.
+
+CSRF의 정책은 ```@CrossOrigin```으로 적용할 수 있습니다. 다음과 같이 메서드 위에 적용하면 해당 메서드는 localhost 출처에 대한 교차 출처 요청을 허용하게 됩니다. 이 때 ```*```로 넓은 범위의 출처를 허용하는 경우는 XXS(교차 사이트 스크립팅) 요청에 노출되어 DDoS 공격에 취약해질 수 있습니다.
+```
+@CrossOrigin("http://localhost:8080")
+```
+
+하지만 개별 관리를 이런 식으로 하게 되면, 관리가 어렵기 때문에 Security Config에 ```CorsConfigurationSource```를 정의해서 허용할 출처와 메서드를 지정해서 ```cors()```에 적용할 수 있습니다.
 
 <br><br>
 
