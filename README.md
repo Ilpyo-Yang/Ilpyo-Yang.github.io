@@ -17,6 +17,12 @@
 <br>
 
 <h3 style="border-bottom: 1px dotted darkolivegreen;">Recent Posts</h3>
+<span class="badge date" style="border-radius: 5px; padding: 4px; font-size: small; border: 1px solid lightslategrey; color: lightslategrey;">2023.09.26</span>
+<span class="badge skill" style="border-radius: 5px; padding: 4px; font-size: small; border: 1px solid darkolivegreen; color: darkolivegreen;">Spring security</span>
+<span class="details" style="margin-left: 10px;">
+  <a href="https://ilpyo-yang.github.io/study/2023/04/14/Spring_security_in_action.html#11장-실전-책임의-분리">Spring Security in Action 11장. 실전: 책임의 분리</a>
+</span>
+
 <span class="badge date" style="border-radius: 5px; padding: 4px; font-size: small; border: 1px solid lightslategrey; color: lightslategrey;">2023.09.25</span>
 <span class="badge skill" style="border-radius: 5px; padding: 4px; font-size: small; border: 1px solid darkolivegreen; color: darkolivegreen;">Spring security</span>
 <span class="details" style="margin-left: 10px;">

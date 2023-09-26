@@ -9,6 +9,8 @@ layout: post
 > 책의 모든 내용이 아닌 기억할 내용 + 추가 조사한 내용을 위주로 정리한 포스팅입니다.
 
 ### Contents
+<li><a href="/backend/2023/04/14/Spring_security_in_action.html#spring-security-5에서-추가된-새로운-기능">Spring Security 5에서 추가된 새로운 기능</a></li>
+
 <table>
     <tr>
         <td style="width:30%;">
@@ -16,7 +18,6 @@ layout: post
         </td>
         <td>
             <ul>
-                <li><a href="/backend/2023/04/14/Spring_security_in_action.html#spring-security-5에서-추가된-새로운-기능">Spring Security 5에서 추가된 새로운 기능</a></li>
                 <li><a href="/backend/2023/04/14/Spring_security_in_action.html#1장-오늘날의-보안">1장. 오늘날의 보안</a></li>
                 <li><a href="/backend/2023/04/14/Spring_security_in_action.html#2장-안녕-스프링-시큐리티">2장. 안녕! 스프링 시큐리티</a></li>
                 <li><a href="/backend/2023/04/14/Spring_security_in_action.html#3장-사용자-관리">3장. 사용자 관리</a></li>
@@ -636,6 +637,24 @@ CSRF의 정책은 ```@CrossOrigin```으로 적용할 수 있습니다. 다음과
 <br><br>
 
 ## 11장. 실전: 책임의 분리
+**인증논리**  
+OTP 토큰 인증을 어떻게 처리할 것인가에 대해 그 순서를 책에서 제시한 순서대로 표기하면 다음과 같습니다.
+1. 클라이언트가 엔드포인트와 함께 자격증명을 보냅니다.
+2. 그럼 비즈니스 논리 서버는 인증서버에서 사용자를 인증하고 OTP를 보냅니다.
+3. 여기서 인증서버는 데이터베이스에서 사용자를 인증합니다.
+4. 그리고 OTP를 클라이언트에 보냅니다.
+
+비지니스 논리서버와 인증서버가 서로 OTP를 주고 받는 건 잘못 됐다고 할 수 있지만 책에서는 설명을 위해 쉬운 구현 예시를 들어 설명하기 위해 이렇게 설정했다고 합니다.
+
+**토큰**  
+엔드포인트 접근을 위해 헤더에 토큰(UUID 혹은 JWT 등)이라는 문자열을 넣어서 인증하게 됩니다.  그리고 애플리케이션 리소스에 접근할 수 있습니다.
++ 요청시마다 자격 증명 공유할 필요가 없습니다.
++ 수명을 지정해 관리할 수 있습니다.
++ 토큰에 세부정보를 저장할 수 있습니다.
+
+JWT(JSON Web Token)  
+JSON 데이터 형식을 포함하는 토큰을 말합니다. 마침표로 분리된 헤더, 본문, 서명의 세 개 Base64 인코딩으로 구성됩니다.  자바에서는 JJWT 라이브러리를 지원해 JWT 토큰 생성을 쉽게 할 수 있도록 지원합니다.
+[JJWT github overview](https://github.com/jwtk/jjwt#overview)에서 사용법, builder() 처리, claims, parser(), key 처리 방법에 대해 알 수 있습니다.
 
 <br><br>
 
