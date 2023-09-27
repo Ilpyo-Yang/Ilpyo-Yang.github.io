@@ -29,6 +29,7 @@ layout: post
                 <li><a href="/backend/2023/04/14/Spring_security_in_action.html#9장-필터-구현">9장. 필터 구현</a></li>
                 <li><a href="/backend/2023/04/14/Spring_security_in_action.html#10장-csrf-보호와-cors-적용">10장. CSRF 보호와 CORS 적용</a></li>
                 <li><a href="/backend/2023/04/14/Spring_security_in_action.html#11장-실전-책임의-분리">11장. 실전: 책임의 분리</a></li>
+                <li><a href="/backend/2023/04/14/Spring_security_in_action.html#12장-oauth-2가-작동하는-방법">12장. OAuth 2가 작동하는 방법</a></li>
             </ul>
         </td>
     </tr>
@@ -657,6 +658,93 @@ JSON 데이터 형식을 포함하는 토큰을 말합니다. 마침표로 분�
 [JJWT github overview](https://github.com/jwtk/jjwt#overview)에서 사용법, builder() 처리, claims, parser(), key 처리 방법에 대해 알 수 있습니다.
 
 <br><br>
+
+## 12장. OAuth 2가 작동하는 방법
+OAuth 2는 권한 부여 프레임워크라고도 하며, 위임 프로토콜이라고도 합니다.  
+HTTP Basic에서는 인증방식에서 모든 요청에 자격증명을 보내야 하고 별도 시스템이 관리해야하는 문제가 발생합니다. 이 뜻은 즉 네트워크에 자격증명이 자주 공유되고 보안에 취약해집니다.
+
+OAuth 2는 리소스 서버, 사용자, 클라이언트, 권한 부여 서버로 구성됩니다. 리소스 소유자는 애플리케이션에 요청을 보내고 권한 부여 서버에서 데이터 작업 승인을 받았다는 증명을 제공 받습니다. 그리고 이 증명을 리소스 서버에 넘겨 클라이언트가 데이터를 이용할 수 있도록 합니다.  
+권한 부여 서버는 클라이언트에 액세스 토큰을 제공할 때 리디렉션 URI로 클라이언트를 호출합니다.
+```
+사용자 - 클라이언트 - 권한 부여 서버 - 리소스 서버
+```
+
+**OAuth 2 그랜트 유형**  
+OAuth 2에서 그랜트 유형은 가장 많이 사용되는 유형으로 흐름은 다음과 같습니다.
+
+승인 코드 그랜트 유형
++ 승인 코드 그랜트 유형으로 인증 요청 수행
+  + 사용자는 엔드포인트를 response_type, client_id, redirect_uri, scope, state가 담긴 쿼리로 호출합니다.
+  + 인증 성공시 리다이렉트 URI로 클라이언트를 호출하고 코드와 상태값을 제공합니다.
++ 승인 코드 그랜트 유형으로 액세스 토큰 얻기
+  + 승인 코드를 가지고 인증 서버에서 토크를 받습니다.
+  + 이 때 요청에는 code, client_id, client_secret, redict_uri, grant_type과 같은 세부정보가 들어있습니다.
++ 승인 코드 그랜트 유형으로 보호된 리소스 호출
+
+암호 그랜트 유형
+승인 코드 그랜트 유형과 달리 클라이언트와 권한 부여 서버를 같은 조직에서 구축한 경우에 이용합니다. 거의 유사하지만 승인 코드를 받는 과정 없이 클라이언트는 grant_type, client_id, client_secret, scope, username, password가 담긴 세부정보를 보내고 액세스 토큰을 받습니다. 그리고 이 토큰으로 리소스를 호출합니다.
+즉, 리소스 소유자가 클라이언트를 신뢰할 수 있는 환경에서 가능합니다.
+
+클라이언트 자격 증명 그랜트 유형  
+여기서는 사용자가 관여하지 않고, 두 애플리케이션 간 인증을 구현하는 방식을 말합니다. grant_type, client_id, client_secret, scope를 가지고 권한 부여 서버에 요청을 보낸 뒤, 액세스 토큰을 받아 리소스 서버에 호출하는 방식입니다.
+
+갱신토큰을 이용하기
+암호 그랜트 유형은 사용자에게 재인증 요청을 하거나 자격증명을 저장해야 합니다. 반면 갱신 토큰이 있다면, 보안 위험이 줄어들고 권한 부여 서버에서 엑세스 토큰과 함께 같이 반환됩니다.  
+클라이언트 자격 증명 그랜트 유형에서는 불필요한데, 사용자 자격증명이 필요하지 않기 때문입니다.
+
+OAuth 2는 프레임워크이므로 기능을 알고 제대로 구현해야 애플리케이션 취약성을 완화할 수 있습니다.
+
+**간단한 SSO(Single Sign-On) 애플리케이션 구현**  
+권한부여 서버를 깃허브를 이용해 승인 코드 그랜트 유형을 구현할 수 있습니다.
+
+먼저 깃헙 OAuth application을 등록해야 합니다.
+
+종속성 추가
++ spring-boot-starter-oauth2-client
++ spring-boot-starter-security
++ spring-boot-starter-web
+
+Security Config 설정에는 http.oauth2Login()을 사용해 구현할 수 있습니다. formLogin()처럼 필터체인에 OAuth2LoginAuthenticationFilter 새 인증 필터를 추가합니다.
+
+ClientRegistration 인스턴스
+```java
+ClientRegistration cr = 
+	ClientRegistration.withRegistrationId("github")
+		.clientId("ae4a6f5a46fe6af5vs")
+		.clientSecret("1f6sadf86a5wef364f51dcs8ae4615")
+		.scope(new String[]("read:user"))
+		.authorizationUri("https://github.com/login/oauth/authorize")
+		.tokenUri("https://github.com/login/oauth/access_token")
+		.userInfoUri("https://api.github.com/user")
+		.userNameAttributeName("id")
+		.clientName("Github")
+		.authorizationGrantType(AuthorizationGrantType.AUTHORIZATION_CODE)
+		.redirectUriTemplate("{baseUrl}/{action}/oauth2/code/{registrationId}")
+		.build();
+```
+
+이미 스프링 시큐리티에서는 withRegistrationId()를 이용한 설정을 하지 않아도 설정할 수 있도록 일반적인 공급자에 대한 인증을 다음과 같이 ClientOAuth2Provider로 지원하고 있습니다.
+```java
+ClientRegistration cr = 
+	ClientOAuth2Provider.GITHUB
+		.getBuilder("github")
+			.clientId("a4f6a5e3ws48d615a")
+			.clientSecret("a1465eafw184651waf1aw4615waw")
+			.build();
+```
+
+작성시점 왜 아직 [spring security doc](https://docs.spring.io/spring-security/reference/servlet/oauth2/login/core.html)에서 아직 spring boot 2.x로 설명하고 있는지 모르겠지만....?! 이 책을 완독하고 spring boot 3.x 기준 oauth 2 설정 샘플 코드와 링크를 업데이트해야 겠다는 생각이 들었기에 우선 책 기준으로 설명하고 넘어가겠습니다;;
+
+ClientRegistrationRepositroy 구현  
+UserDetailsService와 유사하며, spring security에서는 ClientRegistrationRepositroy의 구현인 InMemoryClientRegistrationRepository를 제공합니다. 빈으로 등록하거나 oauth2login() 메서드의 매개변수로 Customizer 객체를 이용해서 등록할 수 있습니다.
+
+전체 SSO 애플리케이션 구현을 위한 순서는 다음과 같습니다.
+1. OAuth application 등록하고, client_id, client_secret 받아오기
+2. 종속성 추가
+3. Security Configuration으로 OAuth 2를 위한 필터 적용
+4. ClientRegistration 인스턴스 구현
+5. ClientRegistrationRepositroy 구현
+6. OAuth2AuthenticationToken에서 인증 사용자의 세부 정보 얻어오기
 
 ****
 + [Spring Security in Action](https://github.com/spring-projects/spring-security/)
