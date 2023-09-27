@@ -17,6 +17,12 @@
 <br>
 
 <h3 style="border-bottom: 1px dotted darkolivegreen;">Recent Posts</h3>
+<span class="badge date" style="border-radius: 5px; padding: 4px; font-size: small; border: 1px solid lightslategrey; color: lightslategrey;">2023.09.27</span>
+<span class="badge skill" style="border-radius: 5px; padding: 4px; font-size: small; border: 1px solid darkolivegreen; color: darkolivegreen;">Spring security</span>
+<span class="details" style="margin-left: 10px;">
+  <a href="https://ilpyo-yang.github.io/study/2023/04/14/Spring_security_in_action.html#13장-oauth-2-권한-부여-서버-구현">Spring Security in Action 13장. OAuth 2: 권한 부여 서버 구현</a>
+</span>
+
 <span class="badge date" style="border-radius: 5px; padding: 4px; font-size: small; border: 1px solid lightslategrey; color: lightslategrey;">2023.09.26</span>
 <span class="badge skill" style="border-radius: 5px; padding: 4px; font-size: small; border: 1px solid darkolivegreen; color: darkolivegreen;">Spring security</span>
 <span class="details" style="margin-left: 10px;">
@@ -69,24 +75,6 @@
 <span class="badge skill" style="border-radius: 5px; padding: 4px; font-size: small; border: 1px solid darkolivegreen; color: darkolivegreen;">Algorithm</span>
 <span class="details" style="margin-left: 10px;">
   <a href="https://ilpyo-yang.github.io/job/2023/08/25/Leetcode.html">LeetCode - Top Interview 150</a>
-</span>
-
-<span class="badge date" style="border-radius: 5px; padding: 4px; font-size: small; border: 1px solid lightslategrey; color: lightslategrey;">2023.09.15</span>
-<span class="badge skill" style="border-radius: 5px; padding: 4px; font-size: small; border: 1px solid darkolivegreen; color: darkolivegreen;">Spring security</span>
-<span class="details" style="margin-left: 10px;">
-  <a href="https://ilpyo-yang.github.io/study/2023/04/14/Spring_security_in_action.html#9장-필터-구현">Spring Security in Action 9장. 필터 구현</a>
-</span>
-
-<span class="badge date" style="border-radius: 5px; padding: 4px; font-size: small; border: 1px solid lightslategrey; color: lightslategrey;">2023.09.15</span>
-<span class="badge skill" style="border-radius: 5px; padding: 4px; font-size: small; border: 1px solid darkolivegreen; color: darkolivegreen;">Spring security</span>
-<span class="details" style="margin-left: 10px;">
-  <a href="https://ilpyo-yang.github.io/study/2023/04/14/Spring_security_in_action.html#8장-권한-부여-구성-제한-적용">Spring Security in Action 8장. 권한 부여 구성: 제한 적용</a>
-</span>
-
-<span class="badge date" style="border-radius: 5px; padding: 4px; font-size: small; border: 1px solid lightslategrey; color: lightslategrey;">2023.09.15</span>
-<span class="badge skill" style="border-radius: 5px; padding: 4px; font-size: small; border: 1px solid darkolivegreen; color: darkolivegreen;">Spring security</span>
-<span class="details" style="margin-left: 10px;">
-  <a href="https://ilpyo-yang.github.io/study/2023/04/14/Spring_security_in_action.html#7장-권한-부여-구선-엑세스-제한">Spring Security in Action 7장. 권한 부여 구성: 엑세스 제한</a>
 </span>
 
 <br>
