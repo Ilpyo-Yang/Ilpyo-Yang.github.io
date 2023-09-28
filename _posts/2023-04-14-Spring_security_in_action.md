@@ -30,6 +30,8 @@ layout: post
                 <li><a href="/backend/2023/04/14/Spring_security_in_action.html#10장-csrf-보호와-cors-적용">10장. CSRF 보호와 CORS 적용</a></li>
                 <li><a href="/backend/2023/04/14/Spring_security_in_action.html#11장-실전-책임의-분리">11장. 실전: 책임의 분리</a></li>
                 <li><a href="/backend/2023/04/14/Spring_security_in_action.html#12장-oauth-2가-작동하는-방법">12장. OAuth 2가 작동하는 방법</a></li>
+                <li><a href="/backend/2023/04/14/Spring_security_in_action.html#13장-oauth-2-권한-부여-서버-구현">13장. OAuth 2: 권한 부여 서버 구현 </a></li>
+                <li><a href="/backend/2023/04/14/Spring_security_in_action.html#14장-oauth-2-리소스-서버-구현">14장. OAuth 2: 리소스 서버 구현</a></li>
             </ul>
         </td>
     </tr>
