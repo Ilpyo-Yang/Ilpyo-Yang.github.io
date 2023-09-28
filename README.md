@@ -20,31 +20,7 @@
 <span class="badge date" style="border-radius: 5px; padding: 4px; font-size: small; border: 1px solid lightslategrey; color: lightslategrey;">2023.09.28</span>
 <span class="badge skill" style="border-radius: 5px; padding: 4px; font-size: small; border: 1px solid darkolivegreen; color: darkolivegreen;">Spring security</span>
 <span class="details" style="margin-left: 10px;">
-  <a href="https://ilpyo-yang.github.io/study/2023/04/14/Spring_security_in_action.html#14장-oauth-2-리소스-서버-구현">Spring Security in Action 14장. OAuth 2: 리소스 서버 구현</a>
-</span>
-
-<span class="badge date" style="border-radius: 5px; padding: 4px; font-size: small; border: 1px solid lightslategrey; color: lightslategrey;">2023.09.27</span>
-<span class="badge skill" style="border-radius: 5px; padding: 4px; font-size: small; border: 1px solid darkolivegreen; color: darkolivegreen;">Spring security</span>
-<span class="details" style="margin-left: 10px;">
-  <a href="https://ilpyo-yang.github.io/study/2023/04/14/Spring_security_in_action.html#13장-oauth-2-권한-부여-서버-구현">Spring Security in Action 13장. OAuth 2: 권한 부여 서버 구현</a>
-</span>
-
-<span class="badge date" style="border-radius: 5px; padding: 4px; font-size: small; border: 1px solid lightslategrey; color: lightslategrey;">2023.09.26</span>
-<span class="badge skill" style="border-radius: 5px; padding: 4px; font-size: small; border: 1px solid darkolivegreen; color: darkolivegreen;">Spring security</span>
-<span class="details" style="margin-left: 10px;">
-  <a href="https://ilpyo-yang.github.io/study/2023/04/14/Spring_security_in_action.html#12장-oauth-2가-작동하는-방법">Spring Security in Action 12장. OAuth 2가 작동하는 방법</a>
-</span>
-
-<span class="badge date" style="border-radius: 5px; padding: 4px; font-size: small; border: 1px solid lightslategrey; color: lightslategrey;">2023.09.26</span>
-<span class="badge skill" style="border-radius: 5px; padding: 4px; font-size: small; border: 1px solid darkolivegreen; color: darkolivegreen;">Spring security</span>
-<span class="details" style="margin-left: 10px;">
-  <a href="https://ilpyo-yang.github.io/study/2023/04/14/Spring_security_in_action.html#11장-실전-책임의-분리">Spring Security in Action 11장. 실전: 책임의 분리</a>
-</span>
-
-<span class="badge date" style="border-radius: 5px; padding: 4px; font-size: small; border: 1px solid lightslategrey; color: lightslategrey;">2023.09.25</span>
-<span class="badge skill" style="border-radius: 5px; padding: 4px; font-size: small; border: 1px solid darkolivegreen; color: darkolivegreen;">Spring security</span>
-<span class="details" style="margin-left: 10px;">
-  <a href="https://ilpyo-yang.github.io/study/2023/04/14/Spring_security_in_action.html#10장-csrf-보호와-cors-적용">Spring Security in Action 10장. CSRF 보호와 CORS 적용</a>
+  <a href="https://ilpyo-yang.github.io/study/2023/04/14/Spring_security_in_action.html">Spring Security in Action</a>
 </span>
 
 <span class="badge date" style="border-radius: 5px; padding: 4px; font-size: small; border: 1px solid lightslategrey; color: lightslategrey;">2023.09.23</span>
