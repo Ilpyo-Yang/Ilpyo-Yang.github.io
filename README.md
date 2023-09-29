@@ -17,6 +17,12 @@
 <br>
 
 <h3 style="border-bottom: 1px dotted darkolivegreen;">Recent Posts</h3>
+<span class="badge date" style="border-radius: 5px; padding: 4px; font-size: small; border: 1px solid lightslategrey; color: lightslategrey;">2023.09.29</span>
+<span class="badge skill" style="border-radius: 5px; padding: 4px; font-size: small; border: 1px solid darkolivegreen; color: darkolivegreen;">Spring</span>
+<span class="details" style="margin-left: 10px;">
+  <a href="https://ilpyo-yang.github.io/backend/2023/04/14/Spring.html#-password-사용자-정의-어노테이션-생성과-yml-속성-mapping-error-해결하기">@Password 사용자 정의 어노테이션 생성과 yml 속성 mapping error 해결하기</a>
+</span>
+
 <span class="badge date" style="border-radius: 5px; padding: 4px; font-size: small; border: 1px solid lightslategrey; color: lightslategrey;">2023.09.28</span>
 <span class="badge skill" style="border-radius: 5px; padding: 4px; font-size: small; border: 1px solid darkolivegreen; color: darkolivegreen;">Spring security</span>
 <span class="details" style="margin-left: 10px;">
