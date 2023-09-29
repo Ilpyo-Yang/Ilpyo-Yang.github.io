@@ -1,5 +1,5 @@
 ---
-title: 📖 Spring Security in Action (진행중)
+title: 📖 Spring Security in Action
 author: Rosie Yang
 date: 2023-04-14
 category: study
