@@ -17,6 +17,12 @@
 <br>
 
 <h3 style="border-bottom: 1px dotted darkolivegreen;">Recent Posts</h3>
+<span class="badge date" style="border-radius: 5px; padding: 4px; font-size: small; border: 1px solid lightslategrey; color: lightslategrey;">2023.10.03</span>
+<span class="badge skill" style="border-radius: 5px; padding: 4px; font-size: small; border: 1px solid darkolivegreen; color: darkolivegreen;">Spring</span>
+<span class="details" style="margin-left: 10px;">
+  <a href="https://ilpyo-yang.github.io/backend/2023/04/14/Spring.html#-내-github-action-unit-test는-왜-안-통과했을까">내 Github action unit-test는 왜 안 통과했을까?</a>
+</span>
+
 <span class="badge date" style="border-radius: 5px; padding: 4px; font-size: small; border: 1px solid lightslategrey; color: lightslategrey;">2023.09.29</span>
 <span class="badge skill" style="border-radius: 5px; padding: 4px; font-size: small; border: 1px solid darkolivegreen; color: darkolivegreen;">Spring</span>
 <span class="details" style="margin-left: 10px;">
