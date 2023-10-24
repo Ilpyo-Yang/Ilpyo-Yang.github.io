@@ -6,7 +6,7 @@ category: manage
 layout: post
 ---
 
-## Google I/O Extended Incheon 2023를 마치며
+## Google I/O Extended Incheon 2023을 마치며
 > 추가로 행사에서 제가 발표한 자료를 정리해서 다시 포스팅해놨습니다.  
 > [Deadlock과 Redis 대기열 발표자료 바로가기](/backend/2023/05/04/Database.html#deadlock과-redis-대기열)
 
