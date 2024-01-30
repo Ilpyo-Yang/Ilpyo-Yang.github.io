@@ -1,5 +1,5 @@
 ---
-title: 📖 Effective Java (진행중)
+title: 📖 Effective Java (중단)
 author: Rosie Yang
 date: 2023-04-30
 category: study
