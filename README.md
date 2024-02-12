@@ -17,51 +17,15 @@
 <br>
 
 <span style="float:right; font-weight:bold">
-<a href="https://ilpyo-yang.github.io/posts/2024/02/05/postlist.html">Post Lists</a>
+<a href="https://ilpyo-yang.github.io/posts/2024/02/05/postlist.html">All Posts</a>
 </span>
 
-<h3 style="border-bottom: 1px dotted darkolivegreen;">Best Posts</h3>
+<h3 style="border-bottom: 1px dotted darkolivegreen;">Recent Posts</h3>
 
-<span class="badge date" style="border-radius: 5px; padding: 4px; font-size: small; border: 1px solid lightslategrey; color: lightslategrey;">2023.11.04</span>
-<span class="badge skill" style="border-radius: 5px; padding: 4px; font-size: small; border: 1px solid darkolivegreen; color: darkolivegreen;">Spring</span>
-<span class="details" style="margin-left: 10px;">
-<a href="https://ilpyo-yang.github.io/backend/2023/04/14/Spring.html#-spring-batch-오픈소스에-기여하기">Spring-batch 오픈소스에 기여하기</a>
-</span>
-
-<span class="badge date" style="border-radius: 5px; padding: 4px; font-size: small; border: 1px solid lightslategrey; color: lightslategrey;">2023.10.03</span>
-<span class="badge skill" style="border-radius: 5px; padding: 4px; font-size: small; border: 1px solid darkolivegreen; color: darkolivegreen;">Spring</span>
-<span class="details" style="margin-left: 10px;">
-  <a href="https://ilpyo-yang.github.io/backend/2023/04/14/Spring.html#-내-github-action-unit-test는-왜-안-통과했을까">내 Github action unit-test는 왜 안 통과했을까?</a>
-</span>
-
-<span class="badge date" style="border-radius: 5px; padding: 4px; font-size: small; border: 1px solid lightslategrey; color: lightslategrey;">2023.09.29</span>
-<span class="badge skill" style="border-radius: 5px; padding: 4px; font-size: small; border: 1px solid darkolivegreen; color: darkolivegreen;">Spring</span>
-<span class="details" style="margin-left: 10px;">
-  <a href="https://ilpyo-yang.github.io/backend/2023/04/14/Spring.html#-password-사용자-정의-어노테이션-생성과-yml-속성-mapping-error-해결하기">@Password 사용자 정의 어노테이션 생성과 yml 속성 mapping error 해결하기</a>
-</span>
-
-<span class="badge date" style="border-radius: 5px; padding: 4px; font-size: small; border: 1px solid lightslategrey; color: lightslategrey;">2023.09.23</span>
+<span class="badge date" style="border-radius: 5px; padding: 4px; font-size: small; border: 1px solid lightslategrey; color: lightslategrey;">2024.02.13</span>
 <span class="badge skill" style="border-radius: 5px; padding: 4px; font-size: small; border: 1px solid darkolivegreen; color: darkolivegreen;">Git</span>
 <span class="details" style="margin-left: 10px;">
-  <a href="https://ilpyo-yang.github.io/tool/2023/05/08/Git_github.html#잘못된-github-실수-만회하기">잘못된 Github 실수 만회하기</a>
-</span>
-
-<span class="badge date" style="border-radius: 5px; padding: 4px; font-size: small; border: 1px solid lightslategrey; color: lightslategrey;">2023.09.19</span>
-<span class="badge skill" style="border-radius: 5px; padding: 4px; font-size: small; border: 1px solid darkolivegreen; color: darkolivegreen;">Tech</span>
-<span class="details" style="margin-left: 10px;">
-  <a href="https://ilpyo-yang.github.io/study/2023/09/19/Tech.html#구글-딥마인드-synthid와-디지털-워터마크의-원리">구글 딥마인드 SynthID와 디지털 워터마크의 원리</a>
-</span>
-
-<span class="badge date" style="border-radius: 5px; padding: 4px; font-size: small; border: 1px solid lightslategrey; color: lightslategrey;">2023.09.18</span>
-<span class="badge skill" style="border-radius: 5px; padding: 4px; font-size: small; border: 1px solid darkolivegreen; color: darkolivegreen;">Database</span>
-<span class="details" style="margin-left: 10px;">
-  <a href="https://ilpyo-yang.github.io/backend/2023/05/04/Database.html#deadlock과-redis-대기열">DeadLock과 Redis 대기열</a>
-</span>
-
-<span class="badge date" style="border-radius: 5px; padding: 4px; font-size: small; border: 1px solid lightslategrey; color: lightslategrey;">2023.09.15</span>
-<span class="badge skill" style="border-radius: 5px; padding: 4px; font-size: small; border: 1px solid darkolivegreen; color: darkolivegreen;">Algorithm</span>
-<span class="details" style="margin-left: 10px;">
-  <a href="https://ilpyo-yang.github.io/job/2023/08/25/Leetcode.html">LeetCode - Top Interview 150</a>
+<a href="https://ilpyo-yang.github.io/tool/2023/05/08/Git_github.html#git-command-정리">Git Command 정리</a>
 </span>
 
 <br>
