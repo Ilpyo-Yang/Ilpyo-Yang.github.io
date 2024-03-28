@@ -21,6 +21,10 @@
 </span>
 
 <h3 style="border-bottom: 1px dotted darkolivegreen;">Recent Posts</h3>
+<span class="badge skill" style="border-radius: 5px; padding: 4px; font-size: small; border: 1px solid darkolivegreen; color: darkolivegreen;">Java</span>
+<span class="details" style="margin-left: 10px;">
+  <a href="https://ilpyo-yang.github.io/study/2024/01/30/Java_multithread.html">Java 멀티스레딩, 병행성 및 성능 최적화(진행중)</a>
+</span>
 
 <span class="badge date" style="border-radius: 5px; padding: 4px; font-size: small; border: 1px solid lightslategrey; color: lightslategrey;">2024.03.17</span>
 <span class="badge skill" style="border-radius: 5px; padding: 4px; font-size: small; border: 1px solid darkolivegreen; color: darkolivegreen;">Spring</span>
@@ -43,6 +47,11 @@
 <br>
 
 <h5 style="border-bottom: 1px dotted lightslategrey;">📖 Study Posts</h5>
+<span class="badge skill" style="border-radius: 5px; padding: 4px; font-size: small; border: 1px solid darkolivegreen; color: darkolivegreen;">Java</span>
+<span class="details" style="margin-left: 10px;">
+  <a href="https://ilpyo-yang.github.io/study/2024/01/30/Java_multithread.html">Java 멀티스레딩, 병행성 및 성능 최적화(진행중)</a>
+</span>
+
 <span class="badge skill" style="border-radius: 5px; padding: 4px; font-size: small; border: 1px solid darkolivegreen; color: darkolivegreen;">Algorithm</span>
 <span class="details" style="margin-left: 10px;">
   <a href="https://ilpyo-yang.github.io/study/2023/08/25/Leetcode.html">LeetCode Top Interview 150</a>
