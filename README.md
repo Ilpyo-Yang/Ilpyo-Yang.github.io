@@ -20,7 +20,13 @@
 <a href="{{site.baseurl}}/posts/2024/02/05/postlist.html">All Posts</a>
 </span>
 
-<h3 style="border-bottom: 1px dotted darkolivegreen;">Recent Posts</h3>
+<h3 style="border-bottom: 1px dotted darkolivegreen;">Recent Posts</h3>  
+<span class="badge date" style="border-radius: 5px; padding: 4px; font-size: small; border: 1px solid lightslategrey; color: lightslategrey;">2024.04.28</span>
+<span class="badge skill" style="border-radius: 5px; padding: 4px; font-size: small; border: 1px solid darkolivegreen; color: darkolivegreen;">CS</span>
+<span class="details" style="margin-left: 10px;">
+<a href="{{site.baseurl}}/backend/2023/04/13/CS.html#언어별-동시성-프로그래밍">언어별 동시성 프로그래밍</a>
+</span>  
+
 <span class="badge date" style="border-radius: 5px; padding: 4px; font-size: small; border: 1px solid lightslategrey; color: lightslategrey;">2024.03.28</span>
 <span class="badge skill" style="border-radius: 5px; padding: 4px; font-size: small; border: 1px solid darkolivegreen; color: darkolivegreen;">Java</span>
 <span class="details" style="margin-left: 10px;">
@@ -82,6 +88,11 @@
 <br>
 
 <h5 style="border-bottom: 1px dotted lightslategrey;">🚴 Trouble Shooting Posts</h5>
+<span class="badge skill" style="border-radius: 5px; padding: 4px; font-size: small; border: 1px solid darkolivegreen; color: darkolivegreen;">CS</span>
+<span class="details" style="margin-left: 10px;">
+<a href="{{site.baseurl}}/backend/2023/04/13/CS.html#언어별-동시성-프로그래밍">언어별 동시성 프로그래밍</a>
+</span>  
+
 <span class="badge skill" style="border-radius: 5px; padding: 4px; font-size: small; border: 1px solid darkolivegreen; color: darkolivegreen;">Database</span>
 <span class="details" style="margin-left: 10px;">
   <a href="{{site.baseurl}}/backend/2023/05/04/Database.html#deadlock과-redis-대기열">DeadLock과 Redis 대기열</a>
