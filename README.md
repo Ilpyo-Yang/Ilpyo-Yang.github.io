@@ -21,11 +21,11 @@
 </span>
 
 <h3 style="border-bottom: 1px dotted darkolivegreen;">Recent Posts</h3>  
-<span class="badge date" style="border-radius: 5px; padding: 4px; font-size: small; border: 1px solid lightslategrey; color: lightslategrey;">2024.05.07</span>
+<span class="badge date" style="border-radius: 5px; padding: 4px; font-size: small; border: 1px solid lightslategrey; color: lightslategrey;">2024.05.06</span>
 <span class="badge skill" style="border-radius: 5px; padding: 4px; font-size: small; border: 1px solid darkolivegreen; color: darkolivegreen;">Database</span>
 <span class="details" style="margin-left: 10px;">
-<a href="{{site.baseurl}}/study/2024/05/07/DDIA.html">📖 DDIA</a>
-</span>  
+  <a href="{{site.baseurl}}/study/2024/05/06/Designing_data_intensive_applications.html">데이터 중심 애플리케이션 설계</a>
+</span> 
 
 <span class="badge date" style="border-radius: 5px; padding: 4px; font-size: small; border: 1px solid lightslategrey; color: lightslategrey;">2024.04.28</span>
 <span class="badge skill" style="border-radius: 5px; padding: 4px; font-size: small; border: 1px solid darkolivegreen; color: darkolivegreen;">CS</span>
@@ -62,7 +62,8 @@
 <h5 style="border-bottom: 1px dotted lightslategrey;">📖 Study Posts</h5>
 <span class="badge skill" style="border-radius: 5px; padding: 4px; font-size: small; border: 1px solid darkolivegreen; color: darkolivegreen;">Database</span>
 <span class="details" style="margin-left: 10px;">
-<a href="{{site.baseurl}}/study/2024/05/07/DDIA.html">📖 DDIA</a>
+  <a href="{{site.baseurl}}/study/2024/05/06/Designing_data_intensive_applications.html">데이터 중심 애플리케이션 설계</a>
+</span>
 
 <span class="badge skill" style="border-radius: 5px; padding: 4px; font-size: small; border: 1px solid darkolivegreen; color: darkolivegreen;">Java</span>
 <span class="details" style="margin-left: 10px;">

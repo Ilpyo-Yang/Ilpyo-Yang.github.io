@@ -1,7 +1,7 @@
 ---
-title: 📖 DDIA
+title: 📖 데이터 중심 애플리케이션 설계
 author: Rosie Yang
-date: 2024-05-07
+date: 2024-05-06
 category: study
 layout: post
 ---
@@ -17,9 +17,9 @@ layout: post
         </td>
         <td>
             <ul>
-                <li><a href="/study/2024/05/07/DDIA.html#intro">Intro</a></li>
+                <li><a href="/study/2024/05/07/Designing_data_intensive_applications.html#intro">Intro</a></li>
                 <li>Part1. 데이터 시스템의 기초</li>
-                <li><a href="/study/2024/05/07/DDIA.html#01-신뢰할-수-있고-확장-가능하며-유지보수하기-쉬운-애플리케이션">1장. 신뢰할 수 있고 확장 가능하며 유지보수하기 쉬운 애플리케이션</a></li>
+                <li><a href="/study/2024/05/07/Designing_data_intensive_applications.html#01-신뢰할-수-있고-확장-가능하며-유지보수하기-쉬운-애플리케이션">1장. 신뢰할 수 있고 확장 가능하며 유지보수하기 쉬운 애플리케이션</a></li>
             </ul>
         </td>
     </tr>
