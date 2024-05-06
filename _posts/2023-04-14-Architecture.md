@@ -9,7 +9,10 @@ layout: post
 > "아키텍처는 세부사항에 대한 결정을 내리는 것이 아니라, 결정을 내리는 방법에 대한 것이다." - Ralph Johnson
 {: .block-tip }
 
-<br>
++ [백엔드 아키텍처 설계시 고려사항]({{site.baseurl}}/cs/2023/04/14/Architecture.html#백엔드-아키텍처-설계시-고려사항)
++ [아키텍처 기본지식]({{site.baseurl}}/cs/2023/04/14/Architecture.html#아키텍처-기본지식)
++ [폰 노이만 아키텍처]({{site.baseurl}}/cs/2023/04/14/Architecture.html#폰-노이만-아키텍처)
++ [Layered Architecture, 계층형 아키텍처]({{site.baseurl}}/cs/2023/04/14/Architecture.html#layered-architecture-계층형-아키텍처)
 
 ## 백엔드 아키텍처 설계시 고려사항
 우리가 백엔드 아키텍처를 설계한다고 했을 때 고려해야 할 사항들과 각 상황별로 어떻게 대처하는 것이 좋을까에 대해 대해서 정리했습니다.  

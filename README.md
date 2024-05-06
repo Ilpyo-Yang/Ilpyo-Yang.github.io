@@ -21,6 +21,12 @@
 </span>
 
 <h3 style="border-bottom: 1px dotted darkolivegreen;">Recent Posts</h3>  
+<span class="badge date" style="border-radius: 5px; padding: 4px; font-size: small; border: 1px solid lightslategrey; color: lightslategrey;">2024.05.07</span>
+<span class="badge skill" style="border-radius: 5px; padding: 4px; font-size: small; border: 1px solid darkolivegreen; color: darkolivegreen;">Database</span>
+<span class="details" style="margin-left: 10px;">
+<a href="{{site.baseurl}}/study/2024/05/07/DDIA.html">📖 DDIA</a>
+</span>  
+
 <span class="badge date" style="border-radius: 5px; padding: 4px; font-size: small; border: 1px solid lightslategrey; color: lightslategrey;">2024.04.28</span>
 <span class="badge skill" style="border-radius: 5px; padding: 4px; font-size: small; border: 1px solid darkolivegreen; color: darkolivegreen;">CS</span>
 <span class="details" style="margin-left: 10px;">
@@ -54,6 +60,10 @@
 <br>
 
 <h5 style="border-bottom: 1px dotted lightslategrey;">📖 Study Posts</h5>
+<span class="badge skill" style="border-radius: 5px; padding: 4px; font-size: small; border: 1px solid darkolivegreen; color: darkolivegreen;">Database</span>
+<span class="details" style="margin-left: 10px;">
+<a href="{{site.baseurl}}/study/2024/05/07/DDIA.html">📖 DDIA</a>
+
 <span class="badge skill" style="border-radius: 5px; padding: 4px; font-size: small; border: 1px solid darkolivegreen; color: darkolivegreen;">Java</span>
 <span class="details" style="margin-left: 10px;">
   <a href="{{site.baseurl}}/study/2024/01/30/Java_multithread.html">Java 멀티스레딩, 병행성 및 성능 최적화(진행중)</a>
