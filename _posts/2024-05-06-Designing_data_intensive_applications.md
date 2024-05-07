@@ -17,9 +17,9 @@ layout: post
         </td>
         <td>
             <ul>
-                <li><a href="/study/2024/05/07/Designing_data_intensive_applications.html#intro">Intro</a></li>
+                <li><a href="/study/2024/05/06/Designing_data_intensive_applications.html#intro">Intro</a></li>
                 <li>Part1. 데이터 시스템의 기초</li>
-                <li><a href="/study/2024/05/07/Designing_data_intensive_applications.html#01-신뢰할-수-있고-확장-가능하며-유지보수하기-쉬운-애플리케이션">1장. 신뢰할 수 있고 확장 가능하며 유지보수하기 쉬운 애플리케이션</a></li>
+                <li><a href="/study/2024/05/06/Designing_data_intensive_applications.html#01-신뢰할-수-있고-확장-가능하며-유지보수하기-쉬운-애플리케이션">1장. 신뢰할 수 있고 확장 가능하며 유지보수하기 쉬운 애플리케이션</a></li>
             </ul>
         </td>
     </tr>
@@ -57,7 +57,13 @@ layout: post
 ### 신뢰성(Reliability)
 하드웨어나 소프트웨어의 결함, 심지어 인적 오류와 같은 역경에도 시스템은 지속적으로 올바르게 동작해야 합니다. 즉, 결함이 있어도 정상적으로 동작해야 한다는 것인데 여기서 결함은 장애와 동일하지 않습니다. 
 장애는 사용자에게 필요한 서비스를 제공하지 못하고 시스템 전체가 멈추게 되는 경우를 말합니다. 결함으로 인한 장애가 발생하지 않도록 내결함성 구조를 설계하는 것이 좋은데 넷플릭스 카오스 몽키가 이런 접근 방식의 한 예입니다.
-+ 넷플릭스 카오스 몽키(Chaos Monkey)
++ [넷플릭스 카오스 몽키(Chaos Monkey)](https://netflix.github.io/chaosmonkey/How-to-deploy/)
+  + 카오스 멍키는 어떤 장애가 발생할지 모르는 상황을 위해 서비스를 공급하는 인스턴스를 무작위로 셧다운시켜버리는 것으로 지금은 운영 이슈 테스트를 위한 개발 원칙으로 자리잡았습니다. 넷플릭스는 자사의 내결함성 전략을 '실패를 피하는 가장 좋은 방법은 지속적으로 실패하는 것'으로 삼고 카오스 엔지니어링을 수행한다고 합니다.
+  + [스프링부트 카오스 멍키 라이브러리](https://codecentric.github.io/chaos-monkey-spring-boot/latest/)
+
+<p style="text-align: center; margin: 50px 0">
+  <img src="/assets/gitbook/post_images/database/chaos_monkey.png">
+</p> 
 
 **하드웨어 오류**  
 하드디스크의 평균 장애 시간은 약 10~50년으로 보고됐으며, 10,000개의 디스크로 구성된 저장 클러스터는 평균적으로 하루에 한 개의 디스크가 죽는다고 예상해야 합니다.
