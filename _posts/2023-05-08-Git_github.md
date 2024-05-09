@@ -6,6 +6,10 @@ category: tool
 layout: post
 ---
 
++ [Git Command 정리]({{site.baseurl}}/tool/2023/05/08/Git_github.html#jekyll-github-블로그-로컬에서-관리하기)
++ [잘못된 Github 실수 만회하기]({{site.baseurl}}/tool/2023/05/08/Git_github.html#jekyll-github-블로그-로컬에서-관리하기)
++ [Jekyll GitHub 블로그 로컬에서 관리하기]({{site.baseurl}}/tool/2023/05/08/Git_github.html#jekyll-github-블로그-로컬에서-관리하기)
+
 ## Git Command 정리  
 ##### 기본 명령어
 ```git clone```, ```git commit``` 이런거 말고 자주 쓸지도 모르는 명령어들을 정리해봤습니다.

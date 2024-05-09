@@ -17,7 +17,7 @@
 <br>
 
 <span style="float:right; font-weight:bold">
-<a href="{{site.baseurl}}/posts/2024/02/05/postlist.html">All Posts</a>
+<a href="{{site.baseurl}}/posts/2024/02/05/Recent_posts.html">All_posts</a>
 </span>
 
 <h3 style="border-bottom: 1px dotted darkolivegreen;">Recent Posts</h3>  
