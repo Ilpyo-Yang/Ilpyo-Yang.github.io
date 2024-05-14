@@ -20,6 +20,7 @@ layout: post
                 <li><a href="/study/2024/05/06/Designing_data_intensive_applications.html#intro">Intro</a></li>
                 <li>Part1. 데이터 시스템의 기초</li>
                 <li><a href="/study/2024/05/06/Designing_data_intensive_applications.html#01-신뢰할-수-있고-확장-가능하며-유지보수하기-쉬운-애플리케이션">1장. 신뢰할 수 있고 확장 가능하며 유지보수하기 쉬운 애플리케이션</a></li>
+		<li><a href="/study/2024/05/06/Designing_data_intensive_applications.html#02-데이터-모델과-질의-언어">2장. 데이터 모델과 질의 언어</a></li>
             </ul>
         </td>
     </tr>
