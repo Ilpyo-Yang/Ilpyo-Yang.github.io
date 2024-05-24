@@ -500,7 +500,7 @@ ALTER TABLE 테이블명 DROP 컬럼명 데이터타입 [제약조건]; 🔴
 **웹 서비스 방식**  
 <U>SOAP, UDDI, WSDL</U>
 
-<img src="/assets/gitbook/post_images/cs/027741.png" />
+<img src="https://private-user-images.githubusercontent.com/67682215/333507520-f2787746-cfc6-4f15-ad9a-5e08c945a1d3.png?jwt=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJnaXRodWIuY29tIiwiYXVkIjoicmF3LmdpdGh1YnVzZXJjb250ZW50LmNvbSIsImtleSI6ImtleTUiLCJleHAiOjE3MTY1Mzg2ODMsIm5iZiI6MTcxNjUzODM4MywicGF0aCI6Ii82NzY4MjIxNS8zMzM1MDc1MjAtZjI3ODc3NDYtY2ZjNi00ZjE1LWFkOWEtNWUwOGM5NDVhMWQzLnBuZz9YLUFtei1BbGdvcml0aG09QVdTNC1ITUFDLVNIQTI1NiZYLUFtei1DcmVkZW50aWFsPUFLSUFWQ09EWUxTQTUzUFFLNFpBJTJGMjAyNDA1MjQlMkZ1cy1lYXN0LTElMkZzMyUyRmF3czRfcmVxdWVzdCZYLUFtei1EYXRlPTIwMjQwNTI0VDA4MTMwM1omWC1BbXotRXhwaXJlcz0zMDAmWC1BbXotU2lnbmF0dXJlPTY2YWJlOThmYzNmYWQ2OTljMzJiZGJjZWNhNjg3YmZmMzQ0MTExZDRhMDZhZGM5YmIxZTJjOGQxMjVhZWNmNmImWC1BbXotU2lnbmVkSGVhZGVycz1ob3N0JmFjdG9yX2lkPTAma2V5X2lkPTAmcmVwb19pZD0wIn0.gUOLPB2hy5ijkaQpGqzTJ5lu2E5AiLebUW_2qHqAJ_4" />
 
 + SOAP(Simple Object Access Protocol) 🔴
   + HTTP, HTTPS, SMTP 등을 사용하여 XML 기반의 메시지를 네트워크 상태에서 교환하는 프로토콜

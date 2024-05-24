@@ -10,13 +10,13 @@ layout: post
 <span class="badge date" style="border-radius: 5px; padding: 4px; font-size: small; border: 1px solid lightslategrey; color: lightslategrey;">2024.05.06</span>
 <span class="badge skill" style="border-radius: 5px; padding: 4px; font-size: small; border: 1px solid darkolivegreen; color: darkolivegreen;">Database</span>
 <span class="details" style="margin-left: 10px;">
-    <a href="{{site.baseurl}}/study/2024/05/06/Designing_data_intensive_applications.html">데이터 중심 애플리케이션 설계</a>
+    <a href="{{site.baseurl}}/study/2024/05/06/Designing_data_intensive_applications.html">📖 데이터 중심 애플리케이션 설계</a>
 </span>
 
 <span class="badge date" style="border-radius: 5px; padding: 4px; font-size: small; border: 1px solid lightslategrey; color: lightslategrey;">2024.04.28</span>
 <span class="badge skill" style="border-radius: 5px; padding: 4px; font-size: small; border: 1px solid darkolivegreen; color: darkolivegreen;">CS</span>
 <span class="details" style="margin-left: 10px;">
-<a href="{{site.baseurl}}/cs/2023/04/13/CS.html#-언어별-동시성-프로그래밍">언어별 동시성 프로그래밍</a>
+<a href="{{site.baseurl}}/cs/2023/04/13/CS.html#-언어별-동시성-프로그래밍">🚴🏽 언어별 동시성 프로그래밍</a>
 </span>  
 
 <span class="badge date" style="border-radius: 5px; padding: 4px; font-size: small; border: 1px solid lightslategrey; color: lightslategrey;">2024.03.28</span>
@@ -28,13 +28,13 @@ layout: post
 <span class="badge date" style="border-radius: 5px; padding: 4px; font-size: small; border: 1px solid lightslategrey; color: lightslategrey;">2024.03.17</span>
 <span class="badge skill" style="border-radius: 5px; padding: 4px; font-size: small; border: 1px solid darkolivegreen; color: darkolivegreen;">Spring</span>
 <span class="details" style="margin-left: 10px;">
-<a href="{{site.baseurl}}/backend/2023/04/14/Spring.html#-spring-security-오픈소스에-기여하기-진행중">Spring Security 오픈소스에 기여하기</a>
+<a href="{{site.baseurl}}/backend/2023/04/14/Spring.html#-spring-security-오픈소스에-기여하기-진행중">🚴🏽 Spring Security 오픈소스에 기여하기</a>
 </span>
 
 <span class="badge date" style="border-radius: 5px; padding: 4px; font-size: small; border: 1px solid lightslategrey; color: lightslategrey;">2024.03.17</span>
 <span class="badge skill" style="border-radius: 5px; padding: 4px; font-size: small; border: 1px solid darkolivegreen; color: darkolivegreen;">Spring</span>
 <span class="details" style="margin-left: 10px;">
-<a href="{{site.baseurl}}/backend/2023/04/14/Spring.html#-spring-batch-오픈소스에-기여하기">Spring Batch 오픈소스에 기여하기</a>
+<a href="{{site.baseurl}}/backend/2023/04/14/Spring.html#-spring-batch-오픈소스에-기여하기">🚴🏽 Spring Batch 오픈소스에 기여하기</a>
 </span>
 
 <span class="badge date" style="border-radius: 5px; padding: 4px; font-size: small; border: 1px solid lightslategrey; color: lightslategrey;">2024.02.13</span>
@@ -57,7 +57,7 @@ layout: post
 <span class="badge date" style="border-radius: 5px; padding: 4px; font-size: small; border: 1px solid lightslategrey; color: lightslategrey;">2023.11.04</span>
 <span class="badge skill" style="border-radius: 5px; padding: 4px; font-size: small; border: 1px solid darkolivegreen; color: darkolivegreen;">Spring</span>
 <span class="details" style="margin-left: 10px;">
-<a href="{{site.baseurl}}/backend/2023/04/14/Spring.html#-spring-batch-오픈소스에-기여하기">Spring-batch 오픈소스에 기여하기</a>
+<a href="{{site.baseurl}}/backend/2023/04/14/Spring.html#-spring-batch-오픈소스에-기여하기">🚴🏽 Spring-batch 오픈소스에 기여하기</a>
 </span>
 
 <span class="badge date" style="border-radius: 5px; padding: 4px; font-size: small; border: 1px solid lightslategrey; color: lightslategrey;">2023.10.03</span>
@@ -75,7 +75,7 @@ layout: post
 <span class="badge date" style="border-radius: 5px; padding: 4px; font-size: small; border: 1px solid lightslategrey; color: lightslategrey;">2023.09.28</span>
 <span class="badge skill" style="border-radius: 5px; padding: 4px; font-size: small; border: 1px solid darkolivegreen; color: darkolivegreen;">Spring security</span>
 <span class="details" style="margin-left: 10px;">
-<a href="{{site.baseurl}}/study/2023/04/14/Spring_security_in_action.html">Spring Security in Action</a>
+<a href="{{site.baseurl}}/study/2023/04/14/Spring_security_in_action.html">📖 Spring Security in Action</a>
 </span>
 
 <span class="badge date" style="border-radius: 5px; padding: 4px; font-size: small; border: 1px solid lightslategrey; color: lightslategrey;">2023.09.23</span>
@@ -99,7 +99,7 @@ layout: post
 <span class="badge date" style="border-radius: 5px; padding: 4px; font-size: small; border: 1px solid lightslategrey; color: lightslategrey;">2023.09.18</span>
 <span class="badge skill" style="border-radius: 5px; padding: 4px; font-size: small; border: 1px solid darkolivegreen; color: darkolivegreen;">Database</span>
 <span class="details" style="margin-left: 10px;">
-<a href="{{site.baseurl}}/backend/2023/05/04/Database.html#deadlock과-redis-대기열">DeadLock과 Redis 대기열</a>
+<a href="{{site.baseurl}}/backend/2023/05/04/Database.html#deadlock과-redis-대기열">🚴🏽 DeadLock과 Redis 대기열</a>
 </span>
 
 <span class="badge date" style="border-radius: 5px; padding: 4px; font-size: small; border: 1px solid lightslategrey; color: lightslategrey;">2023.09.16</span>
@@ -111,7 +111,7 @@ layout: post
 <span class="badge date" style="border-radius: 5px; padding: 4px; font-size: small; border: 1px solid lightslategrey; color: lightslategrey;">2023.09.15</span>
 <span class="badge skill" style="border-radius: 5px; padding: 4px; font-size: small; border: 1px solid darkolivegreen; color: darkolivegreen;">Algorithm</span>
 <span class="details" style="margin-left: 10px;">
-<a href="{{site.baseurl}}/job/2023/08/25/Leetcode.html">LeetCode - Top Interview 150</a>
+<a href="{{site.baseurl}}/job/2023/08/25/Leetcode.html">📖 LeetCode - Top Interview 150</a>
 </span>
 
 <div style="padding:3px; margin:200px 0;"></div>   
