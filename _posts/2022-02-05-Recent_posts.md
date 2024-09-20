@@ -2,7 +2,7 @@
 title: Recent Posts
 author: Rosie Yang
 date: 2022-02-05
-category: posts
+category: test
 layout: post
 ---
 

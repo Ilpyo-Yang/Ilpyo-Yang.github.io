@@ -16,50 +16,7 @@
 
 <br>
 
-[//]: # (<span style="float:right; font-weight:bold">)
-[//]: # (  <a href="{{site.baseurl}}/posts/2024/02/05/Recent_posts.html">All_posts</a>)
-[//]: # (</span>)
-
-<h3 style="border-bottom: 1px dotted darkolivegreen;">Recent Posts</h3>  
-<span class="badge date" style="border-radius: 5px; padding: 4px; font-size: small; border: 1px solid lightslategrey; color: lightslategrey;">2024.05.06</span>
-<span class="badge skill" style="border-radius: 5px; padding: 4px; font-size: small; border: 1px solid darkolivegreen; color: darkolivegreen;">Database</span>
-<span class="details" style="margin-left: 10px;">
-  <a href="{{site.baseurl}}/study/2024/05/06/DDIA.html">데이터 중심 애플리케이션 설계</a>
-</span> 
-
-<span class="badge date" style="border-radius: 5px; padding: 4px; font-size: small; border: 1px solid lightslategrey; color: lightslategrey;">2024.04.28</span>
-<span class="badge skill" style="border-radius: 5px; padding: 4px; font-size: small; border: 1px solid darkolivegreen; color: darkolivegreen;">CS</span>
-<span class="details" style="margin-left: 10px;">
-<a href="{{site.baseurl}}/cs/2023/04/13/CS.html#-언어별-동시성-프로그래밍">언어별 동시성 프로그래밍</a>
-</span>  
-
-<span class="badge date" style="border-radius: 5px; padding: 4px; font-size: small; border: 1px solid lightslategrey; color: lightslategrey;">2024.03.28</span>
-<span class="badge skill" style="border-radius: 5px; padding: 4px; font-size: small; border: 1px solid darkolivegreen; color: darkolivegreen;">Java</span>
-<span class="details" style="margin-left: 10px;">
-  <a href="{{site.baseurl}}/study/2024/01/30/Java_multithread.html">Java 멀티스레딩, 병행성 및 성능 최적화(진행중)</a>
-</span>
-
-<span class="badge date" style="border-radius: 5px; padding: 4px; font-size: small; border: 1px solid lightslategrey; color: lightslategrey;">2024.03.17</span>
-<span class="badge skill" style="border-radius: 5px; padding: 4px; font-size: small; border: 1px solid darkolivegreen; color: darkolivegreen;">Spring</span>
-<span class="details" style="margin-left: 10px;">
-<a href="{{site.baseurl}}/backend/2023/04/14/Spring.html#-spring-security-오픈소스에-기여하기-진행중">Spring Security 오픈소스에 기여하기</a>
-</span>
-
-<span class="badge date" style="border-radius: 5px; padding: 4px; font-size: small; border: 1px solid lightslategrey; color: lightslategrey;">2024.03.17</span>
-<span class="badge skill" style="border-radius: 5px; padding: 4px; font-size: small; border: 1px solid darkolivegreen; color: darkolivegreen;">Spring</span>
-<span class="details" style="margin-left: 10px;">
-<a href="{{site.baseurl}}/backend/2023/04/14/Spring.html#-spring-batch-오픈소스에-기여하기">Spring Batch 오픈소스에 기여하기</a>
-</span>
-
-<span class="badge date" style="border-radius: 5px; padding: 4px; font-size: small; border: 1px solid lightslategrey; color: lightslategrey;">2024.02.13</span>
-<span class="badge skill" style="border-radius: 5px; padding: 4px; font-size: small; border: 1px solid darkolivegreen; color: darkolivegreen;">Git</span>
-<span class="details" style="margin-left: 10px;">
-<a href="{{site.baseurl}}/tool/2023/05/08/Git_github.html#git-command-정리">Git Command 정리</a>
-</span>
-
-<br>
-
-<h5 style="border-bottom: 1px dotted lightslategrey;">📖 Study Posts</h5>
+<h4 style="border-bottom: 1px dotted lightslategrey;">📖 Study Posts</h4>
 <span class="badge skill" style="border-radius: 5px; padding: 4px; font-size: small; border: 1px solid darkolivegreen; color: darkolivegreen;">Database</span>
 <span class="details" style="margin-left: 10px;">
   <a href="{{site.baseurl}}/study/2024/05/06/Designing_data_intensive_applications.html">데이터 중심 애플리케이션 설계</a>
@@ -98,7 +55,7 @@
 
 <br>
 
-<h5 style="border-bottom: 1px dotted lightslategrey;">🚴 Trouble Shooting Posts</h5>
+<h4 style="border-bottom: 1px dotted lightslategrey;">🚴 Trouble Shooting Posts</h4>
 <span class="badge skill" style="border-radius: 5px; padding: 4px; font-size: small; border: 1px solid darkolivegreen; color: darkolivegreen;">CS</span>
 <span class="details" style="margin-left: 10px;">
 <a href="{{site.baseurl}}/cs/2023/04/13/CS.html#-언어별-동시성-프로그래밍">언어별 동시성 프로그래밍</a>
