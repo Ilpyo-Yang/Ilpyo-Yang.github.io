@@ -2,7 +2,7 @@
 title: 📖 Effective Java (중단)
 author: Rosie Yang
 date: 2023-04-30
-category: study
+category: test
 layout: post
 ---
 
