@@ -24,7 +24,7 @@ layout: post
 점점 GDG 인천/송도 행사 규모도 커지고 많은 사람들이 찾게 되는 행사를 만드는데 조금이나마 도움이 되고 있다는 것에 뿌듯한 마음이 드는 행사였습니다!
 
 <p style="text-align: center; margin: 50px 0">
-    <img src="/assets/gitbook/post_images/retrospect/google_io_exteneded_2024.jpeg" style="width: 60%"/>
+    <img src="/assets/gitbook/post_images/retrospect/google_io_extended_2024.png" style="width: 60%"/>
 </p>
 
 <br><br>
