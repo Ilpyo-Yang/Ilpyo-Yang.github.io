@@ -2,7 +2,7 @@
 title: Toy Project
 author: Rosie Yang
 date: 2023-09-18
-category: manage
+category: project
 layout: post
 ---
 
