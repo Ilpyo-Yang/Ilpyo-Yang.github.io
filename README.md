@@ -12,88 +12,9 @@
 
 <br>
 
-<table>
-    <tr>
-      <td style="vertical-align : top;">
-        <h4 style="border-bottom: 1px dotted lightslategrey;">Recent Posts</h4>
-        <ul>
-          <li>
-            <span class="details" style="margin-left: 10px;">
-              <a href="{{site.baseurl}}/devops/2023/05/08/DevOps.html#환경변수-어떻게-가지고-갈까">환경변수 어떻게 가지고 갈까?</a>
-            </span>
-          </li>
-          <li>
-            <span class="details" style="margin-left: 10px;">
-              <a href="{{site.baseurl}}/cs/2023/04/13/CS.html#언어별-동시성-프로그래밍">언어별 동시성 프로그래밍</a>
-            </span>
-          </li>
-        </ul>
-      </td>
-      <td style="vertical-align : top;">
-        <h4 style="border-bottom: 1px dotted lightslategrey;">📖 Study Posts</h4>
-        <ul>
-          <li>
-            <span class="details" style="margin-left: 10px;">
-              <a href="{{site.baseurl}}/study/2024/05/06/DDIA.html">데이터 중심 애플리케이션 설계</a>
-            </span>
-          </li>
-          <li>
-            <span class="details" style="margin-left: 10px;">
-              <a href="{{site.baseurl}}/study/2024/01/30/Java_multithread.html">Java 멀티스레딩, 병행성 및 성능 최적화</a>
-            </span>
-          </li>
-          <li>
-            <span class="details" style="margin-left: 10px;">
-              <a href="{{site.baseurl}}/study/2023/08/25/Leetcode.html">LeetCode Top Interview 150</a>
-            </span>
-          </li>
-          <li>
-            <span class="details" style="margin-left: 10px;">
-              <a href="{{site.baseurl}}/study/2023/04/14/Spring_security_in_action.html">Spring Security in Action</a>
-            </span>
-          </li>
-          <li>
-            <span class="details" style="margin-left: 10px;">
-              <a href="{{site.baseurl}}/study/2023/04/13/CS_large_scale_system_design.html">가상면접 사례로 배우는 대규모 시스템 설계 기초</a>
-            </span>
-          </li>
-          <li>
-            <span class="details" style="margin-left: 10px;">
-              <a href="{{site.baseurl}}/study/2023/04/13/CS_certificate.html">정보처리기사 실기</a>
-            </span>
-          </li>
-          <li>
-            <span class="details" style="margin-left: 10px;">
-              <a href="{{site.baseurl}}/study/2023/04/15/JPA_inflearn_roadmap.html">스프링 부트와 JPA 실무 완전 정복 로드맵</a>
-            </span>
-          </li>
-        </ul>
-        <h4 style="border-bottom: 1px dotted lightslategrey;">🚴 Trouble Shooting Posts</h4>
-        <ul>
-          <li>
-            <span class="details" style="margin-left: 10px;">
-              <a href="{{site.baseurl}}/backend/2023/05/04/Database.html#deadlock과-redis-대기열">DeadLock과 Redis 대기열</a>
-            </span>
-          </li>
-          <li>
-            <span class="details" style="margin-left: 10px;">
-              <a href="{{site.baseurl}}/backend/2023/04/14/Spring.html#암호화와-authentication-이슈">암호화와 authentication 이슈</a>
-            </span>
-          </li>
-          <li>
-            <span class="details" style="margin-left: 10px;">
-              <a href="{{site.baseurl}}/backend/2023/04/15/JPA.html#-jpaqueryfactory-설정-이슈">JPAQueryFactory 설정 이슈</a>
-            </span>
-          </li>
-          <li>
-            <span class="details" style="margin-left: 10px;">
-              <a href="{{site.baseurl}}/tool/2023/05/08/Tools.html#-intellij-환경에서-struts-프로젝트-구동하기">IntelliJ 환경에서 Struts 프로젝트 구동하기</a>
-            </span>
-          </li>
-        </ul>
-      </td>
-    </tr>
-</table>
+<h4 style="border-bottom: 1px dotted lightslategrey;">Recent Posts</h4>
 
+- [환경변수 어떻게 가지고 갈까?]({{site.baseurl}}/devops/2023/05/08/DevOps.html#환경변수-어떻게-가지고-갈까)
+- [언어별 동시성 프로그래밍]({{site.baseurl}}/cs/2023/04/13/CS.html#언어별-동시성-프로그래밍)
 
 <div style="padding:3px; margin:200px 0;"></div>
