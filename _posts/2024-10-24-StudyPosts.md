@@ -12,6 +12,7 @@ layout: post
 
 <br>
 
+- [📖 Learn Kotlin by Example]({{site.baseurl}}/study/2024/10/25/Kotlin_example.html)
 - [📖 언어별 동시성 프로그래밍]({{site.baseurl}}/cs/2023/04/13/CS.html#언어별-동시성-프로그래밍)
 - [📖 데이터 중심 애플리케이션 설계]({{site.baseurl}}/study/2024/05/06/DDIA.html)
 - [📖 Java 멀티스레딩, 병행성 및 성능 최적화]({{site.baseurl}}/study/2024/01/30/Java_multithread.html)

@@ -15,6 +15,7 @@
 
 <h4 style="border-bottom: 1px dotted lightslategrey;">Recent Posts</h4>
 
+- [📖 Learn Kotlin by Example]({{site.baseurl}}/study/2024/10/25/Kotlin_example.html)
 - [라인이 개발한 Kotlin JDSL에 대해서]({{site.baseurl}}/backend/2023/05/02/Kotlin.html/라인이-개발한-Kotlin-JDSL에-대해서)
 - [API 버저닝 방법 정하기]({{site.baseurl}}/cs/2023/04/14/Architecture.html#API-버저닝-방법-정하기)
 - [환경변수 어떻게 가지고 갈까?]({{site.baseurl}}/devops/2023/05/08/DevOps.html#환경변수-어떻게-가지고-갈까)
