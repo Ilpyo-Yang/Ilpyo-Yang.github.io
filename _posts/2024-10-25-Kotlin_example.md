@@ -1,5 +1,5 @@
 ---
-title: Kotlin_example
+title: 📖 Learn Kotlin by Example
 author: Rosie Yang
 date: 2024-10-25
 category: study
@@ -7,7 +7,7 @@ layout: post
 toc: true
 ---
 
-## [Learn Kotlin by Example](https://play.kotlinlang.org/byExample/overview?_gl=1*9t8fde*_gcl_au*MTMyMjIyOTg2NC4xNzI5NzQ0OTky*_ga*MjIxOTA3MTMxLjE3Mjk3NDQ5ODg.*_ga_9J976DJZ68*MTcyOTc0NDk4OC4xLjEuMTcyOTc0NjM2OS41OC4wLjA.)
+[Learn Kotlin by Example](https://play.kotlinlang.org/byExample/overview?_gl=1*9t8fde*_gcl_au*MTMyMjIyOTg2NC4xNzI5NzQ0OTky*_ga*MjIxOTA3MTMxLjE3Mjk3NDQ5ODg.*_ga_9J976DJZ68*MTcyOTc0NDk4OC4xLjEuMTcyOTc0NjM2OS41OC4wLjA.)  
 이 글의 모든 예시는 kotlin doc에서 차용했습니다. 모든 내용을 정리하지는 않고 아래 [kotlin을 시작하며]()와 같은 기본 내용을 제외한 중요내용을 추가했습니다.
 
 <hr>
