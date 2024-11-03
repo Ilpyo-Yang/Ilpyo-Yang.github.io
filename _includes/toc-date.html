@@ -77,7 +77,7 @@
 
             {% for post in reversed_posts %}
 
-            {% if post.category != 'manage' and post.category != 'test' and post.category != 'study' %}
+            {% if post.category != 'manage' and post.category != 'test' and post.category != 'study' and post.category != 'pr' %}
             {% if page.url == post.url %}
             <li class="chapter active" data-level="1.2" data-path="{{site.baseurl}}{{post.url}}">
                 {% else %}

@@ -2,7 +2,7 @@
 title: 🚴 Trouble Shooting Posts
 author: Rosie Yang
 date: 2024-10-24
-category: manage
+category: test
 layout: post
 ---
 
