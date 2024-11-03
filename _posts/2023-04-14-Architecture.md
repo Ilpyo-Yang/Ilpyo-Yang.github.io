@@ -7,18 +7,18 @@ layout: post
 ---
 
 > "아키텍처는 세부사항에 대한 결정을 내리는 것이 아니라, 결정을 내리는 방법에 대한 것이다." - Ralph Johnson
-{: .block-tip }  
-> 아키텍처 뿐만 아니라 웹, 모바일에 대한 내용도 함께 담은 포스팅 페이지입니다.
+{: .block-tip }
 
-<br>
-
+### Contents
 + [API 버저닝 방법 정하기]({{site.baseurl}}/cs/2023/04/14/Architecture.html#API-버저닝-방법-정하기)
 + [백엔드 아키텍처 설계시 고려사항]({{site.baseurl}}/cs/2023/04/14/Architecture.html#백엔드-아키텍처-설계시-고려사항)
 + [아키텍처 기본지식]({{site.baseurl}}/cs/2023/04/14/Architecture.html#아키텍처-기본지식)
 + [폰 노이만 아키텍처]({{site.baseurl}}/cs/2023/04/14/Architecture.html#폰-노이만-아키텍처)
 + [Layered Architecture, 계층형 아키텍처]({{site.baseurl}}/cs/2023/04/14/Architecture.html#layered-architecture-계층형-아키텍처)
 
-<br>
+---
+
+<br><br>
 
 ## API 버저닝 방법 정하기
 프로젝트를 하면서 백엔드 API 개발시 필요한 버저닝에 대한 고민을 하게 되었습니다. 사실 버저닝은 개인 프로젝트라서 편한대로 하면 된다고 생각했지만 좀 더 일반적인 방법을 적용하고 싶다는 생각이 들어서 어떤 방법들을 사용하는지 찾아봤습니다.
