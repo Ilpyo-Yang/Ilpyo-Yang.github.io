@@ -15,6 +15,8 @@
 
 <h4 style="border-bottom: 1px dotted lightslategrey;">Recent Posts</h4>
 
+- [🚴 GCE에서 Vertex AI 연동 이슈]({{site.baseurl}}/study/2023/05/07/GCP.html#-gce에서-vertex-ai-연동-이슈)
+- [🚴 GCP 마이그레이션 세팅 다시하기]({{site.baseurl}}/study/2023/05/07/GCP.html#-gcp-마이그레이션-세팅-다시하기)
 - [📖 Learn Kotlin by Example]({{site.baseurl}}/study/2024/10/25/Kotlin_example.html)
 - [라인이 개발한 Kotlin JDSL에 대해서]({{site.baseurl}}/backend/2023/05/02/Kotlin.html/라인이-개발한-Kotlin-JDSL에-대해서)
 - [API 버저닝 방법 정하기]({{site.baseurl}}/cs/2023/04/14/Architecture.html#API-버저닝-방법-정하기)
